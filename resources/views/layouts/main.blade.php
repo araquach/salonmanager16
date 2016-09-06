@@ -1,6 +1,6 @@
-<!DOCTYPE HTML>
+<!doctype html>
 
-<html class="no-js">
+<html>
 
 @section('head')
 
@@ -12,24 +12,28 @@
 
 	<header>
 		<div id="logo"><a href="{{ url('/') }}"><h1>Salon Manager</h1></a></div>
+
+		<ul class="nav navbar-nav">
+        	<li><a href="{{ url('/home') }}">Home</a></li>
+        </ul>
+
+
 	</header>
 	
 	@yield('content')
 	
-	<div class="group"></div>
-
 	<footer>
 	<div id="mainmenu">
 		<nav class="group">
-		{{-- add jquery active --}}
 			<ul>
-				<li>{{ HTML::link('/', "Home") }}</li>
-				<li>{{ HTML::link('admin', "Admin") }}</li>
-				@if(!Auth::id())
-					<li>{{ HTML::link('login', "Log in") }}</li>
-				@endif
-				@if(Auth::id())
-					<li><a href="{{ url('logout') }}">Log out {{ Auth::user()->username }}</a></li>
+				<li><a href="{{ url('/') }}">Home</li>
+				@if (Auth::guest())
+					<li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
+                @else  
+            		<li><a href="#">{{ Auth::user()->name }}</a></li>
+				
+					<li><a href="{{ url('/logout') }}">Logout</a></li>
 				@endif
 				
 			</ul>
