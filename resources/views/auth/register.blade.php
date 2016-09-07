@@ -12,33 +12,33 @@
 
 {{ Form::open(array('url' => '/register')) }}
 
-    <div class="row">
+    <p>
     	{!! Form::label('name', 'Name') !!}
     	{!! Form::text('name', old('name')) !!}
     	{!! $errors->first('name', '<div class="errorMessage">:message</div>') !!}
-    </div>
+    </p>
     
-    <div class="row">
+    <p>
     	{!! Form::label('email', 'Email address') !!}
     	{!! Form::email('email', old('email')) !!}
     	{!! $errors->first('email', '<div class="errorMessage">:message</div>') !!}
-    </div>
+    </p>
     
-    <div class="row">
+    <p>
     	{!! Form::label('password', 'Password') !!}
     	{!! Form::text('password', old('password')) !!}
     	{!! $errors->first('password', '<div class="errorMessage">:message</div>') !!}
-    </div>
+    </p>
     
-    <div class="row">
+    <p>
     	{!! Form::label('password_confirmation', 'Confirm Password') !!}
     	{!! Form::text('password_confirmation', old('password_confirmation')) !!}
     	{!! $errors->first('password_confirmation', '<div class="errorMessage">:message</div>') !!}
-    </div>
+    </p>
     
-    <div class="row">
+    <p>
     	{!! Form::submit('Register') !!}
-	</div>
+	</p>
 
 {{ Form::close() }}
 

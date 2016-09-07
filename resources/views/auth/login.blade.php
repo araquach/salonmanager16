@@ -12,22 +12,22 @@
 
 {{ Form::open(array('url' => '/login')) }}
 
-    <div class="row">
+    <p>
     	{!! Form::label('email', 'Email Address') !!}
     	{!! Form::email('email', old('email')) !!}
     	{!! $errors->first('email', '<div class="errorMessage">:message</div>') !!}
-    </div>
+    </p>
     
-    <div class="row">
+    <p>
     	{!! Form::label('password', 'Password') !!}
     	{!! Form::text('password', old('password')) !!}
     	{!! $errors->first('password', '<div class="errorMessage">:message</div>') !!}
-    </div>
+    </p>
     
-    <div class="row">
+    <p>
     	{!! Form::label('remember', 'Remember Me') !!}
-    	{!! Form::checkBox('remember', old('remember')) !!}
-    </div>
+    	{!! Form::checkBox('remember') !!}
+    </p>
     
     <div class="row">
 	{!! Form::submit('Login') !!}
@@ -35,6 +35,6 @@
 
 {{ Form::close() }}
 
-<a href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+<p><a href="{{ url('/password/reset') }}">Forgot Your Password?</a></p>
 
 @endsection

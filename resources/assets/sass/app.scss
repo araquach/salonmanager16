@@ -1,2 +1,23 @@
 @import "node_modules/concise.css/src/concise.scss";
 
+$dark: #000033;
+
+header {
+    @include row();
+    background-color: $dark;
+    padding: 30px;
+
+    h1 {
+        color: white;
+    }
+}
+
+footer {
+     @include row();
+    background-color: $dark;
+    padding: 30px;
+}
+
+form {
+    max-width: 500px;
+}

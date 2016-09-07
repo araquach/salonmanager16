@@ -2046,4 +2046,33 @@ ol.dropdown-content {
 .tooltip--always .tooltip--left:before, .tooltip--always .tooltip--left:after {
   transform: translateX(8px); }
 
+header {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 0;
+  background-color: #000033;
+  padding: 30px; }
+  header:before, header:after {
+    content: "";
+    display: table; }
+  header:after {
+    clear: both; }
+  header h1 {
+    color: white; }
+
+footer {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 0;
+  background-color: #000033;
+  padding: 30px; }
+  footer:before, footer:after {
+    content: "";
+    display: table; }
+  footer:after {
+    clear: both; }
+
+form {
+  max-width: 500px; }
+
 /*# sourceMappingURL=app.css.map */

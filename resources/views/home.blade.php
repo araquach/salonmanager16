@@ -10,4 +10,6 @@
 
 <h2>You are logged in!</h2>
 
+<p class="text--warning">This is a top site</p>
+
 @stop
