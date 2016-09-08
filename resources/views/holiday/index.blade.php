@@ -14,7 +14,7 @@
 
 <nav>
 <ul>
-<li><a href="{{ url('/holiday/create', 'upcoming') }}">Book holiday</a></li>
+<li><a href="{{ url('/holiday/create') }}">Book holiday</a></li>
 <li><a href="{{ url('/holiday/index', 'upcoming') }}">Upcoming Holidays</a></li>
 <li><a href="{{ url('/holiday/index', 'awaiting') }}">Awaiting Approval</a></li>
 <li><a href="{{ url('/holiday/index', 'denied') }}">Denied Holidays</a></li>

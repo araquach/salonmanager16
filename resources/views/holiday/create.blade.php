@@ -1,57 +1,61 @@
 @extends('layouts.main')
 
+@section('head')
+
+@include('layouts.partials.head')
+
+@stop
+
 @section('content')
-
-<script>
-  $(function() {
-    $( ".datepicker" ).each(function(){
-    	$(this).datepicker();
-    })
-  });
-</script>
-
 
 <div class="form holiday">
 
-<form action="{{ action('HolidayController@handleCreate') }}" method="post" role="form">
+{!! Form::open(array(
+	'action' => 'HolidayController@store'
+)) !!}
 
-@if($errors->any())
+@if (count($errors) > 0)
+
 	<div class="errorSummary">
-		<p>Please fix the following input errors</p>
-		<ul>
-		@foreach($errors->all() as $message)
-			<li>{{ $message }}</li>
-		@endforeach
-		</ul>
-	</div> <!--errorSummary-->
+			<p>Please fix the following input errors:</p>
+			<ul>
+		   		 @foreach($errors->all() as $error)
+		        <li>{{{ $error }}}</li>
+		    	@endforeach
+			</ul>
+	</div>
+   
 @endif
 
-<input type="hidden" name="staff_id" value="{{ Auth::id() }}" />
+	{!! Form::hidden('staff_id', Auth::id()) !!}
+	
+	<p>
+    	{!! Form::label('request_date_from', 'From:') !!}
+    	{!! Form::text('request_date_from', old('request_date_from')) !!}
+    	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
+    	{!! Form::label('request_date_to', 'To:') !!}
+    	{!! Form::text('request_date_to', old('request_date_to:')) !!}
+    	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
+    	{!! Form::label('hours_requested', 'Days Requested:') !!}
+    	{!! Form::text('hours_requested', old('hours_requested')) !!}
+    	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
+	    {!! Form::submit('Create') !!}
+	</p>
+	
+	<a href="{{ action('HolidayController@showIndex') }}">cancel</a>
+
+{{ Form::close() }}
 
 
-<div>
-<label for="request_date_from">From:</label>
-<input type="text" class="" name="request_date_from" />
 </div>
-
-<div>
-<label for="request_date_to">To:</label>
-<input type="text" class="" name="request_date_to" />
-</div>
-
-<div>
-<label for="hours_requested">Days Requested:</label>
-<input type="text" name="hours_requested" />
-</div>
-
-<div class="row buttons">
-<input type="submit"  value="create" />
-<a href="{{ action('HolidayController@showIndex') }}">cancel</a>
-</div>
-
-</form>
-
-
-</div> <!--.form holiday-->
 
 @stop

@@ -29,9 +29,9 @@
     	{!! Form::checkBox('remember') !!}
     </p>
     
-    <div class="row">
-	{!! Form::submit('Login') !!}
-	</div>
+    <p>
+	    {!! Form::submit('Login') !!}
+	</p>
 
 {{ Form::close() }}
 
