@@ -20,7 +20,6 @@ class CreateHolidaysTable extends Migration
 			$table->dateTime('request_date_from');
 			$table->dateTime('request_date_to');
 			$table->boolean('approved');
-			$table->dateTime('requested_on_date');
 			$table->timestamps();
         });
     }
