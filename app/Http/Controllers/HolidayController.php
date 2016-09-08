@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Holiday;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use App\Http\Requests\HolidayFormRequest;
 
 class HolidayController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    
+    public function __construct(Holiday $holiday)
+	{
+		$this->middleware('auth');
+		
+		$this->holiday = $holiday;
+	}
     
     /**
      * Display a listing of the resource.
@@ -39,9 +43,13 @@ class HolidayController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HolidayFormRequest $request)
     {
-        //
+        $input = $request->all();
+		
+	    Holiday::create($input);
+	    
+	    return redirect()->back()->with('message', 'Holiday request made');
     }
 
     /**
