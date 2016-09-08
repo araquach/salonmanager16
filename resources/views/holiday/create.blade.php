@@ -9,6 +9,12 @@
 @section('content')
 
 <div class="form holiday">
+	
+@if(Session::has('message'))
+    <div>
+    {{{ Session::get('message') }}}
+    </div>
+@endif
 
 {!! Form::open(array(
 	'action' => 'HolidayController@store'
@@ -31,13 +37,13 @@
 	
 	<p>
     	{!! Form::label('request_date_from', 'From:') !!}
-    	{!! Form::text('request_date_from', old('request_date_from')) !!}
+    	{!! Form::date('request_date_from', old('request_date_from')) !!}
     	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>
     	{!! Form::label('request_date_to', 'To:') !!}
-    	{!! Form::text('request_date_to', old('request_date_to:')) !!}
+    	{!! Form::date('request_date_to', old('request_date_to:')) !!}
     	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	

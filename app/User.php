@@ -6,6 +6,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    protected $dates = ['created_at', 'updated_at'];
+    
     /**
      * The attributes that are mass assignable.
      *

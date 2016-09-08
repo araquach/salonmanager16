@@ -24,7 +24,10 @@ class HolidayFormRequest extends Request
     public function rules()
     {
         return [
-            
+            'hours_requested' => 'required',
+            'prebooked' => '',
+            'request_date_from' => 'required',
+            'request_date_to' => 'required',
         ];
     }
 }
