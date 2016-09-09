@@ -8,8 +8,8 @@
 
 @section('content')
 
-<h2>You are logged in!</h2>
-
-<p class="text--warning">This is a top site</p>
+<div id="menuBox">
+    
+</div>
 
 @stop

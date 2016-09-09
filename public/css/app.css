@@ -2046,12 +2046,17 @@ ol.dropdown-content {
 .tooltip--always .tooltip--left:before, .tooltip--always .tooltip--left:after {
   transform: translateX(8px); }
 
+body {
+  background-color: #011b40; }
+
 header {
   margin-left: -15px;
   margin-right: -15px;
   margin-bottom: 0;
-  background-color: #000033;
-  padding: 30px; }
+  background: url("/images/icons/icons_home.png") no-repeat right;
+  background-size: 75px 75px;
+  height: 200px;
+  padding-top: 50px; }
   header:before, header:after {
     content: "";
     display: table; }
@@ -2064,7 +2069,7 @@ footer {
   margin-left: -15px;
   margin-right: -15px;
   margin-bottom: 0;
-  background-color: #000033;
+  background-color: #011b40;
   padding: 30px; }
   footer:before, footer:after {
     content: "";
@@ -2074,5 +2079,18 @@ footer {
 
 form {
   max-width: 500px; }
+
+#menuBox {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 0;
+  height: 100px;
+  padding: 20px;
+  background-color: red; }
+  #menuBox:before, #menuBox:after {
+    content: "";
+    display: table; }
+  #menuBox:after {
+    clear: both; }
 
 /*# sourceMappingURL=app.css.map */

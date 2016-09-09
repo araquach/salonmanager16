@@ -1,11 +1,17 @@
 @import "node_modules/concise.css/src/concise.scss";
 
-$dark: #000033;
+$dark: rgb(1,27,64);
+
+body {
+    background-color: $dark;
+}
 
 header {
     @include row();
-    background-color: $dark;
-    padding: 30px;
+	background: url('/images/icons/icons_home.png') no-repeat right;
+	background-size: 75px 75px;
+	height: 200px;
+	padding-top: 50px;
 
     h1 {
         color: white;
@@ -20,4 +26,11 @@ footer {
 
 form {
     max-width: 500px;
+}
+
+#menuBox {
+    @include row();
+    height: 100px;
+	padding: 20px;
+	background-color: red;
 }
