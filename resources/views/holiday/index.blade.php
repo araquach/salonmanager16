@@ -8,8 +8,6 @@
 
 @section('content')
 
-<div id="holidayPage">
-
 <div class="pageHead holiday">
 
 <nav>

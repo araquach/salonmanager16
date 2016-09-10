@@ -8,8 +8,6 @@
 
 @section('content')
 
-<div id="menuBox">
-    
-</div>
+
 
 @stop

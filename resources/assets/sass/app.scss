@@ -1,9 +1,8 @@
 @import "node_modules/concise.css/src/concise.scss";
 
-$dark: rgb(1,27,64);
-
 body {
     background-color: $dark;
+    padding: 0 10%;
 }
 
 header {
@@ -19,18 +18,84 @@ header {
 }
 
 footer {
-     @include row();
-    background-color: $dark;
-    padding: 30px;
+    @include row();
+    padding: 30px 0;
+}
+
+.pageHead {
+	@include row();
+	height: 250px;
+	width: 100%;
+	padding-left: 220px;
+	padding-top: 30px;
+	background-repeat: no-repeat;
+	background-position: 40px 30px;
+	margin-top: -30px;
+	margin-bottom: 10px;
+}
+
+.pageHead.holiday {
+    background: url('/images/icons/icons_holiday.png') no-repeat top 40px right 40px $holiday;
 }
 
 form {
     max-width: 500px;
+    
+    p:last-of-type {
+        margin-top: 40px;
+    }
+}
+
+.form {
+    @include row();
+    width: 60%;
+	padding: 40px;
+	padding-top: 80px;
+	
+	h2 {
+        margin-bottom: 60px;
+    }
+}
+
+.form.holiday {
+	background: url('/images/icons/icons_holiday.png') no-repeat top 20px right 50px $holiday;
 }
 
 #menuBox {
     @include row();
-    height: 100px;
 	padding: 20px;
-	background-color: red;
+	
+	h2 {
+	    font-size: 0.9em;
+	    margin: 0;
+	}
+	
+	p {
+	    font-size: .7em;
+	    color: #FFF;
+    }
+    
+    .info {
+        margin-top: 110px;
+    }
+}
+
+.menu {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+}
+
+.menu.holiday {
+	background: url('/images/icons/icons_holiday.png') no-repeat center 40px $holiday;
+	background-size: 50%;
+}
+
+.info li {
+    color: #FFF;
+    font-size: .7em;
+}
+
+.hidden {
+    display: none;
 }

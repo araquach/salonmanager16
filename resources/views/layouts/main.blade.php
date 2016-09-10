@@ -14,7 +14,7 @@
 		<div id="logo"><a href="{{ url('/') }}"><h1>Salon Manager</h1></a></div>
 
 		<ul class="list--inline">
-        	<li><a href="{{ url('/home') }}">Home</a></li>
+        	<li><a href="{{ url('/') }}">Home</a></li>
         	<li><a href="{{ url('/holiday') }}">Holidays</a></li>
         </ul>
 	</header>
