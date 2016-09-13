@@ -3,6 +3,7 @@
 body {
     background-color: $dark;
     padding: 0 10%;
+    min-width: 465px;
 }
 
 header {
@@ -26,16 +27,39 @@ footer {
 	@include row();
 	height: 250px;
 	width: 100%;
-	padding-left: 220px;
 	padding-top: 30px;
 	background-repeat: no-repeat;
 	background-position: 40px 30px;
 	margin-top: -30px;
 	margin-bottom: 10px;
+	
+	nav {
+    margin-top: 130px;
+    margin-left: 40px;
+    
+	    ul li {
+	        padding-left: 10px;
+            
+            a {
+                border: 3px solid #FFF;
+                padding: 10px;
+                border-radius: 15px;
+                
+                &:hover {
+                opacity: .7;
+                }
+            }
+	    }
+	    
+	    ul li:first-child {
+	        padding-left: 10px;
+	    }
+	}
+    
 }
 
 .pageHead.holiday {
-    background: url('/images/icons/icons_holiday.png') no-repeat top 40px right 40px $holiday;
+    background: url('/images/icons/icons_holiday.png') no-repeat top 20px left 40px $holiday;
 }
 
 form {
@@ -98,4 +122,19 @@ form {
 
 .hidden {
     display: none;
+}
+
+
+.views {
+    @include row();
+}
+
+.view {
+	width: 170px;
+	height: 170px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 20px;
+	line-height: 1.5em;
+	float: left;
 }

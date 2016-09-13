@@ -10,8 +10,10 @@
 
 <div class="pageHead holiday">
 
-<nav>
-<ul>
+@include('widgets.holiday')
+
+<nav class"pageHeadNav">
+<ul class="list--inline">
 <li><a href="{{ url('/holiday/create') }}">Book holiday</a></li>
 <li><a href="{{ url('/holiday/index', 'upcoming') }}">Upcoming Holidays</a></li>
 <li><a href="{{ url('/holiday/index', 'awaiting') }}">Awaiting Approval</a></li>
@@ -20,13 +22,13 @@
 </ul>
 </nav>
 
-@include('widgets.holiday')
-
 </div> <!--.pageHead holiday-->
 
 {{-- @foreach($holidays as $holiday) --}}
 
-<div class="{{-- view @if($holiday->approved == 1) 
+<div class="views">
+
+<div class="view bg--warning {{-- view @if($holiday->approved == 1) 
 						unapproved 
 					@elseif($holiday->approved == 2) 
 						approved 
@@ -48,8 +50,8 @@
 	{{-- $holiday->request_date_to->toFormattedDateString() --}}
 	<br />
 	
-	{{-- @if($holiday->id == 1) --}}
-	 	<img src="{{ asset('/images/icons/icons_1xsat.png') }}" />
+	{{-- @if($holiday->id == 1) 
+	 	<img src="{{ asset('/images/icons/icons_1xsat.png') }}" /> --}}
 	{{-- @elseif($holiday->id == 2) --}}
 		<img src="{{ asset('/images/icons/icons_2xsat.png') }}" />
 	{{-- @endif --}}
@@ -59,8 +61,12 @@
 	{{-- @endif --}}
 </div>
 
-{{-- @endforeach --}}
+<div class="view bg--error" >
+	<img src="{{ asset('/images/icons/icons_1xsat.png') }}" />
+</div>
 
-</div> <!--holidayPage-->
+</div>
+
+{{-- @endforeach --}}
 
 @stop
