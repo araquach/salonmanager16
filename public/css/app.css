@@ -2067,6 +2067,18 @@ header {
   header h1 {
     color: white; }
 
+button, input[type="submit"] {
+  background: #777; }
+
+.approved {
+  background-color: #5ea428; }
+
+.unapproved {
+  background-color: #ba222e; }
+
+.pending {
+  background-color: #d0482e; }
+
 footer {
   margin-left: -15px;
   margin-right: -15px;
@@ -2094,9 +2106,13 @@ footer {
     display: table; }
   .pageHead:after {
     clear: both; }
+  .pageHead ul.info {
+    margin-left: 15em; }
+    .pageHead ul.info li {
+      font-size: 1.7em; }
   .pageHead nav {
-    margin-top: 130px;
-    margin-left: 40px; }
+    margin-top: 5.5em;
+    margin-left: 3em; }
     .pageHead nav ul li {
       padding-left: 10px; }
       .pageHead nav ul li a {
@@ -2158,6 +2174,10 @@ form {
   width: 200px;
   height: 200px;
   padding: 20px; }
+  .menu ul li:nth-of-type(1),
+  .menu ul li:nth-of-type(2),
+  .menu ul li:nth-of-type(3) {
+    display: none; }
 
 .menu.holiday {
   background: url("/images/icons/icons_holiday.png") no-repeat center 40px #008A00;
@@ -2165,7 +2185,8 @@ form {
 
 .info li {
   color: #FFF;
-  font-size: .7em; }
+  font-size: .9em;
+  line-height: 3em; }
 
 .hidden {
   display: none; }
@@ -2188,5 +2209,7 @@ form {
   padding: 20px;
   line-height: 1.5em;
   float: left; }
+  .view img {
+    margin-top: .5em; }
 
 /*# sourceMappingURL=app.css.map */

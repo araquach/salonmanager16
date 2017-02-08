@@ -27,11 +27,11 @@
 	</tr>
 	<tr>
 		<td><strong>From:</strong></td>
-		<td>{{ $holiday->request_date_from->toFormattedDateString() }}</td>
+		<td>{{ $holiday->request_date_from->format('d/m/Y') }}</td>
 	</tr>
 	<tr>
 		<td><strong>To:</strong></td>
-		<td>{{ $holiday->request_date_to->toFormattedDateString() }}</td>
+		<td>{{ $holiday->request_date_to->format('d/m/Y') }}</td>
 	</tr>
 	<tr>
 		<td><strong>Approved?:</strong></td>
@@ -40,8 +40,7 @@
 	{{--  saturday function to show icon--}}
 </table>
 
-
-{{ HTML::link('/holiday/index', "Back to list") }}
+{!! link_to('/holiday/index', 'Menu') !!}
 
 </div> <!-- detail holiday  -->
 
