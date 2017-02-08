@@ -2145,6 +2145,7 @@ form {
   #menuBox:after {
     clear: both; }
   #menuBox h2 {
+    font-family: "cooper-black-std",sans-serif;
     font-size: 0.9em;
     margin: 0; }
   #menuBox p {

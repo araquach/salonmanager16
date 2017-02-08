@@ -6,6 +6,8 @@ use App\Holiday;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\HolidayFormRequest;
+use Auth;
+use Carbon\Carbon;
 
 class HolidayController extends Controller
 {
@@ -22,9 +24,35 @@ class HolidayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category = null)
     {
-        return view('holiday.index');
+        $user = Auth::user();
+        
+        if($category == 'awaiting')
+		{
+			$holidays = Holiday::where('staff_id', '=', $user->id)
+			->where('approved', '=', 0)
+			->get();
+		}
+		elseif($category == 'upcoming') 
+		{
+			$holidays = Holiday::where('staff_id', '=', $user->id)
+			->where('approved', '=', 2)
+			->where('request_date_from', '>=', Carbon::now())
+			->get();
+		}
+		elseif($category == 'denied') 
+		{
+			$holidays = Holiday::where('staff_id', '=', $user->id)
+			->where('approved', '=', 1)
+			->get();
+		}
+		else
+		{
+			$holidays = Holiday::where('staff_id', '=', $user->id)->get();
+		}
+        
+        return view('holiday/index', compact('holidays'));
     }
 
     /**
@@ -58,9 +86,9 @@ class HolidayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Holiday $holiday)
     {
-        //
+        return view('holiday.view', compact('holiday'));
     }
 
     /**

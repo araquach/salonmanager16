@@ -19,4 +19,27 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('holiday', 'HolidayController');
+// Holiday Routes
+
+// Route::model('holiday', 'Holiday');
+Route::get('/holiday/index/{category?}', 'HolidayController@index' );
+Route::get('/holiday/view/{holiday}', 'HolidayController@view' );
+Route::get('/holiday/create', 'HolidayController@create');
+Route::get('/holiday/update/{holiday}', 'HolidayController@update');
+
+// Holiday Form Handlers
+
+Route::post('/holiday/create', 'HolidayController@store');
+Route::post('/holiday/update', 'HolidayController@update');
+
+// Holiday Admin Routes
+
+Route::get('admin/holiday/index', 'HolidayController@showAdminIndex' );
+Route::get('admin/holiday/view/{holiday}', 'HolidayController@showAdminView' );
+Route::get('admin/holiday/create', 'HolidayController@showAdminCreate');
+Route::get('admin/holiday/update/{holiday}', 'HolidayController@showAdminUpdate');
+
+// Holiday Admin Form Handlers
+
+Route::post('admin/holiday/create', 'HolidayController@handleAdminCreate');
+Route::post('admin/holiday/update', 'HolidayController@handleAdminUpdate');
