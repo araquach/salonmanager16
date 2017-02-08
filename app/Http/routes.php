@@ -23,14 +23,13 @@ Route::get('/home', 'HomeController@index');
 
 // Route::model('holiday', 'Holiday');
 Route::get('/holiday/index/{category?}', 'HolidayController@index' );
-Route::get('/holiday/view/{holiday}', 'HolidayController@view' );
 Route::get('/holiday/create', 'HolidayController@create');
-Route::get('/holiday/update/{holiday}', 'HolidayController@update');
-
-// Holiday Form Handlers
-
 Route::post('/holiday/create', 'HolidayController@store');
+Route::get('/holiday/view/{holiday}', 'HolidayController@view' );
+Route::get('/holiday/edit/{holiday}', 'HolidayController@update');
 Route::post('/holiday/update', 'HolidayController@update');
+
+
 
 // Holiday Admin Routes
 

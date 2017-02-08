@@ -28,16 +28,16 @@
 
 <div class="views">
 
-<div class="view bg--warning {{-- view @if($holiday->approved == 1) 
+<div class="view @if($holiday->approved == 1) 
 						unapproved 
 					@elseif($holiday->approved == 2) 
 						approved 
 					@else 
 						pending 
-					@endif --}}" >
+					@endif" >
 					
 	
-	{{-- <a href="{{ action('HolidayController@showView', $holiday->id) }}"></a> --}}
+	<a href="{{-- action('HolidayController@view', $holiday->id) --}}"></a>
 	<b>Requested:</b> 
 	{{-- $holiday->hours_requested --}} {{-- hour converter function --}}
 	<br />

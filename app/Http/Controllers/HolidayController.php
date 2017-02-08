@@ -77,7 +77,7 @@ class HolidayController extends Controller
 		
 	    Holiday::create($input);
 	    
-	    return redirect()->back()->with('message', 'Holiday request made');
+	    return redirect('HolidayController@index');
     }
 
     /**
@@ -124,4 +124,80 @@ class HolidayController extends Controller
     {
         //
     }
+    
+    // Admin Pages
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function adminIndex()
+	{
+		$holidays = Holiday::all();
+		return View('/holiday/admin/index', compact('holidays'));
+	}
+    
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function adminCreate()
+	{
+		return View('/holiday/admin/create');
+	}
+	
+	/**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+	public function adminStore()
+	{
+		$input = $request->all();
+		
+	    Holiday::create($input);
+		
+		return Redirect::action('HolidayController@showAdminIndex');
+	}
+    
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function adminShow(Holiday $holiday) {
+		return View('holiday/admin/view', compact('holiday'));
+	}
+	
+	/**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+	public function adminEdit($id)
+    {
+        //
+    }
+    
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function adminUpdate(Request $request, $id)
+    {
+        //
+    }
+    
+    
+	
+	
+    
 }

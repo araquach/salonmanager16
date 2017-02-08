@@ -14,7 +14,7 @@
 
 <div id="menuBox">
     
-    <a href="{{ url('/holiday') }}">
+    <a href="{{ url('/holiday/index') }}">
         <div class="menu holiday">
             <h2><strong>Holidays</strong></h2>
             @include('widgets.holiday')
