@@ -55,12 +55,12 @@ footer {
 		margin-left: 15em;
 		
 		li {
-			font-size: 1.7em;
+			font-size: 1.4em;
 		}
 	}
 	
 	nav {
-    margin-top: 5.5em;
+    margin-top: 2em;
     margin-left: 3em;
     
 	    ul li {
@@ -126,6 +126,11 @@ form {
 	    color: #FFF;
     }
     
+    a {
+    	display: block;
+    	width: 160px;
+    }
+    
     .info {
         margin-top: 110px;
     }
@@ -135,6 +140,16 @@ form {
     width: 200px;
     height: 200px;
     padding: 20px;
+    
+    a {
+    	display: block;
+    	width: 160px;
+    }
+    
+    ul li {
+    	font-size: .8em;
+    	line-height: 4em;
+    }
     
     ul li:nth-of-type(1),
     ul li:nth-of-type(2),
@@ -152,7 +167,6 @@ form {
 .info li {
     color: #FFF;
     font-size: .9em;
-    line-height: 3em;
 }
 
 .hidden {
