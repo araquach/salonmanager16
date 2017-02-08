@@ -21,24 +21,20 @@ Route::get('/home', 'HomeController@index');
 
 // Holiday Routes
 
-// Route::model('holiday', 'Holiday');
 Route::get('/holiday/index/{category?}', 'HolidayController@index' );
 Route::get('/holiday/create', 'HolidayController@create');
 Route::post('/holiday/create', 'HolidayController@store');
-Route::get('/holiday/view/{holiday}', 'HolidayController@view' );
-Route::get('/holiday/edit/{holiday}', 'HolidayController@update');
+Route::get('/holiday/view/{holiday}', 'HolidayController@show' );
+Route::get('/holiday/edit/{holiday}', 'HolidayController@edit');
 Route::post('/holiday/update', 'HolidayController@update');
-
-
+// need destroy routes
 
 // Holiday Admin Routes
 
-Route::get('admin/holiday/index', 'HolidayController@showAdminIndex' );
-Route::get('admin/holiday/view/{holiday}', 'HolidayController@showAdminView' );
-Route::get('admin/holiday/create', 'HolidayController@showAdminCreate');
-Route::get('admin/holiday/update/{holiday}', 'HolidayController@showAdminUpdate');
-
-// Holiday Admin Form Handlers
-
-Route::post('admin/holiday/create', 'HolidayController@handleAdminCreate');
+Route::get('admin/holiday/index/{category?}', 'HolidayController@adminIndex' );
+Route::get('admin/holiday/create', 'HolidayController@adminCreate');
+Route::post('admin/holiday/create', 'HolidayController@adminStore');
+Route::get('admin/holiday/view/{holiday}', 'HolidayController@adminShow' );
+Route::get('admin/holiday/edit/{holiday}', 'HolidayController@adminEdit');
 Route::post('admin/holiday/update', 'HolidayController@handleAdminUpdate');
+// need destroy routes
