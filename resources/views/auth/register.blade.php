@@ -19,9 +19,9 @@
     </p>
     
     <p>
-    	{!! Form::label('email', 'Email address') !!}
-    	{!! Form::email('email', old('email')) !!}
-    	{!! $errors->first('email', '<div class="errorMessage">:message</div>') !!}
+    	{!! Form::label('username', 'Username') !!}
+    	{!! Form::text('username', old('username')) !!}
+    	{!! $errors->first('username', '<div class="errorMessage">:message</div>') !!}
     </p>
     
     <p>
