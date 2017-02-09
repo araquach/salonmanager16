@@ -77,7 +77,7 @@ class HolidayController extends Controller
 		
 	    Holiday::create($input);
 	    
-	    return redirect('HolidayController@index');
+	    return redirect('holiday/index');
     }
 
     /**

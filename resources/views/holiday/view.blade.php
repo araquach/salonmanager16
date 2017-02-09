@@ -11,16 +11,13 @@
 <div class="detail holiday">
 
 
-<div class="detailCode @if($holiday->approved == 1)
+<table class="detail-view @if($holiday->approved == 1)
 							unapproved
 						@elseif($holiday->approved == 2)
 							approved
 						@else
 							pending
 						@endif">
-</div>
-
-<table class="detail-view">
 	<tr>
 		<td><strong>Days Requested:</strong></td>
 		<td>{{ $holiday->hours_requested }}</td>
@@ -37,10 +34,23 @@
 		<td><strong>Approved?:</strong></td>
 		<td>{{ $holiday->approved ? 'Yes' : 'No' }}</td>
 	</tr>
-	{{--  saturday function to show icon--}}
+	<tr>
+		<td>
+			@if($holiday->id == 1) 
+		 	<img src="{{ asset('/images/icons/icons_1xsat.png') }}" />
+			@elseif($holiday->id == 2)
+			<img src="{{ asset('/images/icons/icons_2xsat.png') }}" />
+			@endif
+		</td>
+		<td>
+			@if($holiday->prebooked ==1)
+			<img src="{{ asset('images/icons/pb-11.png') }}">
+			@endif
+		</td>
+	</tr>
 </table>
 
-{!! link_to('/holiday/index', 'Menu') !!}
+{!! link_to('/holiday/index', 'Back to Holidays overview') !!}
 
 </div> <!-- detail holiday  -->
 
