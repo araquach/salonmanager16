@@ -39,7 +39,7 @@
 						@endif" >
 						
 		<b>Requested:</b> 
-		{{ $holiday->hours_requested }} {{-- hour converter function --}}
+		{!! calculateDays($holiday->hours_requested) !!}
 		<br />
 	
 		<b>From:</b> 
