@@ -17,5 +17,12 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('blonde123'),
             'remember_token' => null,
         ]);
+        
+        DB::table('users')->insert([
+            'name' => 'Jimmy Sharpe',
+            'username' => 'jimmy',
+            'password' => Hash::make('jim123'),
+            'remember_token' => null,
+        ]);
     }
 }
