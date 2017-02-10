@@ -1,8 +1,8 @@
 <!--holiday widget partial view-->
 
 <ul class="info list--unstyled">
-    <li>Holiday Entitlement:  days</li>
-    <li>Total Booked:  days</li>
-    <li>Remaining Saturdays:  </li>
-    <li>Days remaining: </li>
+    <li>Holiday Entitlement: {{ $entitlement }} days</li>
+    <li>Total Booked: {{ $total }} days</li>
+    <li>Remaining Saturdays:  {{ $remainingSat }}</li>
+    <li>Days remaining: {{ $remainingDays }}</li>
 </ul>

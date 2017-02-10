@@ -15,11 +15,12 @@ class CreateHolidaysTable extends Migration
         Schema::create('holidays', function (Blueprint $table) {
             $table->increments('id');
 			$table->integer('staff_id')->unsigned();
-			$table->integer('hours_requested');
-			$table->boolean('prebooked');
+			$table->integer('hours_requested')->unsigned();
+			$table->boolean('prebooked')->nullable();
 			$table->dateTime('request_date_from');
 			$table->dateTime('request_date_to');
-			$table->boolean('approved');
+			$table->integer('saturday')->unsigned()->nullable();
+			$table->boolean('approved')->nullable();
 			$table->timestamps();
         });
     }

@@ -12,7 +12,15 @@ class StaffsTableSeeder extends Seeder
     public function run()
     {
         DB::table('staffs')->insert([
-            'person_id' => 1,
+            'first_name' => 'Adam',
+            'second_name' => 'Carter',
+            'address1' => '32 Glossop Close',
+            'address2' => 'Warrington',
+            'address3' => '',
+            'postcode' => 'WA1 2GS',
+            'email' => 'adam@jakatasalon.co.uk',
+            'phone' => '',
+            'mobile' => '07921806884',
             'iris_id' => 1,
             'salon_id' => '1',
             'staff_role_id' => '1',
@@ -24,7 +32,15 @@ class StaffsTableSeeder extends Seeder
         ]);
         
         DB::table('staffs')->insert([
-            'person_id' => 2,
+            'first_name' => 'Jimmy',
+            'second_name' => 'Sharpe',
+            'address1' => '19 Some Road',
+            'address2' => 'Orford',
+            'address3' => 'Warrington',
+            'postcode' => 'WA1 5SR',
+            'email' => 'jimmy@jakatasalon.co.uk',
+            'phone' => '',
+            'mobile' => '07999555555',
             'iris_id' => 2,
             'salon_id' => '2',
             'staff_role_id' => '1',
