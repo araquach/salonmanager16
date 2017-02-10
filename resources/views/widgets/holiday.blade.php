@@ -4,5 +4,5 @@
     <li>Holiday Entitlement: {{ $entitlement->staff->holiday_entitlement }} days</li>
     <li>Total Booked: {{ $total }} days</li>
     <li>Remaining Saturdays:  {{ $remainingSat }}</li>
-    <li>Days remaining: {{ $remainingDays }}</li>
+    <li>Days remaining: {{ $entitlement->staff->holiday_entitlement - $total }} days</li>
 </ul>

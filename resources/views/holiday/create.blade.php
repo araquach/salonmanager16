@@ -55,6 +55,23 @@
     	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
+	<div class="row question">
+		<p>
+			{!! Form::label('saturday', 'How Many Saturdays:') !!}
+	    	<p class="scale_label">0</p>
+	    	{!! Form::radio('saturday', '0') !!}
+	    	<p class="scale_label">1/2</p>
+	    	{!! Form::radio('saturday', '.5') !!}
+	        <p class="scale_label">1</p>
+	        {!! Form::radio('saturday', '1') !!}
+	        <p class="scale_label">1 1/2</p>
+	        {!! Form::radio('saturday', '1.5') !!}
+	        <p class="scale_label">2</p>
+	        {!! Form::radio('saturday', '2') !!}
+	    	{!! $errors->first('saturday', '<div class="errorMessage">:message</div>') !!}
+		</p>
+	</div>
+	
 	<p>
 	    {!! Form::submit('Create') !!}
 	</p>

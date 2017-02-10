@@ -50,9 +50,9 @@
 		{{ $holiday->request_date_to->format('d/m/Y') }}
 		<br />
 		
-		@if($holiday->id == 1) 
+		@if($holiday->saturday == 1) 
 		 	<img src="{{ asset('/images/icons/icons_1xsat.png') }}" />
-		@elseif($holiday->id == 2)
+		@elseif($holiday->saturday == 2)
 			<img src="{{ asset('/images/icons/icons_2xsat.png') }}" />
 		@endif
 		

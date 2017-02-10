@@ -25,7 +25,7 @@ class WidgetServiceProvider extends ServiceProvider
             $view->with('total', Holiday::sum('hours_requested') / 8);
             $view->with('entitlement', User::where('id', '=', Auth::user()->id)->first());
             $view->with('remainingSat', 5 - Holiday::sum('saturday'));
-            $view->with('remainingDays', 20);
+            $view->with('remainingDays', 2);
         });
     }
 
