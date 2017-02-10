@@ -8,9 +8,11 @@ class User extends Authenticatable
 {
     protected $dates = ['created_at', 'updated_at'];
     
+    protected $with = ['staff'];
+    
     public function staff()
     {
-        return $this->hasOne('App\Staff');
+        return $this->hasOne('App\Staff', 'id');
     }
     
     /**

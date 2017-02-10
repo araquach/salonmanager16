@@ -11,6 +11,9 @@ use Auth;
 
 class WidgetServiceProvider extends ServiceProvider
 {
+    
+    
+    
     /**
      * Bootstrap the application services.
      *
@@ -20,7 +23,7 @@ class WidgetServiceProvider extends ServiceProvider
     {
         view()->composer('widgets.holiday', function($view){
             $view->with('total', Holiday::sum('hours_requested') / 8);
-            $view->with('entitlement', User::where('user_id', '=', Auth::user())->first());
+            $view->with('entitlement', User::where('id', '=', Auth::user()->id)->first());
             $view->with('remainingSat', 5 - Holiday::sum('saturday'));
             $view->with('remainingDays', 20);
         });
