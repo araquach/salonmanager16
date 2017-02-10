@@ -8,6 +8,11 @@ class User extends Authenticatable
 {
     protected $dates = ['created_at', 'updated_at'];
     
+    public function staff()
+    {
+        return $this->hasOne('App\Staff');
+    }
+    
     /**
      * The attributes that are mass assignable.
      *

@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 
 use App\Holiday;
+use App\User;
+use App\Staff;
+use Auth;
 
 class WidgetServiceProvider extends ServiceProvider
 {
@@ -17,8 +20,8 @@ class WidgetServiceProvider extends ServiceProvider
     {
         view()->composer('widgets.holiday', function($view){
             $view->with('total', Holiday::sum('hours_requested') / 8);
-            $view->with('entitlement', 27);
-            $view->with('remainingSat', 2);
+            $view->with('entitlement', User::where('user_id', '=', Auth::user())->first());
+            $view->with('remainingSat', 5 - Holiday::sum('saturday'));
             $view->with('remainingDays', 20);
         });
     }
