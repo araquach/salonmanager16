@@ -22,10 +22,9 @@ class WidgetServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('widgets.holiday', function($view){
-            $view->with('total', Holiday::sum('hours_requested') / 8);
+            $view->with('total', Holiday::where('staff_id', '=', Auth::user()->id)->sum('hours_requested') / 8);
             $view->with('entitlement', User::where('id', '=', Auth::user()->id)->first());
-            $view->with('remainingSat', 5 - Holiday::sum('saturday'));
-            $view->with('remainingDays', 2);
+            $view->with('remainingSat', 5 - Holiday::where('staff_id', '=', Auth::user()->id)->sum('saturday'));
         });
     }
 

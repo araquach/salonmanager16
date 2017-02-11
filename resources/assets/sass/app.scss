@@ -3,7 +3,7 @@
 body {
     background-color: $dark;
     padding: 0 10%;
-    min-width: 465px;
+    min-width: 800px;
 }
 
 header {
@@ -45,6 +45,7 @@ footer {
 	@include row();
 	height: 250px;
 	width: 100%;
+	min-width: 900px;
 	padding-top: 30px;
 	background-repeat: no-repeat;
 	background-position: 40px 30px;
@@ -91,14 +92,31 @@ footer {
 form {
     max-width: 500px;
     
+    label {
+    	color: #fff;
+    }
+    
     p:last-of-type {
         margin-top: 40px;
     }
+    
+    p.scale_label {
+		margin-right: 10px;
+		display: inline;
+		margin-bottom: 40px;
+		color: #FFF;
+	}
+	
+	.errorSummary, 
+	.errorMessage {
+		color: darken(red, 20%);
+	}
 }
 
 .form {
     @include row();
     width: 60%;
+    min-width: 600px;
 	padding: 40px;
 	padding-top: 80px;
 	
@@ -212,12 +230,6 @@ table.detail-view th, table.detail-view td
 	vertical-align: top;
 	color: #FFF;
 	font-weight: normal;
-}
-
-p.scale_label {
-	margin-right: 10px;
-	display: inline;
-	margin-bottom: 40px;
 }
 
 .question input {

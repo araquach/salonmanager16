@@ -19,7 +19,7 @@ class CreateHolidaysTable extends Migration
 			$table->boolean('prebooked')->nullable();
 			$table->dateTime('request_date_from');
 			$table->dateTime('request_date_to');
-			$table->integer('saturday')->unsigned()->nullable();
+			$table->float('saturday')->unsigned()->nullable();
 			$table->boolean('approved')->nullable();
 			$table->timestamps();
         });

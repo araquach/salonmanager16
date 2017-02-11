@@ -36,10 +36,14 @@
 	</tr>
 	<tr>
 		<td>
-			@if($holiday->id == 1) 
-		 	<img src="{{ asset('/images/icons/icons_1xsat.png') }}" />
-			@elseif($holiday->id == 2)
-			<img src="{{ asset('/images/icons/icons_2xsat.png') }}" />
+			@if($holiday->saturday == 0.5) 
+		 	<img src="{{ asset('/images/icons/icons_halfxsat.png') }}" />
+			@elseif($holiday->saturday == 1)
+				<img src="{{ asset('/images/icons/icons_1xsat.png') }}" />
+			@elseif($holiday->saturday == 1.5)
+				<img src="{{ asset('/images/icons/icons_1andhalfxsat.png') }}" />
+			@elseif($holiday->saturday == 2)
+				<img src="{{ asset('/images/icons/icons_2xsat.png') }}" />
 			@endif
 		</td>
 		<td>
