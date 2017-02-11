@@ -80,6 +80,7 @@ return [
     'timezone'             => 'The :attribute must be a valid zone.',
     'unique'               => 'The :attribute has already been taken.',
     'url'                  => 'The :attribute format is invalid.',
+    'availableDays'        => 'You don\'t have enough holidays left!',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +92,7 @@ return [
     | specify a specific custom language line for a given attribute rule.
     |
     */
-
+    
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
