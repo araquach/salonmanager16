@@ -14,7 +14,7 @@ class Holiday extends Model
     
     public function staff()
     {
-        return $this->belongsTo('App\Staff', 'id');
+        return $this->belongsTo('App\Staff', 'staff_id');
     }
     
     public static function boot()

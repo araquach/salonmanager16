@@ -23,7 +23,7 @@
 	</tr>
 	<tr>
 		<td><strong>Days Requested:</strong></td>
-		<td>{{ $holiday->hours_requested }}</td>
+		<td>{{ calculateDays($holiday->hours_requested) }}</td>
 	</tr>
 	<tr>
 		<td><strong>Prebooked:</strong></td>

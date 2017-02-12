@@ -37,6 +37,8 @@
 
 	{!! Form::hidden('staff_id', Auth::id()) !!}
 	
+	{!! Form::hidden('approved', 0) !!}
+	
 	<p>
     	{!! Form::label('request_date_from', 'From:') !!}
     	{!! Form::date('request_date_from', old('request_date_from')) !!}

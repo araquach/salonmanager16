@@ -24,7 +24,7 @@ class HolidayFormRequest extends Request
     public function rules()
     {
         return [
-            'hours_requested' => 'required|numeric|availableDays',
+            'hours_requested' => 'required|numeric',
             'request_date_from' => 'required|date|after:today',
             'request_date_to' => 'required|date|after:request_date_from',
         ];

@@ -38,6 +38,10 @@
 							pending 
 						@endif" >
 						
+		<b>{!! $holiday->staff->first_name !!} {!! $holiday->staff->second_name !!}</b> 
+		
+		<br />
+		
 		<b>Requested:</b> 
 		{!! calculateDays($holiday->hours_requested) !!}
 		<br />
