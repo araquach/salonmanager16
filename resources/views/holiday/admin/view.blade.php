@@ -48,6 +48,48 @@
 	</tr>
 </table>
 
+<div class="form holiday">
+	
+@if(Session::has('message'))
+    <div>
+    {{{ Session::get('message') }}}
+    </div>
+@endif
+
+{!! Form::open(array(
+	'action' => 'HolidayController@update'
+)) !!}
+
+@if (count($errors) > 0)
+
+	<div class="errorSummary">
+			<p>Please fix the following input errors:</p>
+			<ul>
+		   		 @foreach($errors->all() as $error)
+		        <li>{{{ $error }}}</li>
+		    	@endforeach
+			</ul>
+	</div>
+   
+@endif
+	
+	<p>
+    	{!! Form::label('approved', 'Approve') !!}
+    	{!! Form::date('approved', old('request_date_from')) !!}
+    	{!! $errors->first('approved', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
+	    {!! Form::submit('Send') !!}
+	</p>
+	
+	<a href="{{ action('HolidayController@adminIndex') }}">cancel</a>
+
+{{ Form::close() }}
+
+
+</div>
+
 {{ HTML::link('/admin/holiday/index', "Back to list") }}
 
 </div> <!-- detail holiday  -->

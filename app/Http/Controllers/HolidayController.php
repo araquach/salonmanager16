@@ -170,7 +170,7 @@ class HolidayController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function adminShow(Holiday $holiday) {
-		return View('holiday/admin/view', compact('holiday'));
+		return View('holiday.admin.view', compact('holiday'));
 	}
 	
 	/**

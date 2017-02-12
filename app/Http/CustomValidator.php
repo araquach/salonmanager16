@@ -21,10 +21,10 @@ class CustomValidator {
         
         if((int)$value > $remaining)
         {
-            return true;
+            return false;
         }
         
-        return false;
+        return true;
     }
 
 }
