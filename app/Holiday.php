@@ -12,6 +12,11 @@ class Holiday extends Model
     
     protected $dates = ['created_at', 'updated_at', 'request_date_from', 'request_date_to'];
     
+    public function staff()
+    {
+        return $this->belongsTo('App\Staff', 'id');
+    }
+    
     public static function boot()
     {
         parent::boot();

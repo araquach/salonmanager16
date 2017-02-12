@@ -12,10 +12,17 @@ class Staff extends Model
     
     protected $with = ['user'];
     
+    // protected $with = ['holiday'];
+    
     protected $table = 'staffs';
     
     public function user()
     {
         return $this->belongsTo('App\User', 'staff_id');
+    }
+    
+    public function holidays()
+    {
+        return $this->hasMany('App\Holiday', 'staff_id');
     }
 }
