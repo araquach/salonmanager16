@@ -91,10 +91,10 @@ Route::post('/freetime/update', 'FreeTimeController@update');
 
 // FreeTime Admin Routes
 
-Route::get('admin/freetime/index/{category?}', 'FreeTimeController@adminIndex' );
-Route::get('admin/freetime/create', 'FreeTimeController@adminCreate');
-Route::post('admin/freetime/create', 'FreeTimeController@adminStore');
-Route::get('admin/freetime/view/{FreeTime}', 'FreeTimeController@adminShow' );
-Route::get('admin/freetime/edit/{FreeTime}', 'FreeTimeController@adminEdit');
-Route::post('admin/freetime/update', 'FreeTimeController@handleAdminUpdate');
+Route::get('admin/freetime3/index/{category?}', 'FreeTimeController@adminIndex' );
+Route::get('admin/freetime3/create', 'FreeTimeController@adminCreate');
+Route::post('admin/freetime3/create', 'FreeTimeController@adminStore');
+Route::get('admin/freetime3/view/{FreeTime}', 'FreeTimeController@adminShow' );
+Route::get('admin/freetime3/edit/{FreeTime}', 'FreeTimeController@adminEdit');
+Route::post('admin/freetime3/update', 'FreeTimeController@handleAdminUpdate');
 // need destroy routes
