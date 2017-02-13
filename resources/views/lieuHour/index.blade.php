@@ -14,11 +14,11 @@
 
 <nav class"pageHeadNav">
 <ul class="list--inline">
-<li><a href="{{ url('/lieuHour/create') }}">Book lieuHour</a></li>
-<li><a href="{{ url('/lieuHour/index', 'upcoming') }}">Upcoming lieuHours</a></li>
-<li><a href="{{ url('/lieuHour/index', 'awaiting') }}">Awaiting Approval</a></li>
-<li><a href="{{ url('/lieuHour/index', 'denied') }}">Denied lieuHours</a></li>
-<li><a href="{{ url('/lieuHour/index') }}">All lieuHours</a></li>
+<li><a href="{{ url('/lieu/create') }}">Book Lieu Hours</a></li>
+<li><a href="{{ url('/lieu/index', 'upcoming') }}">Upcoming Lieu</a></li>
+<li><a href="{{ url('/lieu/index', 'awaiting') }}">Awaiting Approval</a></li>
+<li><a href="{{ url('/lieu/index', 'denied') }}">Denied Lieu Hours</a></li>
+<li><a href="{{ url('/lieu/index') }}">All Lieu Hours</a></li>
 </ul>
 </nav>
 
@@ -43,26 +43,12 @@
 		<br />
 	
 		<b>From:</b> 
-		{{ $lieuHour->request_date_from->format('d/m/Y') }}
+		{{ $lieuHour->date_regarding->format('d/m/Y') }}
 		<br />
 	
-		<b>To:</b> 
-		{{ $lieuHour->request_date_to->format('d/m/Y') }}
+		<b>Approved:</b> 
+		{{ $lieuHour->approved ? 'Yes' : 'No' }}
 		<br />
-		
-		@if($lieuHour->saturday == 0.5) 
-		 	<img src="{{ asset('/images/icons/icons_halfxsat.png') }}" />
-		@elseif($lieuHour->saturday == 1)
-			<img src="{{ asset('/images/icons/icons_1xsat.png') }}" />
-		@elseif($lieuHour->saturday == 1.5)
-			<img src="{{ asset('/images/icons/icons_1andhalfxsat.png') }}" />
-		@elseif($lieuHour->saturday == 2)
-			<img src="{{ asset('/images/icons/icons_2xsat.png') }}" />
-		@endif
-		
-		@if($lieuHour->prebooked ==1)
-			<img src="{{ asset('images/icons/pb-11.png') }}">
-		@endif
 	</div>
 </a>
 

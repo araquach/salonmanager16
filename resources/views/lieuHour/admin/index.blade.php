@@ -14,11 +14,11 @@
 
 <nav class"pageHeadNav">
 <ul class="list--inline">
-<li><a href="{{ url('/lieuHour/admin/create') }}">Book lieuHour</a></li>
-<li><a href="{{ url('/lieuHour/admin/index', 'upcoming') }}">Upcoming lieuHours</a></li>
-<li><a href="{{ url('/lieuHour/admin/index', 'awaiting') }}">Awaiting Approval</a></li>
-<li><a href="{{ url('/lieuHour/admin/index', 'denied') }}">Denied lieuHours</a></li>
-<li><a href="{{ url('/lieuHour/admin/index') }}">All lieuHours</a></li>
+<li><a href="{{ url('/lieu/admin/create') }}">Book lieuHour</a></li>
+<li><a href="{{ url('/lieu/admin/index', 'upcoming') }}">Upcoming lieuHours</a></li>
+<li><a href="{{ url('/lieu/admin/index', 'awaiting') }}">Awaiting Approval</a></li>
+<li><a href="{{ url('/lieu/admin/index', 'denied') }}">Denied lieuHours</a></li>
+<li><a href="{{ url('/lieu/admin/index') }}">All lieuHours</a></li>
 </ul>
 </nav>
 
