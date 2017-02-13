@@ -2108,7 +2108,8 @@ footer {
   .pageHead:after {
     clear: both; }
   .pageHead ul.info {
-    margin-left: 15em; }
+    margin-left: 15em;
+    height: 8.5em; }
     .pageHead ul.info li {
       font-size: 1.4em; }
   .pageHead nav {
