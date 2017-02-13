@@ -41,60 +41,60 @@ Route::post('admin/holiday/update', 'HolidayController@handleAdminUpdate');
 
 // LieuHour Routes
 
-Route::get('/LieuHour/index/{category?}', 'LieuHourController@index' );
-Route::get('/LieuHour/create', 'LieuHourController@create');
-Route::post('/LieuHour/create', 'LieuHourController@store');
-Route::get('/LieuHour/view/{LieuHour}', 'LieuHourController@show' );
-Route::get('/LieuHour/edit/{LieuHour}', 'LieuHourController@edit');
-Route::post('/LieuHour/update', 'LieuHourController@update');
+Route::get('/lieu/index/{category?}', 'LieuHourController@index' );
+Route::get('/lieu/create', 'LieuHourController@create');
+Route::post('/lieu/create', 'LieuHourController@store');
+Route::get('/lieu/view/{LieuHour}', 'LieuHourController@show' );
+Route::get('/lieu/edit/{LieuHour}', 'LieuHourController@edit');
+Route::post('/lieu/update', 'LieuHourController@update');
 // need destroy routes
 
 // LieuHour Admin Routes
 
-Route::get('admin/holiday/index/{category?}', 'HolidayController@adminIndex' );
-Route::get('admin/holiday/create', 'HolidayController@adminCreate');
-Route::post('admin/holiday/create', 'HolidayController@adminStore');
-Route::get('admin/holiday/view/{holiday}', 'HolidayController@adminShow' );
-Route::get('admin/holiday/edit/{holiday}', 'HolidayController@adminEdit');
-Route::post('admin/holiday/update', 'HolidayController@handleAdminUpdate');
+Route::get('admin/lieu/index/{category?}', 'LieuHourController@adminIndex' );
+Route::get('admin/lieu/create', 'LieuHourController@adminCreate');
+Route::post('admin/lieu/create', 'LieuHourController@adminStore');
+Route::get('admin/lieu/view/{lieuHour}', 'LieuHourController@adminShow' );
+Route::get('admin/lieu/edit/{lieuHour}', 'LieuHourController@adminEdit');
+Route::post('admin/lieu/update', 'LieuHourController@handleAdminUpdate');
 // need destroy routes
 
 // SickDay Routes
 
-Route::get('/SickDay/index/{category?}', 'SickDayController@index' );
-Route::get('/SickDay/create', 'SickDayController@create');
-Route::post('/SickDay/create', 'SickDayController@store');
-Route::get('/SickDay/view/{SickDay}', 'SickDayController@show' );
-Route::get('/SickDay/edit/{SickDay}', 'SickDayController@edit');
-Route::post('/SickDay/update', 'SickDayController@update');
+Route::get('/sick/index/{category?}', 'SickDayController@index' );
+Route::get('/sick/create', 'SickDayController@create');
+Route::post('/sick/create', 'SickDayController@store');
+Route::get('/sick/view/{SickDay}', 'SickDayController@show' );
+Route::get('/sick/edit/{SickDay}', 'SickDayController@edit');
+Route::post('/sick/update', 'SickDayController@update');
 // need destroy routes
 
 // SickDay Admin Routes
 
-Route::get('admin/SickDay/index/{category?}', 'HolidayController@adminIndex' );
-Route::get('admin/SickDay/create', 'SickDayController@adminCreate');
-Route::post('admin/SickDay/create', 'SickDayController@adminStore');
-Route::get('admin/SickDay/view/{SickDay}', 'SickDayController@adminShow' );
-Route::get('admin/SickDay/edit/{SickDay}', 'SickDayController@adminEdit');
-Route::post('admin/SickDay/update', 'SickDayController@handleAdminUpdate');
+Route::get('admin/sick/index/{category?}', 'SickDayController@adminIndex' );
+Route::get('admin/sick/create', 'SickDayController@adminCreate');
+Route::post('admin/sick/create', 'SickDayController@adminStore');
+Route::get('admin/sick/view/{SickDay}', 'SickDayController@adminShow' );
+Route::get('admin/sick/edit/{SickDay}', 'SickDayController@adminEdit');
+Route::post('admin/sick/update', 'SickDayController@handleAdminUpdate');
 // need destroy routes
 
 // FreeTime Routes
 
-Route::get('/FreeTime/index/{category?}', 'FreeTimeController@index' );
-Route::get('/FreeTime/create', 'FreeTimeController@create');
-Route::post('/FreeTime/create', 'FreeTimeyController@store');
-Route::get('/FreeTime/view/{FreeTime}', 'FreeTimeController@show' );
-Route::get('/FreeTime/edit/{FreeTime}', 'FreeTimeController@edit');
-Route::post('/FreeTime/update', 'FreeTimeController@update');
+Route::get('/freetime/index/{category?}', 'FreeTimeController@index' );
+Route::get('/freetime/create', 'FreeTimeController@create');
+Route::post('/freetime/create', 'FreeTimeyController@store');
+Route::get('/freetime/view/{FreeTime}', 'FreeTimeController@show' );
+Route::get('/freetime/edit/{FreeTime}', 'FreeTimeController@edit');
+Route::post('/freetime/update', 'FreeTimeController@update');
 // need destroy routes
 
 // FreeTime Admin Routes
 
-Route::get('admin/FreeTime/index/{category?}', 'FreeTimeController@adminIndex' );
-Route::get('admin/FreeTime/create', 'FreeTimeController@adminCreate');
-Route::post('admin/FreeTime/create', 'FreeTimeController@adminStore');
-Route::get('admin/FreeTime/view/{FreeTime}', 'FreeTimeController@adminShow' );
-Route::get('admin/FreeTime/edit/{FreeTime}', 'FreeTimeController@adminEdit');
-Route::post('admin/FreeTime/update', 'FreeTimeController@handleAdminUpdate');
+Route::get('admin/freetime/index/{category?}', 'FreeTimeController@adminIndex' );
+Route::get('admin/freetime/create', 'FreeTimeController@adminCreate');
+Route::post('admin/freetime/create', 'FreeTimeController@adminStore');
+Route::get('admin/freetime/view/{FreeTime}', 'FreeTimeController@adminShow' );
+Route::get('admin/freetime/edit/{FreeTime}', 'FreeTimeController@adminEdit');
+Route::post('admin/freetime/update', 'FreeTimeController@handleAdminUpdate');
 // need destroy routes
