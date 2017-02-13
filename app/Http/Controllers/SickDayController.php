@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\LieuHour;
+use App\SickDay;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Requests\LieuHourFormRequest;
+use App\Http\Requests\SickDayFormRequest;
 use Auth;
 use Carbon\Carbon;
 
-class LieuHourController extends Controller
+class SickDayController extends Controller
 {
     
-    public function __construct(lieuHour $lieuHour)
+    public function __construct(SickDay $sickDay)
 	{
 		$this->middleware('auth');
 		
-		$this->lieuHour = $lieuHour;
+		$this->sickDay = $sickDay;
 	}
     
     /**
@@ -30,29 +30,29 @@ class LieuHourController extends Controller
         
         if($category == 'awaiting')
 		{
-			$lieuHours = LieuHour::where('staff_id', '=', $user->id)
+			$sickDays = SickDay::where('staff_id', '=', $user->id)
 			->where('approved', '=', 0)
 			->get();
 		}
 		elseif($category == 'upcoming') 
 		{
-			$lieuHours = LieuHour::where('staff_id', '=', $user->id)
+			$sickDays = SickDay::where('staff_id', '=', $user->id)
 			->where('approved', '=', 2)
 			->where('request_date_from', '>=', Carbon::now())
 			->get();
 		}
 		elseif($category == 'denied') 
 		{
-			$lieuHours = LieuHour::where('staff_id', '=', $user->id)
+			$sickDays = SickDay::where('staff_id', '=', $user->id)
 			->where('approved', '=', 1)
 			->get();
 		}
 		else
 		{
-			$lieuHours = LieuHour::where('staff_id', '=', $user->id)->get();
+			$sickDays = SickDay::where('staff_id', '=', $user->id)->get();
 		}
         
-        return view('lieuHour/index', compact('lieuHours'));
+        return view('sickDay/index', compact('sickDays'));
     }
 
     /**
@@ -62,7 +62,7 @@ class LieuHourController extends Controller
      */
     public function create()
     {
-        return view('lieuHour.create');
+        return view('sickDay.create');
     }
 
     /**
@@ -71,13 +71,13 @@ class LieuHourController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(lieuHourFormRequest $request)
+    public function store(SickDayFormRequest $request)
     {
         $input = $request->all();
 		
-	    LieuHour::create($input);
+	    SickDay::create($input);
 	    
-	    return redirect('lieuHour/index');
+	    return redirect('sickDay/index');
     }
 
     /**
@@ -86,9 +86,9 @@ class LieuHourController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(lieuHour $lieuHour)
+    public function show(SickDay $sickDay)
     {
-        return view('lieuHour.view', compact('lieuHour'));
+        return view('sickDay.view', compact('sickDay'));
     }
 
     /**
@@ -134,8 +134,8 @@ class LieuHourController extends Controller
      */
     public function adminIndex()
 	{
-		$lieuHours = LieuHour::all();
-		return View('/lieuHour/admin/index', compact('lieuHours'));
+		$sickDays = SickDay::all();
+		return View('/sickDay/admin/index', compact('sickDays'));
 	}
     
     /**
@@ -145,7 +145,7 @@ class LieuHourController extends Controller
      */
     public function adminCreate()
 	{
-		return View('/lieuHour/admin/create');
+		return View('/sickDay/admin/create');
 	}
 	
 	/**
@@ -158,9 +158,9 @@ class LieuHourController extends Controller
 	{
 		$input = $request->all();
 		
-	    LieuHour::create($input);
+	    SickDay::create($input);
 		
-		return Redirect::action('LieuHourController@showAdminIndex');
+		return Redirect::action('SickDayController@showAdminIndex');
 	}
     
     /**
@@ -169,8 +169,8 @@ class LieuHourController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function adminShow(lieuHour $lieuHour) {
-		return View('lieuHour.admin.view', compact('lieuHour'));
+    public function adminShow(SickDay $sickDay) {
+		return View('sickDay.admin.view', compact('sickDay'));
 	}
 	
 	/**

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSickdaysTable extends Migration
+class CreateSickDaysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateSickdaysTable extends Migration
      */
     public function up()
     {
-        Schema::create('sickdays', function (Blueprint $table) {
+        Schema::create('sick_days', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('staff_id')->unsigned();
             $table->integer('sick_hours')->unsigned();
@@ -31,6 +31,6 @@ class CreateSickdaysTable extends Migration
      */
     public function down()
     {
-        Schema::drop('sickdays');
+        Schema::drop('sick_days');
     }
 }
