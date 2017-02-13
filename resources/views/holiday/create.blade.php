@@ -53,7 +53,7 @@
 	
 	<p>
     	{!! Form::label('hours_requested', 'Days Requested:') !!}
-    	{!! Form::text('hours_requested', old('hours_requested')) !!}
+    	{!! Form::number('hours_requested', old('hours_requested')) !!}
     	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	

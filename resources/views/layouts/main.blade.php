@@ -16,6 +16,9 @@
 		<ul class="list--inline">
         	<li><a href="{{ url('/') }}">Home</a></li>
         	<li><a href="{{ url('/holiday/index') }}">Holidays</a></li>
+        	<li><a href="{{ url('/sick/index') }}">Sick Days</a></li>
+        	<li><a href="{{ url('/lieu/index') }}">Lieu Hours</a></li>
+        	<li><a href="{{ url('/freetime/index') }}">Free Time</a></li>
         </ul>
 	</header>
 	
