@@ -14,11 +14,11 @@
 
 <nav class"pageHeadNav">
 <ul class="list--inline">
-<li><a href="{{ url('/freeTime/create') }}">Book freeTime</a></li>
-<li><a href="{{ url('/freeTime/index', 'upcoming') }}">Upcoming freeTimes</a></li>
-<li><a href="{{ url('/freeTime/index', 'awaiting') }}">Awaiting Approval</a></li>
-<li><a href="{{ url('/freeTime/index', 'denied') }}">Denied freeTimes</a></li>
-<li><a href="{{ url('/freeTime/index') }}">All freeTimes</a></li>
+<li><a href="{{ url('/freetime/create') }}">Book freeTime</a></li>
+<li><a href="{{ url('/freetime/index', 'upcoming') }}">Upcoming Free Time</a></li>
+<li><a href="{{ url('/freetime/index', 'awaiting') }}">Awaiting Approval</a></li>
+<li><a href="{{ url('/freetime/index', 'denied') }}">Denied Free Time</a></li>
+<li><a href="{{ url('/freetime/index') }}">All Free Time</a></li>
 </ul>
 </nav>
 
@@ -39,30 +39,16 @@
 						@endif" >
 						
 		<b>Requested:</b> 
-		{!! calculateDays($freeTime->hours_requested) !!}
+		{!! $freeTime->free_time_hours !!}
 		<br />
 	
-		<b>From:</b> 
-		{{ $freeTime->request_date_from->format('d/m/Y') }}
+		<b>Date:</b> 
+		{{ $freeTime->date_regarding->format('d/m/Y') }}
 		<br />
 	
-		<b>To:</b> 
-		{{ $freeTime->request_date_to->format('d/m/Y') }}
+		<b>Approved:</b> 
+		{{ $freeTime->approved }}
 		<br />
-		
-		@if($freeTime->saturday == 0.5) 
-		 	<img src="{{ asset('/images/icons/icons_halfxsat.png') }}" />
-		@elseif($freeTime->saturday == 1)
-			<img src="{{ asset('/images/icons/icons_1xsat.png') }}" />
-		@elseif($freeTime->saturday == 1.5)
-			<img src="{{ asset('/images/icons/icons_1andhalfxsat.png') }}" />
-		@elseif($freeTime->saturday == 2)
-			<img src="{{ asset('/images/icons/icons_2xsat.png') }}" />
-		@endif
-		
-		@if($freeTime->prebooked ==1)
-			<img src="{{ asset('images/icons/pb-11.png') }}">
-		@endif
 	</div>
 </a>
 

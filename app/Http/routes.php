@@ -83,7 +83,7 @@ Route::post('admin/sick/update', 'SickDayController@handleAdminUpdate');
 
 Route::get('/freetime/index/{category?}', 'FreeTimeController@index' );
 Route::get('/freetime/create', 'FreeTimeController@create');
-Route::post('/freetime/create', 'FreeTimeyController@store');
+Route::post('/freetime/create', 'FreeTimeController@store');
 Route::get('/freetime/view/{FreeTime}', 'FreeTimeController@show' );
 Route::get('/freetime/edit/{FreeTime}', 'FreeTimeController@edit');
 Route::post('/freetime/update', 'FreeTimeController@update');
