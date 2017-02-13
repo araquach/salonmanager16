@@ -11,9 +11,7 @@
 <div class="detail sickDay">
 
 
-<table class="detail-view @if($sickDay->approved == 1)
-							unapproved
-						@elseif($sickDay->approved == 2)
+<table class="detail-view @if($sickDay->deducted == 1)
 							approved
 						@else
 							pending
@@ -24,34 +22,25 @@
 	</tr>
 	<tr>
 		<td><strong>From:</strong></td>
-		<td>{{ $sickDay->request_date_from->format('d/m/Y') }}</td>
+		<td>{{ $sickDay->sick_from->format('D d/m/Y') }}</td>
 	</tr>
 	<tr>
 		<td><strong>To:</strong></td>
-		<td>{{ $sickDay->request_date_to->format('d/m/Y') }}</td>
+		<td>{{ $sickDay->sick_to->format('D d/m/Y') }}</td>
 	</tr>
 	<tr>
-		<td><strong>Approved?:</strong></td>
-		<td>{{ $sickDay->approved ? 'Yes' : 'No' }}</td>
+		<td><strong>Days:</strong></td>
+		<td>{{ calculateDays($sickDay->sick_hours) }}</td>
 	</tr>
 	<tr>
-		<td>
-			@if($sickDay->saturday == 0.5) 
-		 	<img src="{{ asset('/images/icons/icons_halfxsat.png') }}" />
-			@elseif($sickDay->saturday == 1)
-				<img src="{{ asset('/images/icons/icons_1xsat.png') }}" />
-			@elseif($sickDay->saturday == 1.5)
-				<img src="{{ asset('/images/icons/icons_1andhalfxsat.png') }}" />
-			@elseif($sickDay->saturday == 2)
-				<img src="{{ asset('/images/icons/icons_2xsat.png') }}" />
-			@endif
-		</td>
-		<td>
-			@if($sickDay->prebooked ==1)
-			<img src="{{ asset('images/icons/pb-11.png') }}">
-			@endif
-		</td>
+		<td><strong>Description:</strong></td>
+		<td>{{ $sickDay->descrition }}</td>
 	</tr>
+	<tr>
+		<td><strong>Deducted:</strong></td>
+		<td>{{ $sickDay->deducted ? 'Yes' : 'No' }}</td>
+	</tr>
+	
 </table>
 
 {!! link_to('/sickDay/index', 'Back to sickDays overview') !!}

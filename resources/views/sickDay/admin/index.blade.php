@@ -14,11 +14,11 @@
 
 <nav class"pageHeadNav">
 <ul class="list--inline">
-<li><a href="{{ url('/sickDay/admin/create') }}">Book sickDay</a></li>
-<li><a href="{{ url('/sickDay/admin/index', 'upcoming') }}">Upcoming sickDays</a></li>
-<li><a href="{{ url('/sickDay/admin/index', 'awaiting') }}">Awaiting Approval</a></li>
-<li><a href="{{ url('/sickDay/admin/index', 'denied') }}">Denied sickDays</a></li>
-<li><a href="{{ url('/sickDay/admin/index') }}">All sickDays</a></li>
+<li><a href="{{ url('/sick/admin/create') }}">Book sickDay</a></li>
+<li><a href="{{ url('/sick/admin/index', 'upcoming') }}">Upcoming sickDays</a></li>
+<li><a href="{{ url('/sick/admin/index', 'awaiting') }}">Awaiting Approval</a></li>
+<li><a href="{{ url('/sick/admin/index', 'denied') }}">Denied sickDays</a></li>
+<li><a href="{{ url('/sick/admin/index') }}">All sickDays</a></li>
 </ul>
 </nav>
 
