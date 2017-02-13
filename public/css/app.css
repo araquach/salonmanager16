@@ -2135,7 +2135,7 @@ footer {
   background: url("/images/icons/icons_sick.png") no-repeat top 20px left 40px #D80073; }
 
 .pageHead.freeTime {
-  background: url("/images/icons/icons_free_time.png") no-repeat top 20px left 40px #6A00FF; }
+  background: url("/images/icons/icons_freeTime.png") no-repeat top 20px left 40px #6A00FF; }
 
 form {
   max-width: 500px; }
@@ -2172,7 +2172,7 @@ form {
   background: url("/images/icons/icons_holiday.png") no-repeat top 20px right 50px #008A00; }
 
 .form.freeTime {
-  background: url("/images/icons/icons_free_time.png") no-repeat top 20px right 50px #6A00FF; }
+  background: url("/images/icons/icons_freeTime.png") no-repeat top 20px right 50px #6A00FF; }
 
 .form.lieuHour {
   background: url("/images/icons/icons_lieu.png") no-repeat top 20px right 50px #76608A; }
@@ -2226,7 +2226,7 @@ form {
   background-size: 50%; }
 
 .menu.freeTime {
-  background: url("/images/icons/icons_free_time.png") no-repeat center 55px #6A00FF;
+  background: url("/images/icons/icons_freeTime.png") no-repeat center 55px #6A00FF;
   background-size: 50%; }
 
 .menu.sickDay {
