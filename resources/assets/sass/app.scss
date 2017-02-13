@@ -89,6 +89,18 @@ footer {
     background: url('/images/icons/icons_holiday.png') no-repeat top 20px left 40px $holiday;
 }
 
+.pageHead.lieuHour {
+    background: url('/images/icons/icons_lieu.png') no-repeat top 20px left 40px $lieuHour;
+}
+
+.pageHead.sickDay {
+    background: url('/images/icons/icons_sick.png') no-repeat top 20px left 40px $sickDay;
+}
+
+.pageHead.freeTime {
+    background: url('/images/icons/icons_free_time.png') no-repeat top 20px left 40px $freeTime;
+}
+
 form {
     max-width: 500px;
     
@@ -129,6 +141,18 @@ form {
 	background: url('/images/icons/icons_holiday.png') no-repeat top 20px right 50px $holiday;
 }
 
+.form.freeTime {
+	background: url('/images/icons/icons_free_time.png') no-repeat top 20px right 50px $freeTime;
+}
+
+.form.lieuHour {
+	background: url('/images/icons/icons_lieu.png') no-repeat top 20px right 50px $lieuHour;
+}
+
+.form.sickDay {
+	background: url('/images/icons/icons_sick.png') no-repeat top 20px right 50px $sickDay;
+}
+
 #menuBox {
     @include row();
 	padding: 20px;
@@ -147,6 +171,9 @@ form {
     a {
     	display: block;
     	width: 160px;
+    	float: left;
+    	margin-right: 4em;
+    	margin-bottom: 1.6em;
     }
     
     .info {
@@ -178,7 +205,22 @@ form {
 }
 
 .menu.holiday {
-	background: url('/images/icons/icons_holiday.png') no-repeat center 40px $holiday;
+	background: url('/images/icons/icons_holiday.png') no-repeat center 50px $holiday;
+	background-size: 50%;
+}
+
+.menu.freeTime {
+	background: url('/images/icons/icons_free_time.png') no-repeat center 55px $freeTime;
+	background-size: 50%;
+}
+
+.menu.sickDay {
+	background: url('/images/icons/icons_sick.png') no-repeat center 55px $sickDay;
+	background-size: 50%;
+}
+
+.menu.lieuHour {
+	background: url('/images/icons/icons_lieu.png') no-repeat center 55px $lieuHour;
 	background-size: 50%;
 }
 

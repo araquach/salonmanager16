@@ -2128,6 +2128,15 @@ footer {
 .pageHead.holiday {
   background: url("/images/icons/icons_holiday.png") no-repeat top 20px left 40px #008A00; }
 
+.pageHead.lieuHour {
+  background: url("/images/icons/icons_lieu.png") no-repeat top 20px left 40px #76608A; }
+
+.pageHead.sickDay {
+  background: url("/images/icons/icons_sick.png") no-repeat top 20px left 40px #D80073; }
+
+.pageHead.freeTime {
+  background: url("/images/icons/icons_free_time.png") no-repeat top 20px left 40px #6A00FF; }
+
 form {
   max-width: 500px; }
   form label {
@@ -2162,6 +2171,15 @@ form {
 .form.holiday {
   background: url("/images/icons/icons_holiday.png") no-repeat top 20px right 50px #008A00; }
 
+.form.freeTime {
+  background: url("/images/icons/icons_free_time.png") no-repeat top 20px right 50px #6A00FF; }
+
+.form.lieuHour {
+  background: url("/images/icons/icons_lieu.png") no-repeat top 20px right 50px #76608A; }
+
+.form.sickDay {
+  background: url("/images/icons/icons_sick.png") no-repeat top 20px right 50px #D80073; }
+
 #menuBox {
   margin-left: -15px;
   margin-right: -15px;
@@ -2181,7 +2199,10 @@ form {
     color: #FFF; }
   #menuBox a {
     display: block;
-    width: 160px; }
+    width: 160px;
+    float: left;
+    margin-right: 4em;
+    margin-bottom: 1.6em; }
   #menuBox .info {
     margin-top: 110px; }
 
@@ -2201,7 +2222,19 @@ form {
     display: none; }
 
 .menu.holiday {
-  background: url("/images/icons/icons_holiday.png") no-repeat center 40px #008A00;
+  background: url("/images/icons/icons_holiday.png") no-repeat center 50px #008A00;
+  background-size: 50%; }
+
+.menu.freeTime {
+  background: url("/images/icons/icons_free_time.png") no-repeat center 55px #6A00FF;
+  background-size: 50%; }
+
+.menu.sickDay {
+  background: url("/images/icons/icons_sick.png") no-repeat center 55px #D80073;
+  background-size: 50%; }
+
+.menu.lieuHour {
+  background: url("/images/icons/icons_lieu.png") no-repeat center 55px #76608A;
   background-size: 50%; }
 
 .info li {

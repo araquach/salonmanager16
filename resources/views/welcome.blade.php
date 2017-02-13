@@ -20,6 +20,29 @@
             @include('widgets.holiday')
         </div>
     </a>
+    
+    <a href="{{ url('/sickDay/index') }}">
+        <div class="menu sickDay">
+            <h2><strong>Sick Days</strong></h2>
+            @include('widgets.sickDay')
+        </div>
+    </a>
+    
+    <a href="{{ url('/lieuHour/index') }}">
+        <div class="menu lieuHour">
+            <h2><strong>Lieu Hours</strong></h2>
+            @include('widgets.lieuHour')
+        </div>
+    </a>
+    
+    <a href="{{ url('/freeTime/index') }}">
+        <div class="menu freeTime">
+            <h2><strong>Free Time</strong></h2>
+            @include('widgets.freeTime')
+        </div>
+    </a>
+
+
 </div>
 
 @else
