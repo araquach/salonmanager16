@@ -97,9 +97,9 @@ class HolidayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Holiday $holiday )
     {
-        //
+        return view('holiday.update', compact('holiday'));
     }
 
     /**
@@ -109,9 +109,13 @@ class HolidayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(HolidayFormRequest $request, Holiday $holiday)
     {
-        //
+        $input = $request->all();
+        
+        $holiday->update($input);
+        
+        return redirect('holiday/index');
     }
 
     /**

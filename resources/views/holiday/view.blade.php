@@ -54,6 +54,8 @@
 	</tr>
 </table>
 
+<a href="/holiday/{{ $holiday->id }}/edit">Edit the holiday</a>
+<br>
 {!! link_to('/holiday/index', 'Back to Holidays overview') !!}
 
 </div> <!-- detail holiday  -->
