@@ -31,7 +31,7 @@
 		<td>{{ $holiday->request_date_to->format('d/m/Y') }}</td>
 	</tr>
 	<tr>
-		<td><strong>Approved?:</strong></td>
+		<td><strong>Approved:</strong></td>
 		<td>{{ $holiday->approved ? 'Yes' : 'No' }}</td>
 	</tr>
 	<tr>

@@ -47,7 +47,13 @@
 		<br />
 	
 		<b>Approved:</b> 
-		{{ $lieuHour->approved ? 'Yes' : 'No' }}
+		@if($lieuHour->approved == 1)
+			No
+			@elseif($lieuHour->approved == 2)
+			Yes
+			@else
+			Waiting Approval
+		@endif
 		<br />
 	</div>
 </a>

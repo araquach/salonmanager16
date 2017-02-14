@@ -24,7 +24,7 @@
 	</tr>
 	<tr>
 		<td><strong>From:</strong></td>
-		<td>{{ $lieuHour->date_regarding }}</td>
+		<td>{{ $lieuHour->date_regarding->format('D d/m/Y') }}</td>
 	</tr>
 	<tr>
 		<td><strong>Description:</strong></td>
@@ -32,7 +32,16 @@
 	</tr>
 	<tr>
 		<td><strong>Approved:</strong></td>
-		<td>{{ $lieuHour->approved ? 'Yes' : 'No' }}</td>
+		<td>
+			@if($lieuHour->approved == 1)
+			No
+			@elseif($lieuHour->approved == 2)
+			Yes
+			@else
+			Waiting Approval
+			@endif
+		</td>
+			
 	</tr>
 </table>
 

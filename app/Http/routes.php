@@ -27,6 +27,7 @@ Route::post('/holiday/create', 'HolidayController@store');
 Route::get('/holiday/view/{holiday}', 'HolidayController@show' );
 Route::get('/holiday/edit/{holiday}', 'HolidayController@edit');
 Route::post('/holiday/update', 'HolidayController@update');
+
 // need destroy routes
 
 // Holiday Admin Routes
@@ -44,8 +45,8 @@ Route::post('admin/holiday/update', 'HolidayController@handleAdminUpdate');
 Route::get('/lieu/index/{category?}', 'LieuHourController@index' );
 Route::get('/lieu/create', 'LieuHourController@create');
 Route::post('/lieu/create', 'LieuHourController@store');
-Route::get('/lieu/view/{LieuHour}', 'LieuHourController@show' );
-Route::get('/lieu/edit/{LieuHour}', 'LieuHourController@edit');
+Route::get('/lieu/view/{lieuHour}', 'LieuHourController@show' );
+Route::get('/lieu/edit/{lieuHour}', 'LieuHourController@edit');
 Route::post('/lieu/update', 'LieuHourController@update');
 // need destroy routes
 

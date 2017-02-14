@@ -19,7 +19,7 @@ class LieuHourController extends Controller
 		$this->lieuHour = $lieuHour;
 	}
     
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -38,7 +38,6 @@ class LieuHourController extends Controller
 		{
 			$lieuHours = LieuHour::where('staff_id', '=', $user->id)
 			->where('approved', '=', 2)
-			->where('request_date_from', '>=', Carbon::now())
 			->get();
 		}
 		elseif($category == 'denied') 
