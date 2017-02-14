@@ -26,6 +26,18 @@ class WidgetServiceProvider extends ServiceProvider
             $view->with('entitlement', User::where('id', '=', Auth::user()->id)->first());
             $view->with('remainingSat', 5 - Holiday::where('staff_id', '=', Auth::user()->id)->sum('saturday'));
         });
+        
+        view()->composer('widgets.lieuHour', function($view){
+            $view->with('total', "5 dummy");
+        });
+        
+        view()->composer('widgets.sickDay', function($view){
+            $view->with('total', "8 dummy");
+        });
+        
+        view()->composer('widgets.freeTime', function($view){
+            $view->with('total', "3 dummy");
+        });
     }
 
     /**

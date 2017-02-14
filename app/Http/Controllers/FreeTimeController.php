@@ -134,7 +134,7 @@ class FreeTimeController extends Controller
     public function adminIndex()
 	{
 		$freeTimes = FreeTime::all();
-		return View('/freeTime/admin/index', compact('freeTimes'));
+		return View('/freetime/admin/index', compact('freeTimes'));
 	}
     
     /**

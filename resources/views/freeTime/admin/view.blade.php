@@ -22,28 +22,28 @@
 		<td>{{ $freeTime->staff->first_name }} {{ $freeTime->staff->second_name }}</td>
 	</tr>
 	<tr>
-		<td><strong>Days Requested:</strong></td>
-		<td>{{ calculateDays($freeTime->hours_requested) }}</td>
-	</tr>
-	<tr>
-		<td><strong>Prebooked:</strong></td>
-		<td>{{ $freeTime->prebooked ? 'Yes' : 'No'}}</td>
+		<td><strong>Hours Requested:</strong></td>
+		<td>{!! $freeTime->free_time_hours !!}</td>
 	</tr>
 	<tr>
 		<td><strong>From:</strong></td>
-		<td>{{ $freeTime->request_date_from->format('D d/m/Y') }}</td>
+		<td>{{ $freeTime->date_regarding->format('d/m/Y') }}</td>
 	</tr>
 	<tr>
 		<td><strong>To:</strong></td>
-		<td>{{ $freeTime->request_date_to->format('D d/m/Y') }}</td>
+		<td>{{ $freeTime->description }}</td>
 	</tr>
 	<tr>
 		<td><strong>Approved:</strong></td>
-		<td>{{ $freeTime->approved ? 'Yes' : 'No'}}</td>
-	</tr>
-	<tr>
-		<td><strong>Saturday:</strong></td>
-		<td>{{ $freeTime->saturday}}</td>
+		<td>
+			@if($lieuHour->approved == 1)
+				No
+			@elseif($lieuHour->approved == 2)
+				Yes
+			@else
+				Waiting Approval
+			@endif
+		</td>
 	</tr>
 	<tr>
 		<td><strong>Request Date:</strong></td>
