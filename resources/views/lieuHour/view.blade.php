@@ -24,19 +24,19 @@
 	</tr>
 	<tr>
 		<td><strong>From:</strong></td>
-		<td>{{ $lieuHour->date_regarding('D d/m/Y') }}</td>
+		<td>{{ $lieuHour->date_regarding }}</td>
 	</tr>
 	<tr>
 		<td><strong>Description:</strong></td>
 		<td>{{ $lieuHour->description }}</td>
 	</tr>
 	<tr>
-		<td><strong>Approved?:</strong></td>
+		<td><strong>Approved:</strong></td>
 		<td>{{ $lieuHour->approved ? 'Yes' : 'No' }}</td>
 	</tr>
 </table>
 
-{!! link_to('/lieuHour/index', 'Back to lieuHours overview') !!}
+{!! link_to('lieu/index', 'Back to Lieu Hours overview') !!}
 
 </div> <!-- detail lieuHour  -->
 

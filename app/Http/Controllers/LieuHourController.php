@@ -12,7 +12,7 @@ use Carbon\Carbon;
 class LieuHourController extends Controller
 {
     
-    public function __construct(lieuHour $lieuHour)
+    public function __construct(LieuHour $lieuHour)
 	{
 		$this->middleware('auth');
 		
@@ -71,13 +71,13 @@ class LieuHourController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(lieuHourFormRequest $request)
+    public function store(LieuHourFormRequest $request)
     {
         $input = $request->all();
 		
 	    LieuHour::create($input);
 	    
-	    return redirect('lieuHour/index');
+	    return redirect('lieu/index');
     }
 
     /**
@@ -86,7 +86,7 @@ class LieuHourController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(lieuHour $lieuHour)
+    public function show(LieuHour $lieuHour)
     {
         return view('lieuHour.view', compact('lieuHour'));
     }
@@ -169,7 +169,7 @@ class LieuHourController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function adminShow(lieuHour $lieuHour) {
+    public function adminShow(LieuHour $lieuHour) {
 		return View('lieuHour.admin.view', compact('lieuHour'));
 	}
 	

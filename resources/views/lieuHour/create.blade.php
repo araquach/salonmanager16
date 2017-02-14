@@ -46,8 +46,8 @@
 	</p>
 	
 	<p>
-    	{!! Form::label('lieu_hours', 'To:') !!}
-    	{!! Form::number('lieu_hours', old('lieu_hours:')) !!}
+    	{!! Form::label('lieu_hours', 'Hours:') !!}
+    	{!! Form::text('lieu_hours', old('lieu_hours:')) !!}
     	{!! $errors->first('lieu_hours', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	

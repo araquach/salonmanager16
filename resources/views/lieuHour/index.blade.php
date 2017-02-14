@@ -29,7 +29,7 @@
 
 @foreach($lieuHours as $lieuHour)
 
-<a href="/lieuHour/view/{{ $lieuHour->id }}" >
+<a href="/lieu/view/{{ $lieuHour->id }}" >
 	<div class="view @if($lieuHour->approved == 1) 
 							unapproved 
 						@elseif($lieuHour->approved == 2) 
@@ -39,7 +39,7 @@
 						@endif" >
 						
 		<b>Requested:</b> 
-		{!! calculateDays($lieuHour->hours_requested) !!}
+		{!! $lieuHour->lieu_hours !!}
 		<br />
 	
 		<b>From:</b> 

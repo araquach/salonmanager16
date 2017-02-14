@@ -10,6 +10,8 @@ class FreeTime extends Model
 {
     protected $guarded = ['id'];
     
+    protected $table = 'free_times';
+    
     protected $dates = ['created_at', 'updated_at', 'date_regarding'];
     
     public function staff()
