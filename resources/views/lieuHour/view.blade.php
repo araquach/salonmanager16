@@ -34,11 +34,11 @@
 		<td><strong>Approved:</strong></td>
 		<td>
 			@if($lieuHour->approved == 1)
-			No
+				No
 			@elseif($lieuHour->approved == 2)
-			Yes
+				Yes
 			@else
-			Waiting Approval
+				Waiting Approval
 			@endif
 		</td>
 			

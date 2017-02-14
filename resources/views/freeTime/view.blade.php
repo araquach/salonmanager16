@@ -31,12 +31,20 @@
 		<td>{{ $freeTime->description }}</td>
 	</tr>
 	<tr>
-		<td><strong>Approved?:</strong></td>
-		<td>{{ $freeTime->approved ? 'Yes' : 'No' }}</td>
+		<td><strong>Approved:</strong></td>
+		<td>
+			@if($lieuHour->approved == 1)
+				No
+			@elseif($lieuHour->approved == 2)
+				Yes
+			@else
+				Waiting Approval
+			@endif
+		</td>
 	</tr>
 </table>
 
-{!! link_to('/freeTime/index', 'Back to freeTimes overview') !!}
+{!! link_to('/freetime/index', 'Back to Free Time overview') !!}
 
 </div> <!-- detail freeTime  -->
 

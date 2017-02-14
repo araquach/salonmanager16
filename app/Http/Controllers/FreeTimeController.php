@@ -38,7 +38,6 @@ class FreeTimeController extends Controller
 		{
 			$freeTimes = FreeTime::where('staff_id', '=', $user->id)
 			->where('approved', '=', 2)
-			->where('request_date_from', '>=', Carbon::now())
 			->get();
 		}
 		elseif($category == 'denied') 
@@ -77,7 +76,7 @@ class FreeTimeController extends Controller
 		
 	    FreeTime::create($input);
 	    
-	    return redirect('freeTime/index');
+	    return redirect('freetime/index');
     }
 
     /**

@@ -29,7 +29,7 @@
 
 @foreach($freeTimes as $freeTime)
 
-<a href="/freeTime/view/{{ $freeTime->id }}" >
+<a href="/freetime/view/{{ $freeTime->id }}" >
 	<div class="view @if($freeTime->approved == 1) 
 							unapproved 
 						@elseif($freeTime->approved == 2) 
@@ -47,7 +47,13 @@
 		<br />
 	
 		<b>Approved:</b> 
-		{{ $freeTime->approved }}
+			@if($freeTime->approved == 1)
+				No
+			@elseif($freeTime->approved == 2)
+				Yes
+			@else
+				Waiting Approval
+			@endif
 		<br />
 	</div>
 </a>

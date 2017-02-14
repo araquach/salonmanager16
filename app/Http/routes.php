@@ -85,8 +85,8 @@ Route::post('admin/sick/update', 'SickDayController@handleAdminUpdate');
 Route::get('/freetime/index/{category?}', 'FreeTimeController@index' );
 Route::get('/freetime/create', 'FreeTimeController@create');
 Route::post('/freetime/create', 'FreeTimeController@store');
-Route::get('/freetime/view/{FreeTime}', 'FreeTimeController@show' );
-Route::get('/freetime/edit/{FreeTime}', 'FreeTimeController@edit');
+Route::get('/freetime/view/{freeTime}', 'FreeTimeController@show' );
+Route::get('/freetime/edit/{freeTime}', 'FreeTimeController@edit');
 Route::post('/freetime/update', 'FreeTimeController@update');
 // need destroy routes
 
