@@ -1,4 +1,4 @@
-<!--holiday widget partial view-->
+<!--Admin holiday widget partial view-->
 
 <ul class="info">
 
