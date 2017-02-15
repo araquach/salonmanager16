@@ -57,7 +57,7 @@
 	
 {!! Form::model($holiday, [
 	'method' => 'PATCH', 
-	'action' => ['HolidayController@authorise', $holiday->id]
+	'action' => ['AdminHolidayController@authorise', $holiday->id]
 ]) !!}
 	
 	<div class="row question">
@@ -78,7 +78,7 @@
 	    {!! Form::submit('Send') !!}
 	</p>
 	
-	<a href="{{ action('HolidayController@adminIndex') }}">cancel</a>
+	<a href="{{ action('AdminHolidayController@index') }}">cancel</a>
 
 {{ Form::close() }}
 

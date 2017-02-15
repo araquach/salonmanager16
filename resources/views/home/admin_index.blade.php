@@ -16,28 +16,28 @@
 
 <div id="menuBox">
     
-    <a href="{{ url('/holiday/index') }}">
+    <a href="{{ url('admin/holiday/index') }}">
         <div class="menu holiday">
             <h2><strong>Holidays</strong></h2>
             @include('widgets.admin.holiday')
         </div>
     </a>
     
-    <a href="{{ url('/sick/index') }}">
+    <a href="{{ url('admin/sick/index') }}">
         <div class="menu sickDay">
             <h2><strong>Sick Days</strong></h2>
             @include('widgets.admin.sickDay')
         </div>
     </a>
     
-    <a href="{{ url('/lieu/index') }}">
+    <a href="{{ url('admin/lieu/index') }}">
         <div class="menu lieuHour">
             <h2><strong>Lieu Hours</strong></h2>
             @include('widgets.admin.lieuHour')
         </div>
     </a>
     
-    <a href="{{ url('/freetime/index') }}">
+    <a href="{{ url('admin/freetime/index') }}">
         <div class="menu freeTime">
             <h2><strong>Free Time</strong></h2>
             @include('widgets.admin.freeTime')
