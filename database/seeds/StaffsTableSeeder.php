@@ -23,7 +23,6 @@ class StaffsTableSeeder extends Seeder
             'mobile' => '07921806884',
             'iris_id' => 1,
             'salon_id' => '1',
-            'staff_role_id' => '1',
             'dob' => '',
             'working_hours_week' => 40,
             'holiday_entitlement' => 27,
@@ -43,12 +42,11 @@ class StaffsTableSeeder extends Seeder
             'mobile' => '07999555555',
             'iris_id' => 2,
             'salon_id' => '2',
-            'staff_role_id' => '1',
             'dob' => '',
             'working_hours_week' => 40,
             'holiday_entitlement' => 27,
             'active' => 1,
-            'role' => 1
+            'role' => 2
         ]);
     }
 }

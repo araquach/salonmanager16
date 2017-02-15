@@ -14,7 +14,7 @@ class HolidayController extends Controller
     
     public function __construct(Holiday $holiday)
 	{
-		$this->middleware('auth');
+		$this->middleware('admin');
 		
 		$this->holiday = $holiday;
 	}
@@ -202,7 +202,7 @@ class HolidayController extends Controller
     {
         $holiday->update($request->all());
         
-        return redirect('holiday/admin/index');
+        return redirect('admin/holiday/index');
     }
     
     

@@ -25,7 +25,6 @@ class CreateStaffTable extends Migration
 			$table->string('mobile');
 			$table->integer('iris_id')->unsigned();
 			$table->integer('salon_id')->unsigned();
-			$table->integer('staff_role_id')->unsigned();
 			$table->date('dob');
 			$table->integer('working_hours_week')->unsigned();
 			$table->integer('holiday_entitlement')->unsigned();

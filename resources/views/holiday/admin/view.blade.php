@@ -38,10 +38,6 @@
 		<td>{{ $holiday->request_date_to->format('D d/m/Y') }}</td>
 	</tr>
 	<tr>
-		<td><strong>Approved:</strong></td>
-		<td>{{ $holiday->approved ? 'Yes' : 'No'}}</td>
-	</tr>
-	<tr>
 		<td><strong>Saturday:</strong></td>
 		<td>{{ $holiday->saturday}}</td>
 	</tr>
@@ -63,24 +59,20 @@
 	'method' => 'PATCH', 
 	'action' => ['HolidayController@authorise', $holiday->id]
 ]) !!}
-
-	<p>
-    	{!! Form::label('approved', 'Approve') !!}
-    	{!! Form::checkBox('approved', 2) !!}
-    	{!! $errors->first('approved', '<div class="errorMessage">:message</div>') !!}
-	</p>
 	
-	<p>
-    	{!! Form::label('approved', 'Deny') !!}
-    	{!! Form::checkBox('approved', 1) !!}
-    	{!! $errors->first('approved', '<div class="errorMessage">:message</div>') !!}
-	</p>
-	
-	<p>
-    	{!! Form::label('approved', 'Pending') !!}
-    	{!! Form::checkBox('approved', 0) !!}
-    	{!! $errors->first('approved', '<div class="errorMessage">:message</div>') !!}
-	</p>
+	<div class="row question">
+		<p>
+			{!! Form::label('approved', 'Approval:') !!}
+	    	<p class="scale_label">Approved</p>
+	    	{!! Form::radio('approved', '2') !!}
+	    	<p class="scale_label">Denied</p>
+	    	{!! Form::radio('approved', '1') !!}
+	        <p class="scale_label">Pending</p>
+	        {!! Form::radio('approved', '0') !!}
+	        
+	    	{!! $errors->first('approved', '<div class="errorMessage">:message</div>') !!}
+		</p>
+	</div>
 	
 	<p>
 	    {!! Form::submit('Send') !!}
