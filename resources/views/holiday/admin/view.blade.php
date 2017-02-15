@@ -58,14 +58,27 @@
     {{{ Session::get('message') }}}
     </div>
 @endif
-
-{!! Form::open(array(
-	'action' => 'HolidayController@update'
-)) !!}
 	
+{!! Form::model($holiday, [
+	'method' => 'PATCH', 
+	'action' => ['HolidayController@authorise', $holiday->id]
+]) !!}
+
 	<p>
     	{!! Form::label('approved', 'Approve') !!}
-    	{!! Form::checkBox('approved', old('request_date_from')) !!}
+    	{!! Form::checkBox('approved', 2) !!}
+    	{!! $errors->first('approved', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
+    	{!! Form::label('approved', 'Deny') !!}
+    	{!! Form::checkBox('approved', 1) !!}
+    	{!! $errors->first('approved', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
+    	{!! Form::label('approved', 'Pending') !!}
+    	{!! Form::checkBox('approved', 0) !!}
     	{!! $errors->first('approved', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	

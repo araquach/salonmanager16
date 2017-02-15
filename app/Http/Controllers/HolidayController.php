@@ -183,7 +183,7 @@ class HolidayController extends Controller
      */
 	public function adminEdit($id)
     {
-        //
+        
     }
     
     /**
@@ -196,6 +196,13 @@ class HolidayController extends Controller
     public function adminUpdate(Request $request, $id)
     {
         //
+    }
+    
+    public function authorise(Request $request, Holiday $holiday)
+    {
+        $holiday->update($request->all());
+        
+        return redirect('holiday/admin/index');
     }
     
     

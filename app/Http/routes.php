@@ -38,6 +38,7 @@ Route::post('admin/holiday/create', 'HolidayController@adminStore');
 Route::get('admin/holiday/view/{holiday}', 'HolidayController@adminShow' );
 Route::get('admin/holiday/{holiday}/edit', 'HolidayController@adminEdit');
 Route::patch('admin/holiday/{holiday}', 'HolidayController@adminUpdate');
+Route::patch('admin/holiday/{holiday}', 'HolidayController@authorise');
 // need destroy routes
 
 // LieuHour Routes
