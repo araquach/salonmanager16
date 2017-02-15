@@ -2,31 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Holiday;
+use App\LieuHour;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Requests\AdminHolidayFormRequest;
+use App\Http\Requests\AdminLieuHourFormRequest;
 use Auth;
 use Carbon\Carbon;
 
-class AdminHolidayController extends Controller
+class AdminLieuHourController extends Controller
 {
     
-    public function __construct(Holiday $holiday)
+    public function __construct(LieuHour $lieuHour)
 	{
 		$this->middleware('admin');
 		
-		$this->holiday = $holiday;
+		$this->lieuHour = $lieuHour;
 	}
-    
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    
-    
-    // Admin Pages
     
     /**
      * Display a listing of the resource.
@@ -35,8 +26,8 @@ class AdminHolidayController extends Controller
      */
     public function index()
 	{
-		$holidays = Holiday::all();
-		return View('/holiday/admin/index', compact('holidays'));
+		$lieuHours = LieuHour::all();
+		return View('/lieuHour/admin/index', compact('lieuHours'));
 	}
     
     /**
@@ -46,7 +37,7 @@ class AdminHolidayController extends Controller
      */
     public function create()
 	{
-		return View('/holiday/admin/create');
+		return View('/lieuHour/admin/create');
 	}
 	
 	/**
@@ -59,9 +50,9 @@ class AdminHolidayController extends Controller
 	{
 		$input = $request->all();
 		
-	    Holiday::create($input);
+	    LieuHour::create($input);
 		
-		return Redirect::action('AdminHolidayController@index');
+		return Redirect::action('AdminLieuHourController@index');
 	}
     
     /**
@@ -70,8 +61,8 @@ class AdminHolidayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Holiday $holiday) {
-		return View('holiday.admin.view', compact('holiday'));
+    public function show(LieuHour $lieuHour) {
+		return View('lieuHour.admin.view', compact('lieuHour'));
 	}
 	
 	/**
@@ -82,7 +73,7 @@ class AdminHolidayController extends Controller
      */
 	public function edit($id)
     {
-        
+        //
     }
     
     /**
@@ -92,16 +83,9 @@ class AdminHolidayController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         //
-    }
-    
-    public function authorise(Request $request, Holiday $holiday)
-    {
-        $holiday->update($request->all());
-        
-        return redirect('admin/holiday/index');
     }
     
     
