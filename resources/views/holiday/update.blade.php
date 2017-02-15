@@ -18,7 +18,7 @@
     </div>
 @endif
 
-{{ Form::model($holiday, array('HolidayController@update', 'method' => 'PUT')) }}
+{!! Form::model($holiday, ['method' => 'PATCH', 'action' => ['HolidayController@update', $holiday->id]]) !!}
 
 
 @if (count($errors) > 0)
@@ -38,20 +38,22 @@
 	
 	{!! Form::hidden('approved', 0) !!}
 	
+	<p>Current Date booked from: {{ $holiday->request_date_from->format('D d/m/Y') }}</p>
 	<p>
-    	{!! Form::label('request_date_from', 'From:') !!}
+    	{!! Form::label('request_date_from', 'New from date:') !!}
     	{!! Form::date('request_date_from') !!}
     	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
+	<p>Current Date booked to: {{ $holiday->request_date_to->format('D d/m/Y') }}</p>
 	<p>
-    	{!! Form::label('request_date_to', 'To:') !!}
+    	{!! Form::label('request_date_to', 'New to date:') !!}
     	{!! Form::date('request_date_to') !!}
     	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>
-    	{!! Form::label('hours_requested', 'Days Requested:') !!}
+    	{!! Form::label('hours_requested', 'New days requested:') !!}
     	{!! Form::number('hours_requested') !!}
     	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
 	</p>

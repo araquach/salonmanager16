@@ -111,9 +111,7 @@ class HolidayController extends Controller
      */
     public function update(HolidayFormRequest $request, Holiday $holiday)
     {
-        $input = $request->all();
-        
-        $holiday->update($input);
+        $holiday->update($request->all());
         
         return redirect('holiday/index');
     }

@@ -30,9 +30,4 @@ class Holiday extends Model
             return $model;
         });
     }
-    
-    public function setHoursRequestedAttribute($value) 
-    {
-        $this->attributes['hours_requested'] = $value * 8;
-    }
 }
