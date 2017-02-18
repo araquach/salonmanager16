@@ -45,10 +45,6 @@
 
 </div>
 
-@if(Auth::user()->staff->role == 1)
-<a href="{{ url('/admin') }}">Admin Index</a>
-@endif
-
 @else
 
 <h2>Welcome</h2>
