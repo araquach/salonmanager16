@@ -43,7 +43,7 @@ class AdminSickDayController extends Controller
 	/**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\SickDayFormRequest  $request
      * @return \Illuminate\Http\Response
      */
 	public function store()
@@ -58,7 +58,7 @@ class AdminSickDayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\SickDay  $sickDay
      * @return \Illuminate\Http\Response
      */
     public function show(SickDay $sickDay) {
@@ -68,28 +68,40 @@ class AdminSickDayController extends Controller
 	/**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\SickDay  $sickDay
      * @return \Illuminate\Http\Response
      */
-	public function edit($id)
+	public function edit(SickDay $sickDay)
     {
-        //
+        return view('sickDay.admin.update', compact('sickDay'));
     }
     
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\AdminSickDayFormRequest  $request
+     * @param  \App\SickDay  $sickDay
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SickDayFormRequest $request, SickDay $sickDay)
     {
-        //
+        $holiday->update($request->all());
+        
+        return redirect('admin/sick/index');
     }
     
-    
-	
-	
-    
+    /**
+     * Authorise the specified resource through an Update.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\SickDay  $sickDay
+     * @return \Illuminate\Http\Response
+     */
+    public function authorise(Request $request, SickDay $sickDay)
+    {
+        $holiday->update($request->all());
+        
+        return redirect('admin/sick/index');
+    }
+
 }

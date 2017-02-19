@@ -24,15 +24,6 @@ class AdminHolidayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
-    
-    // Admin Pages
-    
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
 	{
 		$holidays = Holiday::all();
@@ -52,7 +43,7 @@ class AdminHolidayController extends Controller
 	/**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\HolidayFormRequest  $request
      * @return \Illuminate\Http\Response
      */
 	public function store()
@@ -67,7 +58,7 @@ class AdminHolidayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Holiday  $holiday
      * @return \Illuminate\Http\Response
      */
     public function show(Holiday $holiday) {
@@ -77,35 +68,40 @@ class AdminHolidayController extends Controller
 	/**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Holiday  $holiday
      * @return \Illuminate\Http\Response
      */
-	public function edit($id)
+	public function edit(Holiday $holiday)
     {
-        
+        return view('holiday.admin.update', compact('holiday'));
     }
     
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\AdminHolidayFormRequest  $request
+     * @param  \App\Holiday  $holiday
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
-    {
-        //
-    }
-    
-    public function authorise(Request $request, Holiday $holiday)
+    public function update(AdminHolidayFormRequest $request, Holiday $holiday)
     {
         $holiday->update($request->all());
         
         return redirect('admin/holiday/index');
     }
     
-    
-	
-	
-    
+    /**
+     * Authorise the specified resource through an Update.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Holiday  $holiday
+     * @return \Illuminate\Http\Response
+     */
+    public function authorise(Request $request, Holiday $holiday)
+    {
+        $holiday->update($request->all());
+        
+        return redirect('admin/holiday/index');
+    }
+
 }

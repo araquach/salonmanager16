@@ -30,11 +30,10 @@
 				<li><a href="{{ url('/') }}">Home</li>
 				@if (Auth::guest())
 					<li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
                 @else 
 				<li><a href="{{ url('/logout') }}">Logout</a></li>
 				@endif
-				@if(Auth::user()->staff->role == 1)
+				@if(Auth::user() && Auth::user()->staff->role == 1)
 					<li><a href="{{ url('/admin') }}">Admin</a></li>
 				@endif
 			</ul>
