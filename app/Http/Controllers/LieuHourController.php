@@ -67,7 +67,7 @@ class LieuHourController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\LieuHourFormRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(LieuHourFormRequest $request)
@@ -82,7 +82,7 @@ class LieuHourController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\LieuHour  $lieuHour
      * @return \Illuminate\Http\Response
      */
     public function show(LieuHour $lieuHour)
@@ -93,35 +93,37 @@ class LieuHourController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\LieuHour  $lieuHour
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(LieuHour $lieuHour)
     {
-        //
+        return view('lieuHour.update', compact('lieuHour'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\LieuHourFormRequest  $request
+     * @param  \App\LieuHour  $lieuHour
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(LieuHourFormRequest $request, LieuHour $lieuHour)
     {
-        //
+        $lieuHour->update($request->all());
+        
+        return redirect('lieuhour/index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\LieuHour  $lieuHour
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(LieuHour $lieuHour)
     {
-        //
+        // if LieuHour not approved - can be deleted functionality
     }
     
 }

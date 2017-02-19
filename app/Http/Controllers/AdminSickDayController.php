@@ -43,10 +43,10 @@ class AdminSickDayController extends Controller
 	/**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\SickDayFormRequest  $request
+     * @param  \App\Http\Requests\AdminSickDayFormRequest  $request
      * @return \Illuminate\Http\Response
      */
-	public function store()
+	public function store(AdminSickDayFormRequest $request)
 	{
 		$input = $request->all();
 		

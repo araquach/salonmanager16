@@ -36,7 +36,7 @@ class SickDayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\SickDay  $sickDay
      * @return \Illuminate\Http\Response
      */
     public function show(SickDay $sickDay)

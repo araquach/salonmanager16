@@ -43,10 +43,10 @@ class AdminLieuHourController extends Controller
 	/**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\AdminLieuHourFormRequest  $request
      * @return \Illuminate\Http\Response
      */
-	public function store()
+	public function store(AdminLieuHourController $request)
 	{
 		$input = $request->all();
 		
@@ -58,7 +58,7 @@ class AdminLieuHourController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\LieuHour  $lieuHour
      * @return \Illuminate\Http\Response
      */
     public function show(LieuHour $lieuHour) {
@@ -68,28 +68,51 @@ class AdminLieuHourController extends Controller
 	/**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\LieuHour  $lieuHour
      * @return \Illuminate\Http\Response
      */
-	public function edit($id)
+	public function edit(LieuHour $lieuHour)
     {
-        //
+        return view('lieuHour.admin.update', compact('lieuHour'));
     }
     
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\AdminLieuHourFormRequest  $request
+     * @param  \App\LieuHour  $lieuHour
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminLieuHourFormRequest $request, LieuHour $lieuHour)
+    {
+        $lieuHour->update($request->all());
+        
+        return redirect('admin/lieuhour/index');
+    }
+    
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\LieuHour  $lieuHour
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(LieuHour $lieuHour)
     {
         //
     }
-    
-    
 	
-	
+	/**
+     * Authorise the specified resource through an Update.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\LieuHour  $lieuHour
+     * @return \Illuminate\Http\Response
+     */
+    public function authorise(Request $request, LieuHour $lieuHour)
+    {
+        $lieuHour->update($request->all());
+        
+        return redirect('admin/lieuhour/index');
+    }
     
 }
