@@ -42,16 +42,16 @@
 		
 		<br />
 		
-		<b>Requested:</b> 
-		{!! calculateDays($sickDay->hours_requested) !!}
+		<b>Days Sick:</b> 
+		{!! calculateDays($sickDay->sick_hours) !!}
 		<br />
 	
 		<b>From:</b> 
-		{{ $sickDay->request_date_from->format('d/m/Y') }}
+		{{ $sickDay->sick_from->format('d/m/Y') }}
 		<br />
 	
 		<b>To:</b> 
-		{{ $sickDay->request_date_to->format('d/m/Y') }}
+		{{ $sickDay->sick_to->format('d/m/Y') }}
 		<br />
 		
 		@if($sickDay->saturday == 0.5) 

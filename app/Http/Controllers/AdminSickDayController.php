@@ -52,7 +52,7 @@ class AdminSickDayController extends Controller
 		
 	    SickDay::create($input);
 		
-		return Redirect::action('AdminSickDayController@index');
+		return redirect('admin/sick/index');
 	}
     
     /**
