@@ -43,10 +43,10 @@ class AdminFreeTimeController extends Controller
 	/**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\AdminFreeTimeFormRequest  $request
      * @return \Illuminate\Http\Response
      */
-	public function store()
+	public function store(AdminFreeTimeFormRequest $request)
 	{
 		$input = $request->all();
 		
@@ -58,7 +58,7 @@ class AdminFreeTimeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\FreeTime  $freeTime
      * @return \Illuminate\Http\Response
      */
     public function show(FreeTime $freeTime) {
@@ -68,27 +68,52 @@ class AdminFreeTimeController extends Controller
 	/**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\FreeTime  $freeTime
      * @return \Illuminate\Http\Response
      */
-	public function adminEdit($id)
+	public function adminEdit(FreeTime $freeTime)
     {
-        //
+        return view('freeTime.admin.update', compact('freeTime'));
     }
     
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\AdminFreeTimeFormRequest  $request
+     * @param  \App\FreeTime  $freeTime
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminFreeTimeFormRequest $request, FreeTime $freeTime)
+    {
+        $freeTime->update($request->all());
+        
+        return redirect('admin/freetime/index');
+    }
+    
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  FreeTime  $freeTime
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(FreeTime $freeTime)
     {
         //
     }
     
-    
+    /**
+     * Authorise the specified resource through an Update.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\FreeTime  $freeTime
+     * @return \Illuminate\Http\Response
+     */
+    public function authorise(Request $request, FreeTime $freeTime)
+    {
+        $freeTime->update($request->all());
+        
+        return redirect('admin/freetime/index');
+    }
 	
 	
     

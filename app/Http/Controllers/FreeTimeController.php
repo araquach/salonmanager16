@@ -67,7 +67,7 @@ class FreeTimeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\FreeTimeFormRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(FreeTimeFormRequest $request)
@@ -82,7 +82,7 @@ class FreeTimeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\FreeTime  $freeTime
      * @return \Illuminate\Http\Response
      */
     public function show(FreeTime $freeTime)
@@ -93,35 +93,35 @@ class FreeTimeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\FreeTime  $freeTime
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(FreeTime $freeTime)
     {
-        //
+        return view('freeTime.update', compact('freeTime'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\FreeTimeFormRequest  $request
+     * @param  \App\FreeTime  $freeTime
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FreeTimeFormRequest $request, FreeTime $freeTime)
     {
-        //
+        return redirect('freetime/index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  FreeTime  $freeTime
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(FreeTime $freeTime)
     {
-        //
+        // if FreeTime not approved - can be deleted functionality
     }
 
 }

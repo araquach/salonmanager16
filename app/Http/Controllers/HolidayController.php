@@ -68,7 +68,7 @@ class HolidayController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  App\Http\Requests\HolidayFormRequest  $request
+     * @param  \App\Http\Requests\HolidayFormRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(HolidayFormRequest $request)
@@ -122,9 +122,9 @@ class HolidayController extends Controller
      * @param  \App\Holiday  $holiday
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Holiday $holiday)
     {
-        //
+        // if Holiday not approved - can be deleted functionality
     }
     
 }
