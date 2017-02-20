@@ -14,11 +14,10 @@
 
 <nav class"pageHeadNav">
 <ul class="list--inline">
-<li><a href="{{ url('/sick/admin/create') }}">Book sickDay</a></li>
-<li><a href="{{ url('/sick/admin/index', 'upcoming') }}">Upcoming sickDays</a></li>
-<li><a href="{{ url('/sick/admin/index', 'awaiting') }}">Awaiting Approval</a></li>
-<li><a href="{{ url('/sick/admin/index', 'denied') }}">Denied sickDays</a></li>
-<li><a href="{{ url('/sick/admin/index') }}">All sickDays</a></li>
+<li><a href="{{ url('/admin/sick/create') }}">Log Sick Day</a></li>
+<li><a href="{{ url('/admin/sick/index', 'deducted') }}">Deducted</a></li>
+<li><a href="{{ url('/admin/sick/index', 'waiting') }}">Not Deducted</a></li>
+<li><a href="{{ url('/admin/sick/index') }}">All Sick Days</a></li>
 </ul>
 </nav>
 
@@ -29,14 +28,8 @@
 
 @foreach($sickDays as $sickDay)
 
-<a href="/admin/sickDay/view/{{ $sickDay->id }}" >
-	<div class="view @if($sickDay->approved == 1) 
-							unapproved 
-						@elseif($sickDay->approved == 2) 
-							approved 
-						@else 
-							pending 
-						@endif" >
+<a href="/admin/sick/view/{{ $sickDay->id }}" >
+	<div class="view pending" >
 						
 		<b>{!! $sickDay->staff->first_name !!} {!! $sickDay->staff->second_name !!}</b> 
 		
@@ -53,20 +46,6 @@
 		<b>To:</b> 
 		{{ $sickDay->sick_to->format('d/m/Y') }}
 		<br />
-		
-		@if($sickDay->saturday == 0.5) 
-		 	<img src="{{ asset('/images/icons/icons_halfxsat.png') }}" />
-		@elseif($sickDay->saturday == 1)
-			<img src="{{ asset('/images/icons/icons_1xsat.png') }}" />
-		@elseif($sickDay->saturday == 1.5)
-			<img src="{{ asset('/images/icons/icons_1andhalfxsat.png') }}" />
-		@elseif($sickDay->saturday == 2)
-			<img src="{{ asset('/images/icons/icons_2xsat.png') }}" />
-		@endif
-		
-		@if($sickDay->prebooked ==1)
-			<img src="{{ asset('images/icons/pb-11.png') }}">
-		@endif
 	</div>
 </a>
 

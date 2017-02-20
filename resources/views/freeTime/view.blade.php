@@ -33,9 +33,9 @@
 	<tr>
 		<td><strong>Approved:</strong></td>
 		<td>
-			@if($lieuHour->approved == 1)
+			@if($freeTime->approved == 1)
 				No
-			@elseif($lieuHour->approved == 2)
+			@elseif($freeTime->approved == 2)
 				Yes
 			@else
 				Waiting Approval

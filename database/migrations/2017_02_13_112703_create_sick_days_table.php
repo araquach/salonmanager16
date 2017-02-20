@@ -19,7 +19,7 @@ class CreateSickDaysTable extends Migration
             $table->string('description');
             $table->date('sick_from');
             $table->date('sick_to');
-            $table->date('date_deducted');
+            $table->integer('deducted')->unsigned()->nullable();
             $table->timestamps();
         });
     }

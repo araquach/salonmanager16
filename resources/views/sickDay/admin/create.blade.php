@@ -61,7 +61,16 @@
     	{!! $errors->first('description', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
-	
+	<div class="row question">
+		<p>
+	    	<p class="scale_label">Deducted</p>
+	    	{!! Form::radio('deducted', '1') !!}
+	    	<p class="scale_label">Pending</p>
+	    	{!! Form::radio('deducted', '0') !!}
+	        
+	    	{!! $errors->first('approved', '<div class="errorMessage">:message</div>') !!}
+		</p>
+	</div>
 	
 	<p>
 	    {!! Form::submit('Create') !!}

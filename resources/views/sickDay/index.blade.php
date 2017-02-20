@@ -13,8 +13,11 @@
 @include('widgets.sickDay')
 
 <nav class"pageHeadNav">
-	<ul class="list--inline">
-	</ul>
+<ul class="list--inline">
+<li><a href="{{ url('/sick/index', 'deducted') }}">Deducted Sick</a></li>
+<li><a href="{{ url('/sick/index', 'awaiting') }}">Awaiting Deduction</a></li>
+<li><a href="{{ url('/sick/index') }}">All Sick Days</a></li>
+</ul>
 </nav>
 
 </div> <!--.pageHead sickDay-->
@@ -42,8 +45,6 @@
 		<b>To:</b> 
 		{{ calculateDays($sickDay->sick_hours) }}
 		<br />
-		
-		
 	</div>
 </a>
 

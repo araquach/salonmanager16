@@ -24,13 +24,28 @@ class SickDayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category = null)
     {
         $user = Auth::user();
         
-	    $sickDays = SickDay::where('staff_id', '=', $user->id)->get();
-        
-        return view('sickDay/index', compact('sickDays'));
+        if($category == 'deducted')
+		{
+			$sickDay = SickDay::where('staff_id', '=', $user->id)
+			->where('deducted', '=', 1)
+			->get();
+		}
+		elseif($category == 'awaiting')
+		{
+		    $sickDays = SickDay::where('staff_id', '=', $user->id)
+			->where('deducted', '=', 0)
+			->get();
+		}
+		else
+		{
+		    $sickDays = SickDay::where('staff_id', '=', $user->id)->get();
+		}
+		
+		return view('sickDay/index', compact('sickDays'));
     }
 
     /**

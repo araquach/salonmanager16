@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class AdminLieuHourFormRequest extends Request
+class AdminFreeTimeFormRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,7 @@ class AdminLieuHourFormRequest extends Request
     public function rules()
     {
         return [
-            'lieu_hours' => 'required | numeric',
-            'description' => 'required',
-            'date_regarding' => 'required | date',
+            
         ];
     }
 }

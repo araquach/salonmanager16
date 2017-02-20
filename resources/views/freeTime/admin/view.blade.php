@@ -36,9 +36,9 @@
 	<tr>
 		<td><strong>Approved:</strong></td>
 		<td>
-			@if($lieuHour->approved == 1)
+			@if($freeTime->approved == 1)
 				No
-			@elseif($lieuHour->approved == 2)
+			@elseif($freeTime->approved == 2)
 				Yes
 			@else
 				Waiting Approval
@@ -60,7 +60,7 @@
 @endif
 
 {!! Form::open(array(
-	'action' => 'freeTimeController@update'
+	'action' => 'AdminFreeTimeController@authorise'
 )) !!}
 	
 	<p>
@@ -73,14 +73,14 @@
 	    {!! Form::submit('Send') !!}
 	</p>
 	
-	<a href="{{ action('freeTimeController@adminIndex') }}">cancel</a>
+	<a href="{{ action('AdminFreeTimeController@index') }}">cancel</a>
 
 {{ Form::close() }}
 
 
 </div>
 
-{!! link_to('admin/freeTime/index', 'Back to freeTimes overview') !!}
+<a href="{{ action('AdminFreeTimeController@index') }}">Back to Free Time menu</a>
 
 </div> <!-- detail freeTime  -->
 

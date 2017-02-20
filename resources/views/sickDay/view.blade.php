@@ -17,10 +17,6 @@
 							pending
 						@endif">
 	<tr>
-		<td><strong>Days Requested:</strong></td>
-		<td>{!! calculateDays($sickDay->hours_requested) !!}</td>
-	</tr>
-	<tr>
 		<td><strong>From:</strong></td>
 		<td>{{ $sickDay->sick_from->format('D d/m/Y') }}</td>
 	</tr>
@@ -29,12 +25,12 @@
 		<td>{{ $sickDay->sick_to->format('D d/m/Y') }}</td>
 	</tr>
 	<tr>
-		<td><strong>Days:</strong></td>
+		<td><strong>Sick Days:</strong></td>
 		<td>{{ calculateDays($sickDay->sick_hours) }}</td>
 	</tr>
 	<tr>
 		<td><strong>Description:</strong></td>
-		<td>{{ $sickDay->descrition }}</td>
+		<td>{{ $sickDay->description }}</td>
 	</tr>
 	<tr>
 		<td><strong>Deducted:</strong></td>
@@ -43,7 +39,7 @@
 	
 </table>
 
-{!! link_to('/sickDay/index', 'Back to sickDays overview') !!}
+{!! link_to('/sick/index', 'Back to Sick Days overview') !!}
 
 </div> <!-- detail sickDay  -->
 
