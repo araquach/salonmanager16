@@ -18,13 +18,14 @@
 						@else
 							pending
 						@endif">
-	<tr>
-		<td><strong>Hours Requested:</strong></td>
-		<td>{!! $freeTime->free_time_hours !!}</td>
-	</tr>
+	
 	<tr>
 		<td><strong>Date:</strong></td>
 		<td>{{ $freeTime->date_regarding->format('D d/m/Y') }}</td>
+	</tr>
+	<tr>
+		<td><strong>Hours Requested:</strong></td>
+		<td>{!! $freeTime->free_time_hours !!}</td>
 	</tr>
 	<tr>
 		<td><strong>Description:</strong></td>

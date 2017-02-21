@@ -24,9 +24,9 @@ class LieuHourFormRequest extends Request
     public function rules()
     {
         return [
+            'date_regarding' => 'required | date',
             'lieu_hours' => 'required | numeric',
             'description' => 'required',
-            'date_regarding' => 'required | date',
         ];
     }
 }

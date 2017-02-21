@@ -18,10 +18,7 @@
 						@else
 							pending
 						@endif">
-	<tr>
-		<td><strong>Days Requested:</strong></td>
-		<td>{!! calculateDays($holiday->hours_requested) !!}</td>
-	</tr>
+	
 	<tr>
 		<td><strong>From:</strong></td>
 		<td>{{ $holiday->request_date_from->format('d/m/Y') }}</td>
@@ -29,6 +26,10 @@
 	<tr>
 		<td><strong>To:</strong></td>
 		<td>{{ $holiday->request_date_to->format('d/m/Y') }}</td>
+	</tr>
+	<tr>
+		<td><strong>Days Requested:</strong></td>
+		<td>{!! calculateDays($holiday->hours_requested) !!}</td>
 	</tr>
 	<tr>
 		<td><strong>Approved:</strong></td>

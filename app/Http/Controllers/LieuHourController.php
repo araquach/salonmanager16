@@ -112,7 +112,7 @@ class LieuHourController extends Controller
     {
         $lieuHour->update($request->all());
         
-        return redirect('lieuhour/index');
+        return redirect('lieu/index');
     }
 
     /**

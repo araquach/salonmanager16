@@ -38,23 +38,23 @@
 							pending 
 						@endif" >
 						
-		<b>Requested:</b> 
-		{!! $freeTime->free_time_hours !!}
-		<br />
-	
 		<b>Date:</b> 
 		{{ $freeTime->date_regarding->format('d/m/Y') }}
-		<br />
-	
-		<b>Approved:</b> 
-			@if($freeTime->approved == 1)
-				No
-			@elseif($freeTime->approved == 2)
-				Yes
-			@else
-				Waiting Approval
-			@endif
-		<br />
+		<br>
+		
+		<b>Hours Requested:</b> 
+		{!! $freeTime->free_time_hours !!}
+		<br>
+
+		@if($freeTime->approved == 1)
+			Denied
+		@elseif($freeTime->approved == 2)
+			Approved
+		@else
+			Waiting Approval
+		@endif
+		
+		<br>
 	</div>
 </a>
 

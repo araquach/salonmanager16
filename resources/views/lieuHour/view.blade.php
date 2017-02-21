@@ -18,13 +18,14 @@
 						@else
 							pending
 						@endif">
+	
 	<tr>
-		<td><strong>Days Requested:</strong></td>
-		<td>{!! $lieuHour->lieu_hours !!}</td>
+		<td><strong>Date requested:</strong></td>
+		<td>{{ $lieuHour->date_regarding->format('D d/m/Y') }}</td>
 	</tr>
 	<tr>
-		<td><strong>From:</strong></td>
-		<td>{{ $lieuHour->date_regarding->format('D d/m/Y') }}</td>
+		<td><strong>Hours Requested:</strong></td>
+		<td>{!! $lieuHour->lieu_hours !!}</td>
 	</tr>
 	<tr>
 		<td><strong>Description:</strong></td>
@@ -44,6 +45,10 @@
 			
 	</tr>
 </table>
+
+<a href="/lieu/{{ $lieuHour->id }}/edit">Edit the Lieu Hour request</a>
+
+<br>
 
 {!! link_to('lieu/index', 'Back to Lieu Hours overview') !!}
 
