@@ -15,11 +15,11 @@
 
 	<nav class"pageHeadNav">
 		<ul class="list--inline">
-			<li><a href="{{ url('/freeTime/admin/create') }}">Book freeTime</a></li>
-			<li><a href="{{ url('/freeTime/admin/index', 'upcoming') }}">Upcoming freeTimes</a></li>
-			<li><a href="{{ url('/freeTime/admin/index', 'awaiting') }}">Awaiting Approval</a></li>
-			<li><a href="{{ url('/freeTime/admin/index', 'denied') }}">Denied freeTimes</a></li>
-			<li><a href="{{ url('/freeTime/admin/index') }}">All freeTimes</a></li>
+			<li><a href="{{ url('/admin/freetime/create') }}">Book Free Time</a></li>
+			<li><a href="{{ url('/admin/freetime/index', 'upcoming') }}">Upcoming Free Time</a></li>
+			<li><a href="{{ url('/admin/freetime/index', 'awaiting') }}">Awaiting Approval</a></li>
+			<li><a href="{{ url('/admin/freetime/index', 'denied') }}">Denied Free Time</a></li>
+			<li><a href="{{ url('/admin/freetime/index') }}">All Free Time</a></li>
 		</ul>
 	</nav>
 

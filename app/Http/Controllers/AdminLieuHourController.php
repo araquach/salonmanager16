@@ -127,7 +127,7 @@ class AdminLieuHourController extends Controller
     {
         $lieuHour->update($request->all());
         
-        return redirect('admin/lieuhour/index');
+        return redirect('admin/lieu/index');
     }
     
 }
