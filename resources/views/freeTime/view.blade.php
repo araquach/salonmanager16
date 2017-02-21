@@ -19,6 +19,12 @@
 							pending
 						@endif">
 	
+	
+	<tr>
+		<th>Free Time Request</th>
+		<td><img src="{{ asset('/images/icons/icons_freeTime.png') }}" class="thumb"/>
+		</td>
+	</tr>
 	<tr>
 		<td><strong>Date:</strong></td>
 		<td>{{ $freeTime->date_regarding->format('D d/m/Y') }}</td>

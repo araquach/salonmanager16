@@ -257,6 +257,13 @@ form {
 	padding: 0;
 }
 
+.thumb {
+	width: 60px;
+	height: 60px;
+	float: right;
+	margin-right: 1em;
+}
+
 table.detail-view
 {
 	border-collapse: collapse;
@@ -272,6 +279,12 @@ table.detail-view th, table.detail-view td
 	vertical-align: top;
 	color: #FFF;
 	font-weight: normal;
+}
+
+table.detail-view th {
+	font-size: 1.8em;
+	font-weight: bold;
+	text-align: left;
 }
 
 .question input {

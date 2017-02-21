@@ -20,6 +20,11 @@
 						@endif">
 	
 	<tr>
+		<th>Lieu Hour Request</th>
+		<td><img src="{{ asset('/images/icons/icons_lieu.png') }}" class="thumb"/>
+		</td>
+	</tr>
+	<tr>
 		<td><strong>Date requested:</strong></td>
 		<td>{{ $lieuHour->date_regarding->format('D d/m/Y') }}</td>
 	</tr>

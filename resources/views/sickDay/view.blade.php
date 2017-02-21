@@ -16,6 +16,12 @@
 						@else
 							pending
 						@endif">
+	
+	<tr>
+		<th>Sick Day</th>
+		<td><img src="{{ asset('/images/icons/icons_sick.png') }}" class="thumb"/>
+		</td>
+	</tr>
 	<tr>
 		<td><strong>From:</strong></td>
 		<td>{{ $sickDay->sick_from->format('D d/m/Y') }}</td>

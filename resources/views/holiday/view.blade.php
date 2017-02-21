@@ -11,7 +11,7 @@
 <div class="detail holiday">
 
 
-<table class="detail-view @if($holiday->approved == 1)
+<table class="detail-view holiday @if($holiday->approved == 1)
 							unapproved
 						@elseif($holiday->approved == 2)
 							approved
@@ -19,6 +19,11 @@
 							pending
 						@endif">
 	
+	<tr>
+		<th>Holiday Request</th>
+		<td><img src="{{ asset('/images/icons/icons_holiday.png') }}" class="thumb"/>
+		</td>
+	</tr>
 	<tr>
 		<td><strong>From:</strong></td>
 		<td>{{ $holiday->request_date_from->format('d/m/Y') }}</td>
