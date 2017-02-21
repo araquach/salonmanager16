@@ -22,20 +22,20 @@
 		<td>{{ $holiday->staff->first_name }} {{ $holiday->staff->second_name }}</td>
 	</tr>
 	<tr>
-		<td><strong>Days Requested:</strong></td>
-		<td>{{ calculateDays($holiday->hours_requested) }}</td>
-	</tr>
-	<tr>
-		<td><strong>Prebooked:</strong></td>
-		<td>{{ $holiday->prebooked ? 'Yes' : 'No'}}</td>
-	</tr>
-	<tr>
 		<td><strong>From:</strong></td>
 		<td>{{ $holiday->request_date_from->format('D d/m/Y') }}</td>
 	</tr>
 	<tr>
 		<td><strong>To:</strong></td>
 		<td>{{ $holiday->request_date_to->format('D d/m/Y') }}</td>
+	</tr>
+	<tr>
+		<td><strong>Days Requested:</strong></td>
+		<td>{{ calculateDays($holiday->hours_requested) }}</td>
+	</tr>
+	<tr>
+		<td><strong>Prebooked:</strong></td>
+		<td>{{ $holiday->prebooked ? 'Yes' : 'No'}}</td>
 	</tr>
 	<tr>
 		<td><strong>Saturday:</strong></td>

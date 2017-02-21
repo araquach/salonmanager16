@@ -10,7 +10,7 @@
 
 <div class="form lieuHour">
 	
-	<h2>Edit Lieu Hours Request</h2>
+	<h2>Edit Lieu Request</h2>
 	
 @if(Session::has('message'))
     <div>

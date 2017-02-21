@@ -38,7 +38,15 @@
 	</tr>
 	<tr>
 		<td><strong>Approved:</strong></td>
-		<td>{{ $holiday->approved ? 'Yes' : 'No' }}</td>
+		<td>
+			@if($holiday->approved == 1)
+				No
+			@elseif($holiday->approved == 2)
+				Yes
+			@else
+				Waiting Approval
+			@endif
+		</td>
 	</tr>
 	<tr>
 		<td>

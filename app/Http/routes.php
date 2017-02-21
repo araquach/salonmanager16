@@ -57,7 +57,7 @@ Route::post('admin/lieu/create', 'AdminLieuHourController@store');
 Route::get('admin/lieu/view/{lieuHour}', 'AdminLieuHourController@show' );
 Route::get('admin/lieu/{lieuHour}/edit', 'AdminLieuHourController@edit');
 Route::patch('admin/lieu/{lieuHour}', 'AdminLieuHourController@update');
-Route::patch('admin/lieu/{lieuHour}', 'AdminLieuController@authorise');
+Route::patch('admin/lieu/{lieuHour}', 'AdminLieuHourController@authorise');
 // need destroy routes
 
 // SickDay Routes

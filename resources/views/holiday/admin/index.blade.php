@@ -41,10 +41,6 @@
 		<b>{!! $holiday->staff->first_name !!} {!! $holiday->staff->second_name !!}</b> 
 		
 		<br />
-		
-		<b>Requested:</b> 
-		{!! calculateDays($holiday->hours_requested) !!}
-		<br />
 	
 		<b>From:</b> 
 		{{ $holiday->request_date_from->format('d/m/Y') }}
@@ -52,6 +48,10 @@
 	
 		<b>To:</b> 
 		{{ $holiday->request_date_to->format('d/m/Y') }}
+		<br />
+		
+		<b>Requested:</b> 
+		{!! calculateDays($holiday->hours_requested) !!}
 		<br />
 		
 		@if($holiday->saturday == 0.5) 

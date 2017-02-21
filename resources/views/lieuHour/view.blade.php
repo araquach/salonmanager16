@@ -47,7 +47,6 @@
 				Waiting Approval
 			@endif
 		</td>
-			
 	</tr>
 </table>
 

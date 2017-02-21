@@ -24,9 +24,24 @@ class AdminLieuHourController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category = null)
 	{
-		$lieuHours = LieuHour::all();
+		if($category == 'awaiting')
+		{
+			$lieuHours = LieuHour::where('approved', '=', 0)->get();
+		}
+		elseif($category == 'upcoming') 
+		{
+			$lieuHours = LieuHour::where('approved', '=', 2)->get();
+		}
+		elseif($category == 'denied') 
+		{
+			$lieuHours = LieuHour::where('approved', '=', 1)->get();
+		}
+		else
+		{
+			$lieuHours = LieuHour::get();
+		}
 		return View('/lieuHour/admin/index', compact('lieuHours'));
 	}
     
