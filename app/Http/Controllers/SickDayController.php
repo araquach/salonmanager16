@@ -30,7 +30,7 @@ class SickDayController extends Controller
         
         if($category == 'deducted')
 		{
-			$sickDay = SickDay::where('staff_id', '=', $user->id)
+			$sickDays = SickDay::where('staff_id', '=', $user->id)
 			->where('deducted', '=', 1)
 			->get();
 		}
