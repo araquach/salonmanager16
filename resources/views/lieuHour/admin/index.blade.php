@@ -9,18 +9,19 @@
 @section('content')
 
 <div class="pageHead lieuHour">
+	<h3>Admin</h3>
 
-@include('widgets.admin.lieuHour')
+	@include('widgets.admin.lieuHour')
 
-<nav class"pageHeadNav">
-<ul class="list--inline">
-<li><a href="{{ url('/admin/lieu/create') }}">Book lieuHour</a></li>
-<li><a href="{{ url('/admin/lieu/index', 'upcoming') }}">Upcoming lieuHours</a></li>
-<li><a href="{{ url('/admin/lieu/index', 'awaiting') }}">Awaiting Approval</a></li>
-<li><a href="{{ url('/admin/lieu/index', 'denied') }}">Denied lieuHours</a></li>
-<li><a href="{{ url('/admin/lieu/index') }}">All lieuHours</a></li>
-</ul>
-</nav>
+	<nav class"pageHeadNav">
+		<ul class="list--inline">
+			<li><a href="{{ url('/admin/lieu/create') }}">Book lieuHour</a></li>
+			<li><a href="{{ url('/admin/lieu/index', 'upcoming') }}">Upcoming lieuHours</a></li>
+			<li><a href="{{ url('/admin/lieu/index', 'awaiting') }}">Awaiting Approval</a></li>
+			<li><a href="{{ url('/admin/lieu/index', 'denied') }}">Denied lieuHours</a></li>
+			<li><a href="{{ url('/admin/lieu/index') }}">All lieuHours</a></li>
+		</ul>
+	</nav>
 
 </div> <!--.pageHead lieuHour-->
 

@@ -43,6 +43,7 @@ footer {
 
 .pageHead {
 	@include row();
+	position: relative;
 	height: 250px;
 	width: 100%;
 	min-width: 900px;
@@ -51,6 +52,12 @@ footer {
 	background-position: 40px 30px;
 	margin-top: -30px;
 	margin-bottom: 10px;
+	
+	h3 {
+		position: absolute;
+		right: 2em;
+		top: 1em;
+	}
 	
 	ul.info {
 		margin-left: 15em;

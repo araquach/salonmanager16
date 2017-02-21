@@ -9,17 +9,18 @@
 @section('content')
 
 <div class="pageHead sickDay">
+	<h3>Admin</h3>
 
 @include('widgets.admin.sickDay')
 
-<nav class"pageHeadNav">
-<ul class="list--inline">
-<li><a href="{{ url('/admin/sick/create') }}">Log Sick Day</a></li>
-<li><a href="{{ url('/admin/sick/index', 'deducted') }}">Deducted</a></li>
-<li><a href="{{ url('/admin/sick/index', 'waiting') }}">Not Deducted</a></li>
-<li><a href="{{ url('/admin/sick/index') }}">All Sick Days</a></li>
-</ul>
-</nav>
+	<nav class"pageHeadNav">
+		<ul class="list--inline">
+			<li><a href="{{ url('/admin/sick/create') }}">Log Sick Day</a></li>
+			<li><a href="{{ url('/admin/sick/index', 'deducted') }}">Deducted</a></li>
+			<li><a href="{{ url('/admin/sick/index', 'waiting') }}">Not Deducted</a></li>
+			<li><a href="{{ url('/admin/sick/index') }}">All Sick Days</a></li>
+		</ul>
+	</nav>
 
 </div> <!--.pageHead sickDay-->
 
@@ -33,19 +34,19 @@
 						
 		<b>{!! $sickDay->staff->first_name !!} {!! $sickDay->staff->second_name !!}</b> 
 		
-		<br />
+		<br>
 		
 		<b>Days Sick:</b> 
 		{!! calculateDays($sickDay->sick_hours) !!}
-		<br />
+		<br>
 	
 		<b>From:</b> 
 		{{ $sickDay->sick_from->format('d/m/Y') }}
-		<br />
+		<br>
 	
 		<b>To:</b> 
 		{{ $sickDay->sick_to->format('d/m/Y') }}
-		<br />
+		<br>
 	</div>
 </a>
 

@@ -9,21 +9,21 @@
 @section('content')
 
 <div class="pageHead holiday">
+	<h3>Admin</h3>
 
-@include('widgets.admin.holiday')
+	@include('widgets.admin.holiday')
 
-<nav class"pageHeadNav">
-<ul class="list--inline">
-<li><a href="{{ url('/holiday/admin/create') }}">Book holiday</a></li>
-<li><a href="{{ url('/holiday/admin/index', 'upcoming') }}">Upcoming Holidays</a></li>
-<li><a href="{{ url('/holiday/admin/index', 'awaiting') }}">Awaiting Approval</a></li>
-<li><a href="{{ url('/holiday/admin/index', 'denied') }}">Denied Holidays</a></li>
-<li><a href="{{ url('/holiday/admin/index') }}">All Holidays</a></li>
-</ul>
-</nav>
+	<nav class"pageHeadNav">
+		<ul class="list--inline">
+			<li><a href="{{ url('/admin/holiday/create') }}">Book holiday</a></li>
+			<li><a href="{{ url('/admin/holiday/index', 'upcoming') }}">Upcoming Holidays</a></li>
+			<li><a href="{{ url('/admin/holiday/index', 'awaiting') }}">Awaiting Approval</a></li>
+			<li><a href="{{ url('/admin/holiday/index', 'denied') }}">Denied Holidays</a></li>
+			<li><a href="{{ url('/admin/holiday/index') }}">All Holidays</a></li>
+		</ul>
+	</nav>
 
 </div> <!--.pageHead holiday-->
-
 
 <div class="views">
 

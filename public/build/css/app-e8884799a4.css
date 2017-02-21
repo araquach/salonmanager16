@@ -2094,6 +2094,7 @@ footer {
   margin-left: -15px;
   margin-right: -15px;
   margin-bottom: 0;
+  position: relative;
   height: 250px;
   width: 100%;
   min-width: 900px;
@@ -2107,6 +2108,10 @@ footer {
     display: table; }
   .pageHead:after {
     clear: both; }
+  .pageHead h3 {
+    position: absolute;
+    right: 2em;
+    top: 1em; }
   .pageHead ul.info {
     margin-left: 15em;
     height: 8.5em; }

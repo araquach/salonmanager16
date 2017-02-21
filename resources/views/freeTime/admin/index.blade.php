@@ -9,18 +9,19 @@
 @section('content')
 
 <div class="pageHead freeTime">
+	<h3>Admin</h3>
 
-@include('widgets.admin.freeTime')
+	@include('widgets.admin.freeTime')
 
-<nav class"pageHeadNav">
-<ul class="list--inline">
-<li><a href="{{ url('/freeTime/admin/create') }}">Book freeTime</a></li>
-<li><a href="{{ url('/freeTime/admin/index', 'upcoming') }}">Upcoming freeTimes</a></li>
-<li><a href="{{ url('/freeTime/admin/index', 'awaiting') }}">Awaiting Approval</a></li>
-<li><a href="{{ url('/freeTime/admin/index', 'denied') }}">Denied freeTimes</a></li>
-<li><a href="{{ url('/freeTime/admin/index') }}">All freeTimes</a></li>
-</ul>
-</nav>
+	<nav class"pageHeadNav">
+		<ul class="list--inline">
+			<li><a href="{{ url('/freeTime/admin/create') }}">Book freeTime</a></li>
+			<li><a href="{{ url('/freeTime/admin/index', 'upcoming') }}">Upcoming freeTimes</a></li>
+			<li><a href="{{ url('/freeTime/admin/index', 'awaiting') }}">Awaiting Approval</a></li>
+			<li><a href="{{ url('/freeTime/admin/index', 'denied') }}">Denied freeTimes</a></li>
+			<li><a href="{{ url('/freeTime/admin/index') }}">All freeTimes</a></li>
+		</ul>
+	</nav>
 
 </div> <!--.pageHead freeTime-->
 
