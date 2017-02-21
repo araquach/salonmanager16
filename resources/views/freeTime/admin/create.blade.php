@@ -18,7 +18,9 @@
     </div>
 @endif
 
-{!! Form::model($freeTime, ['method' => 'PATCH', 'action' => ['AdminFreeTimeController@update', $freeTime->id]]) !!}
+{!! Form::open(array(
+	'action' => 'AdminFreeTimeController@store'
+)) !!}
 
 @if (count($errors) > 0)
 
@@ -34,7 +36,13 @@
 @endif
 	
 	<p>
-    	{!! Form::label('date_regarding', 'Date of free time:') !!}
+    	{!! Form::label('staff_id', 'Staff:') !!}
+    	{!! Form::text('staff_id', old('staff_id')) !!}
+    	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
+    	{!! Form::label('date_regarding', 'Date:') !!}
     	{!! Form::date('date_regarding', old('date_regarding')) !!}
     	{!! $errors->first('date_regarding', '<div class="errorMessage">:message</div>') !!}
 	</p>
