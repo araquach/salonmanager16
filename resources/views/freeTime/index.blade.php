@@ -14,7 +14,7 @@
 
 <nav class"pageHeadNav">
 <ul class="list--inline">
-<li><a href="{{ url('/freetime/create') }}">Book freeTime</a></li>
+<li><a href="{{ url('/freetime/create') }}">Book Free Time</a></li>
 <li><a href="{{ url('/freetime/index', 'upcoming') }}">Upcoming Free Time</a></li>
 <li><a href="{{ url('/freetime/index', 'awaiting') }}">Awaiting Approval</a></li>
 <li><a href="{{ url('/freetime/index', 'denied') }}">Denied Free Time</a></li>

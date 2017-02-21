@@ -23,11 +23,11 @@
 		<td>{!! $freeTime->free_time_hours !!}</td>
 	</tr>
 	<tr>
-		<td><strong>From:</strong></td>
-		<td>{{ $freeTime->date_regarding->format('d/m/Y') }}</td>
+		<td><strong>Date:</strong></td>
+		<td>{{ $freeTime->date_regarding->format('D d/m/Y') }}</td>
 	</tr>
 	<tr>
-		<td><strong>To:</strong></td>
+		<td><strong>Description:</strong></td>
 		<td>{{ $freeTime->description }}</td>
 	</tr>
 	<tr>
@@ -43,6 +43,10 @@
 		</td>
 	</tr>
 </table>
+
+<a href="/freetime/{{ $freeTime->id }}/edit">Edit this Free Time request</a>
+
+<br>
 
 {!! link_to('/freetime/index', 'Back to Free Time overview') !!}
 

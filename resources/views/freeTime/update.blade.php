@@ -1,47 +1,67 @@
 @extends('layouts.main')
 
+@section('head')
+
+@include('layouts.partials.head')
+
+@stop
+
 @section('content')
 
-<script>
-  $(function() {
-    $( ".datepicker" ).each(function(){
-    	$(this).datepicker();
-    })
-  });
-</script>
-
 <div class="form freeTime">
+	
+	<h2>Edit Free Time</h2>
+	
+@if(Session::has('message'))
+    <div>
+    {{{ Session::get('message') }}}
+    </div>
+@endif
 
-<form action="{{ action('freeTimeController@handleUpdate') }}" method="post" role="form">
+{!! Form::model($freeTime, ['method' => 'PATCH', 'action' => ['FreeTimeController@update', $freeTime->id]]) !!}
 
-<input type="hidden" name="id" value="{{ $freeTime->id }}" />
+@if (count($errors) > 0)
 
-<div>
-<label for="staff_id">Staff Id</label>
-<input type="text" name="staff_id" value="{{ $freeTime->staff_id }}" />
+	<div class="errorSummary">
+			<p>Please fix the following input errors:</p>
+			<ul>
+		   		 @foreach($errors->all() as $error)
+		        <li>{{{ $error }}}</li>
+		    	@endforeach
+			</ul>
+	</div>
+   
+@endif
+
+	{!! Form::hidden('staff_id', Auth::id()) !!}
+	
+	<p>
+    	{!! Form::label('date_regarding', 'Date of free time:') !!}
+    	{!! Form::date('date_regarding', old('date_regarding')) !!}
+    	{!! $errors->first('date_regarding', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
+    	{!! Form::label('free_time_hours', 'Number of hours:') !!}
+    	{!! Form::number('free_time_hours', old('free_time_hours:')) !!}
+    	{!! $errors->first('free_time_hours', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
+    	{!! Form::label('description', 'Description:') !!}
+    	{!! Form::text('description', old('description')) !!}
+    	{!! $errors->first('description', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
+	    {!! Form::submit('Update') !!}
+	</p>
+	
+	<a href="{{ action('FreeTimeController@index') }}">cancel</a>
+
+{{ Form::close() }}
+
+
 </div>
-
-<div>
-<label for="hours_requested">Hours Requested</label>
-<input type="text" name="hours_requested" value="{{ $freeTime->hours_requested }}"/>
-</div>
-
-<div>
-<label for="request_date_from">Request Date From</label>
-<input type="text" name="request_date_from" class="datepicker" value="{{ $freeTime->request_date_from }}" />
-</div>
-
-<div>
-<label for="request_date_to">Request Date to</label>
-<input type="text" name="request_date_to" class="datepicker" value="{{ $freeTime->request_date_to }}" />
-</div>
-
-
-<input type="submit"  value="Save" />
-<a href="{{ action('freeTimeController@showIndex') }}">Cancel</a>
-</form>
-
-
-</div> <!--.form freeTime-->
 
 @stop

@@ -110,6 +110,8 @@ class FreeTimeController extends Controller
      */
     public function update(FreeTimeFormRequest $request, FreeTime $freeTime)
     {
+        $freeTime->update($request->all());
+        
         return redirect('freetime/index');
     }
 
