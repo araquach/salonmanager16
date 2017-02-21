@@ -25,12 +25,12 @@
 @if (count($errors) > 0)
 
 	<div class="errorSummary">
-			<p>Please fix the following input errors:</p>
-			<ul>
-		   		 @foreach($errors->all() as $error)
+		<p>Please fix the following input errors:</p>
+		<ul>
+	   		 @foreach($errors->all() as $error)
 		        <li>{{{ $error }}}</li>
-		    	@endforeach
-			</ul>
+	    	@endforeach
+		</ul>
 	</div>
    
 @endif
@@ -82,7 +82,7 @@
 	    {!! Form::submit('Create') !!}
 	</p>
 	
-	<a href="{{ action('HolidayController@index') }}">cancel</a>
+	<a href="{{ action('AdminHolidayController@index') }}">cancel</a>
 
 {{ Form::close() }}
 

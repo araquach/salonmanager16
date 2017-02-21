@@ -12,28 +12,28 @@
 	
 	<h2>Edit holiday</h2>
 	
-@if(Session::has('message'))
-    <div>
-    {{{ Session::get('message') }}}
-    </div>
-@endif
-
-{!! Form::model($holiday, ['method' => 'PATCH', 'action' => ['AdminHolidayController@update', $holiday->id]]) !!}
-
-
-@if (count($errors) > 0)
-
-	<div class="errorSummary">
+	@if(Session::has('message'))
+	    <div>
+	    	{{{ Session::get('message') }}}
+	    </div>
+	@endif
+	
+	{!! Form::model($holiday, ['method' => 'PATCH', 'action' => ['AdminHolidayController@update', $holiday->id]]) !!}
+	
+	
+	@if (count($errors) > 0)
+	
+		<div class="errorSummary">
 			<p>Please fix the following input errors:</p>
 			<ul>
 		   		 @foreach($errors->all() as $error)
-		        <li>{{{ $error }}}</li>
+		        	<li>{{{ $error }}}</li>
 		    	@endforeach
 			</ul>
-	</div>
-   
-@endif
-	
+		</div>
+	   
+	@endif
+		
 	<p>Current Date booked from: {{ $holiday->request_date_from->format('D d/m/Y') }}</p>
 	<p>
     	{!! Form::label('request_date_from', 'New from date:') !!}
@@ -77,8 +77,7 @@
 	
 	<a href="{{ action('AdminHolidayController@index') }}">cancel</a>
 
-{{ Form::close() }}
-
+	{{ Form::close() }}
 
 </div>
 

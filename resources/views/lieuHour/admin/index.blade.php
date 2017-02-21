@@ -25,7 +25,6 @@
 
 </div> <!--.pageHead lieuHour-->
 
-
 <div class="views">
 
 @foreach($lieuHours as $lieuHour)
@@ -56,7 +55,6 @@
 				Waiting Approval
 			@endif
 			
-			<br>
 		</div>
 	</a>
 	

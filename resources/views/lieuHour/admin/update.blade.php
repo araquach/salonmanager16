@@ -12,26 +12,26 @@
 	
 	<h2>Edit Lieu Request</h2>
 	
-@if(Session::has('message'))
-    <div>
-    {{{ Session::get('message') }}}
-    </div>
-@endif
+	@if(Session::has('message'))
+	    <div>
+	    {{{ Session::get('message') }}}
+	    </div>
+	@endif
 
-{!! Form::model($lieuHour, ['method' => 'PATCH', 'action' => ['AdminLieuHourController@update', $lieuHour->id]]) !!}
-
-@if (count($errors) > 0)
-
-	<div class="errorSummary">
-			<p>Please fix the following input errors:</p>
-			<ul>
-		   		 @foreach($errors->all() as $error)
-		        <li>{{{ $error }}}</li>
-		    	@endforeach
-			</ul>
-	</div>
-   
-@endif
+	{!! Form::model($lieuHour, ['method' => 'PATCH', 'action' => ['AdminLieuHourController@update', $lieuHour->id]]) !!}
+	
+	@if (count($errors) > 0)
+	
+		<div class="errorSummary">
+				<p>Please fix the following input errors:</p>
+				<ul>
+			   		 @foreach($errors->all() as $error)
+			        <li>{{{ $error }}}</li>
+			    	@endforeach
+				</ul>
+		</div>
+	   
+	@endif
 	
 	<p>
     	{!! Form::label('date_regarding', 'Date:') !!}
@@ -57,8 +57,7 @@
 	
 	<a href="{{ action('AdminLieuHourController@index') }}">cancel</a>
 
-{{ Form::close() }}
-
+	{{ Form::close() }}
 
 </div>
 

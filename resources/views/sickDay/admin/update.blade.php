@@ -1,57 +1,85 @@
 @extends('layouts.main')
 
+@section('head')
+
+@include('layouts.partials.head')
+
+@stop
+
 @section('content')
 
-
 <div class="form sickDay">
+	
+	<h2>Update Sick Days</h2>
+	
+	@if(Session::has('message'))
+	    <div>
+	    	{{{ Session::get('message') }}}
+	    </div>
+	@endif
+	
+	{!! Form::model($sickDay, ['method' => 'PATCH', 'action' => ['AdminSickDayController@update', $sickDay->id]]) !!}
+	
+	@if (count($errors) > 0)
+	
+		<div class="errorSummary">
+			<p>Please fix the following input errors:</p>
+			<ul>
+				@foreach($errors->all() as $error)
+			    	<li>{{{ $error }}}</li>
+			    @endforeach
+			</ul>
+		</div>
+	   
+	@endif
+	
+		<p>
+	    	{!! Form::label('staff_id', 'Staff:') !!}
+	    	{!! Form::text('staff_id', old('staff_id')) !!}
+	    	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
+		</p>
+		
+		<p>
+	    	{!! Form::label('sick_from', 'From:') !!}
+	    	{!! Form::date('sick_from', old('sick_from')) !!}
+	    	{!! $errors->first('sick_from', '<div class="errorMessage">:message</div>') !!}
+		</p>
+		
+		<p>
+	    	{!! Form::label('sick_to', 'To:') !!}
+	    	{!! Form::date('sick_to', old('sick_to:')) !!}
+	    	{!! $errors->first('sick_to', '<div class="errorMessage">:message</div>') !!}
+		</p>
+		
+		<p>
+	    	{!! Form::label('sick_hours', 'How many days:') !!}
+	    	{!! Form::number('sick_hours', old('sick_hours')) !!}
+	    	{!! $errors->first('sick_hours', '<div class="errorMessage">:message</div>') !!}
+		</p>
+		
+		<p>
+	    	{!! Form::label('description', 'Description:') !!}
+	    	{!! Form::text('description', old('description')) !!}
+	    	{!! $errors->first('description', '<div class="errorMessage">:message</div>') !!}
+		</p>
+		
+		<div class="row question">
+			<p>
+		    	<p class="scale_label">Deducted</p>
+		    	{!! Form::radio('deducted', '1') !!}
+		    	<p class="scale_label">Pending</p>
+		    	{!! Form::radio('deducted', '0') !!}
+			</p>
+		</div>
+		
+		<p>
+		    {!! Form::submit('Create') !!}
+		</p>
+		
+		<a href="{{ action('AdminSickDayController@index') }}">cancel</a>
+	
+	{{ Form::close() }}
 
-<form action="{{ action('sickDayController@handleUpdate') }}" method="post" role="form">
-
-<input type="hidden" name="id" value="{{ $sickDay->id }}" />
-
-<div>
-<label for="staff_id">Staff Id</label>
-<input type="text" name="staff_id" value="{{ $sickDay->staff_id }}" />
 </div>
-
-<div>
-<label for="hours_requested">Hours Requested</label>
-<input type="text" name="hours_requested" value="{{ $sickDay->hours_requested }}"/>
-</div>
-
-<div>
-<label for="prebooked">
-	<input type="checkbox" name="prebooked" {{ $sickDay->prebooked ? checked : '' }}" />Prebooked?
-</label>
-</div>
-
-<div>
-<label for="request_date_from">Request Date From</label>
-<input type="text" name="request_date_from" value="{{ $sickDay->request_date_from }}" />
-</div>
-
-<div>
-<label for="request_date_to">Request Date to</label>
-<input type="text" name="request_date_to" value="{{ $sickDay->request_date_to }}" />
-</div>
-
-<div>
-<label for="approved">
-	<input type="checkbox" name="approved" {{ $sickDay->approved ? checked : '' }}/>Approved? 
-</label>
-</div>
-
-<div>
-<label for="requested_on_date">Requested on date</label>
-<input type="text" name="requested_on_date" value="{{ $sickDay->requested_on_date }}" />
-</div>
-
-
-<input type="submit"  value="Save" />
-<a href="{{ action('sickDayController@showIndex') }}">Cancel</a>
-</form>
-
-
-</div> <!--.form sickDay-->
 
 @stop

@@ -11,7 +11,7 @@
 <div class="pageHead sickDay">
 	<h3>Admin</h3>
 
-@include('widgets.admin.sickDay')
+	@include('widgets.admin.sickDay')
 
 	<nav class"pageHeadNav">
 		<ul class="list--inline">
@@ -24,33 +24,31 @@
 
 </div> <!--.pageHead sickDay-->
 
-
 <div class="views">
 
-@foreach($sickDays as $sickDay)
-
-<a href="/admin/sick/view/{{ $sickDay->id }}" >
-	<div class="view pending" >
-						
-		<b>{!! $sickDay->staff->first_name !!} {!! $sickDay->staff->second_name !!}</b> 
-		
-		<br>
-		
-		<b>Days Sick:</b> 
-		{!! calculateDays($sickDay->sick_hours) !!}
-		<br>
+	@foreach($sickDays as $sickDay)
 	
-		<b>From:</b> 
-		{{ $sickDay->sick_from->format('d/m/Y') }}
-		<br>
+	<a href="/admin/sick/view/{{ $sickDay->id }}" >
+		<div class="view pending" >
+							
+			<b>{!! $sickDay->staff->first_name !!} {!! $sickDay->staff->second_name !!}</b> 
+			<br>
+			
+			<b>Days Sick:</b> 
+			{!! calculateDays($sickDay->sick_hours) !!}
+			<br>
+		
+			<b>From:</b> 
+			{{ $sickDay->sick_from->format('d/m/Y') }}
+			<br>
+		
+			<b>To:</b> 
+			{{ $sickDay->sick_to->format('d/m/Y') }}
+			<br>
+		</div>
+	</a>
 	
-		<b>To:</b> 
-		{{ $sickDay->sick_to->format('d/m/Y') }}
-		<br>
-	</div>
-</a>
-
-@endforeach
+	@endforeach
 
 </div>
 

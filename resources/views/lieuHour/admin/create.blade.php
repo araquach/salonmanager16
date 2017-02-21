@@ -12,28 +12,28 @@
 	
 	<h2>Book Lieu Hours</h2>
 	
-@if(Session::has('message'))
-    <div>
-    {{{ Session::get('message') }}}
-    </div>
-@endif
+	@if(Session::has('message'))
+	    <div>
+	    {{{ Session::get('message') }}}
+	    </div>
+	@endif
 
-{!! Form::open(array(
-	'action' => 'AdminLieuHourController@store'
-)) !!}
+	{!! Form::open(array(
+		'action' => 'AdminLieuHourController@store'
+	)) !!}
 
-@if (count($errors) > 0)
-
-	<div class="errorSummary">
+	@if (count($errors) > 0)
+	
+		<div class="errorSummary">
 			<p>Please fix the following input errors:</p>
 			<ul>
 		   		 @foreach($errors->all() as $error)
-		        <li>{{{ $error }}}</li>
+		        	<li>{{{ $error }}}</li>
 		    	@endforeach
 			</ul>
-	</div>
-   
-@endif
+		</div>
+	   
+	@endif
 
 	<p>
     	{!! Form::label('staff_id', 'Staff:') !!}
@@ -67,8 +67,7 @@
 	
 	<a href="{{ action('AdminLieuHourController@index') }}">cancel</a>
 
-{{ Form::close() }}
-
+	{{ Form::close() }}
 
 </div>
 

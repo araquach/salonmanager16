@@ -40,19 +40,19 @@
 						
 		<b>{!! $holiday->staff->first_name !!} {!! $holiday->staff->second_name !!}</b> 
 		
-		<br />
+		<br>
 	
 		<b>From:</b> 
 		{{ $holiday->request_date_from->format('d/m/Y') }}
-		<br />
+		<br>
 	
 		<b>To:</b> 
 		{{ $holiday->request_date_to->format('d/m/Y') }}
-		<br />
+		<br>
 		
 		<b>Requested:</b> 
 		{!! calculateDays($holiday->hours_requested) !!}
-		<br />
+		<br>
 		
 		@if($holiday->saturday == 0.5) 
 		 	<img src="{{ asset('/images/icons/icons_halfxsat.png') }}" />
