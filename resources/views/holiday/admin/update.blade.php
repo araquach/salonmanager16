@@ -1,57 +1,85 @@
 @extends('layouts.main')
 
+@section('head')
+
+@include('layouts.partials.head')
+
+@stop
+
 @section('content')
 
-
 <div class="form holiday">
+	
+	<h2>Edit holiday</h2>
+	
+@if(Session::has('message'))
+    <div>
+    {{{ Session::get('message') }}}
+    </div>
+@endif
 
-<form action="{{ action('HolidayController@handleUpdate') }}" method="post" role="form">
+{!! Form::model($holiday, ['method' => 'PATCH', 'action' => ['AdminHolidayController@update', $holiday->id]]) !!}
 
-<input type="hidden" name="id" value="{{ $holiday->id }}" />
 
-<div>
-<label for="staff_id">Staff Id</label>
-<input type="text" name="staff_id" value="{{ $holiday->staff_id }}" />
+@if (count($errors) > 0)
+
+	<div class="errorSummary">
+			<p>Please fix the following input errors:</p>
+			<ul>
+		   		 @foreach($errors->all() as $error)
+		        <li>{{{ $error }}}</li>
+		    	@endforeach
+			</ul>
+	</div>
+   
+@endif
+	
+	<p>Current Date booked from: {{ $holiday->request_date_from->format('D d/m/Y') }}</p>
+	<p>
+    	{!! Form::label('request_date_from', 'New from date:') !!}
+    	{!! Form::date('request_date_from') !!}
+    	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>Current Date booked to: {{ $holiday->request_date_to->format('D d/m/Y') }}</p>
+	<p>
+    	{!! Form::label('request_date_to', 'New to date:') !!}
+    	{!! Form::date('request_date_to') !!}
+    	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
+    	{!! Form::label('hours_requested', 'New days requested:') !!}
+    	{!! Form::number('hours_requested') !!}
+    	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<div class="row question">
+		<p>
+			{!! Form::label('saturday', 'How Many Saturdays:') !!}
+	    	<p class="scale_label">0</p>
+	    	{!! Form::radio('saturday', '0') !!}
+	    	<p class="scale_label">1/2</p>
+	    	{!! Form::radio('saturday', '.5') !!}
+	        <p class="scale_label">1</p>
+	        {!! Form::radio('saturday', '1') !!}
+	        <p class="scale_label">1 1/2</p>
+	        {!! Form::radio('saturday', '1.5') !!}
+	        <p class="scale_label">2</p>
+	        {!! Form::radio('saturday', '2') !!}
+	    	{!! $errors->first('saturday', '<div class="errorMessage">:message</div>') !!}
+		</p>
+	</div>
+	
+	<p>
+	    {!! Form::submit('Update') !!}
+	</p>
+	
+	<a href="{{ action('AdminHolidayController@index') }}">cancel</a>
+
+{{ Form::close() }}
+
+
 </div>
-
-<div>
-<label for="hours_requested">Hours Requested</label>
-<input type="text" name="hours_requested" value="{{ $holiday->hours_requested }}"/>
-</div>
-
-<div>
-<label for="prebooked">
-	<input type="checkbox" name="prebooked" {{ $holiday->prebooked ? checked : '' }}" />Prebooked?
-</label>
-</div>
-
-<div>
-<label for="request_date_from">Request Date From</label>
-<input type="text" name="request_date_from" value="{{ $holiday->request_date_from }}" />
-</div>
-
-<div>
-<label for="request_date_to">Request Date to</label>
-<input type="text" name="request_date_to" value="{{ $holiday->request_date_to }}" />
-</div>
-
-<div>
-<label for="approved">
-	<input type="checkbox" name="approved" {{ $holiday->approved ? checked : '' }}/>Approved? 
-</label>
-</div>
-
-<div>
-<label for="requested_on_date">Requested on date</label>
-<input type="text" name="requested_on_date" value="{{ $holiday->requested_on_date }}" />
-</div>
-
-
-<input type="submit"  value="Save" />
-<a href="{{ action('HolidayController@showIndex') }}">Cancel</a>
-</form>
-
-
-</div> <!--.form holiday-->
 
 @stop

@@ -47,6 +47,8 @@
 	</tr>
 </table>
 
+<a href="{{ action('AdminHolidayController@edit', $holiday) }}">Edit the information</a>
+
 <div class="form holiday">
 	
 @if(Session::has('message'))

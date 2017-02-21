@@ -29,7 +29,7 @@
 
 @foreach($freeTimes as $freeTime)
 
-<a href="/admin/freeTime/view/{{ $freeTime->id }}" >
+<a href="/admin/freetime/view/{{ $freeTime->id }}" >
 	<div class="view @if($freeTime->approved == 1) 
 							unapproved 
 						@elseif($freeTime->approved == 2) 
@@ -42,30 +42,20 @@
 		
 		<br />
 		
-		<b>Requested:</b> 
-		{!! calculateDays($freeTime->hours_requested) !!}
-		<br />
-	
-		<b>From:</b> 
-		{{ $freeTime->request_date_from->format('d/m/Y') }}
-		<br />
-	
-		<b>To:</b> 
-		{{ $freeTime->request_date_to->format('d/m/Y') }}
-		<br />
+		<b>Date:</b> 
+		{{ $freeTime->date_regarding->format('d/m/Y') }}
+		<br>
 		
-		@if($freeTime->saturday == 0.5) 
-		 	<img src="{{ asset('/images/icons/icons_halfxsat.png') }}" />
-		@elseif($freeTime->saturday == 1)
-			<img src="{{ asset('/images/icons/icons_1xsat.png') }}" />
-		@elseif($freeTime->saturday == 1.5)
-			<img src="{{ asset('/images/icons/icons_1andhalfxsat.png') }}" />
-		@elseif($freeTime->saturday == 2)
-			<img src="{{ asset('/images/icons/icons_2xsat.png') }}" />
-		@endif
-		
-		@if($freeTime->prebooked ==1)
-			<img src="{{ asset('images/icons/pb-11.png') }}">
+		<b>Hours Requested:</b> 
+		{!! $freeTime->free_time_hours !!}
+		<br>
+
+		@if($freeTime->approved == 1)
+			Denied
+		@elseif($freeTime->approved == 2)
+			Approved
+		@else
+			Waiting Approval
 		@endif
 	</div>
 </a>

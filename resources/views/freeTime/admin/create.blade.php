@@ -18,9 +18,7 @@
     </div>
 @endif
 
-{!! Form::open(array(
-	'action' => 'FreeTimeController@store'
-)) !!}
+{!! Form::model($freeTime, ['method' => 'PATCH', 'action' => ['AdminFreeTimeController@update', $freeTime->id]]) !!}
 
 @if (count($errors) > 0)
 
@@ -34,10 +32,6 @@
 	</div>
    
 @endif
-
-	{!! Form::hidden('staff_id', Auth::id()) !!}
-	
-	{!! Form::hidden('approved', 0) !!}
 	
 	<p>
     	{!! Form::label('date_regarding', 'Date of free time:') !!}
@@ -58,10 +52,10 @@
 	</p>
 	
 	<p>
-	    {!! Form::submit('Create') !!}
+	    {!! Form::submit('Update') !!}
 	</p>
 	
-	<a href="{{ action('FreeTimeController@index') }}">cancel</a>
+	<a href="{{ action('AdminFreeTimeController@index') }}">cancel</a>
 
 {{ Form::close() }}
 

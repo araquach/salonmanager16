@@ -24,10 +24,26 @@ class AdminFreeTimeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category = null)
 	{
-		$freeTimes = FreeTime::all();
-		return View('/freetime/admin/index', compact('freeTimes'));
+		if($category == 'awaiting')
+		{
+			$freeTimes = FreeTime::where('approved', '=', 0)->get();
+		}
+		elseif($category == 'upcoming') 
+		{
+			$freeTimes = FreeTime::where('approved', '=', 2)->get();
+		}
+		elseif($category == 'denied') 
+		{
+			$freeTimes = FreeTime::where('approved', '=', 1)->get();
+		}
+		else
+		{
+			$freeTimes = FreeTime::get();
+		}
+		
+		return View('/freeTime/admin/index', compact('freeTimes'));
 	}
     
     /**
@@ -71,7 +87,7 @@ class AdminFreeTimeController extends Controller
      * @param  \App\FreeTime  $freeTime
      * @return \Illuminate\Http\Response
      */
-	public function adminEdit(FreeTime $freeTime)
+	public function edit(FreeTime $freeTime)
     {
         return view('freeTime.admin.update', compact('freeTime'));
     }
