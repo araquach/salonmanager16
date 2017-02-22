@@ -34,6 +34,12 @@
 	   
 	@endif
 		
+	<p>
+    	{!! Form::label('staff_id', 'Staff:') !!}
+    	{!! Form::select('staff_id', $staffs, old('staff_id')) !!}
+    	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
 	<p>Current Date booked from: {{ $holiday->request_date_from->format('D d/m/Y') }}</p>
 	<p>
     	{!! Form::label('request_date_from', 'New from date:') !!}

@@ -52,7 +52,9 @@ class AdminLieuHourController extends Controller
      */
     public function create()
 	{
-		return View('/lieuHour/admin/create');
+		$staffs = Staff::lists('first_name', 'id');
+		
+		return View('/lieuHour/admin/create', compact('staffs'));
 	}
 	
 	/**
@@ -88,7 +90,9 @@ class AdminLieuHourController extends Controller
      */
 	public function edit(LieuHour $lieuHour)
     {
-        return view('lieuHour.admin.update', compact('lieuHour'));
+        $staffs = Staff::lists('first_name', 'id');
+        
+        return view('lieuHour.admin.update', compact('lieuHour', 'staffs'));
     }
     
     /**

@@ -37,7 +37,9 @@ class AdminSickDayController extends Controller
      */
     public function create()
 	{
-		return View('/sickDay/admin/create');
+		$staffs = Staff::lists('first_name', 'id');
+		
+		return View('/sickDay/admin/create', compact('staffs'));
 	}
 	
 	/**
@@ -73,7 +75,9 @@ class AdminSickDayController extends Controller
      */
 	public function edit(SickDay $sickDay)
     {
-        return view('sickDay.admin.update', compact('sickDay'));
+        $staffs = Staff::lists('first_name', 'id');
+        
+        return view('sickDay.admin.update', compact('sickDay', 'staffs'));
     }
     
     /**
@@ -97,7 +101,7 @@ class AdminSickDayController extends Controller
      * @param  \App\SickDay  $sickDay
      * @return \Illuminate\Http\Response
      */
-    public function authorise(Request $request, SickDay $sickDay)
+    public function deduct(Request $request, SickDay $sickDay)
     {
         $holiday->update($request->all());
         

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\FreeTime;
+use App\Staff;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\AdminFreeTimeFormRequest;
@@ -53,7 +54,9 @@ class AdminFreeTimeController extends Controller
      */
     public function create()
 	{
-		return View('/freeTime/admin/create');
+		$staffs = Staff::lists('first_name', 'id');
+		
+		return View('/freeTime/admin/create', compact('staffs'));
 	}
 	
 	/**
@@ -68,7 +71,7 @@ class AdminFreeTimeController extends Controller
 		
 	    FreeTime::create($input);
 		
-		return Redirect::action('AdminFreeTimeController@index');
+		return redirect('admin/freetime/index');
 	}
     
     /**
@@ -89,7 +92,9 @@ class AdminFreeTimeController extends Controller
      */
 	public function edit(FreeTime $freeTime)
     {
-        return view('freeTime.admin.update', compact('freeTime'));
+        $staffs = Staff::lists('first_name', 'id');
+        
+        return view('freeTime.admin.update', compact('freeTime', 'staffs'));
     }
     
     /**

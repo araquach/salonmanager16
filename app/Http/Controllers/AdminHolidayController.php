@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Holiday;
+use App\Staff;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\AdminHolidayFormRequest;
@@ -37,7 +38,9 @@ class AdminHolidayController extends Controller
      */
     public function create()
 	{
-		return View('/holiday/admin/create');
+		$staffs = Staff::lists('first_name', 'id');
+		
+		return View('/holiday/admin/create', compact('staffs'));
 	}
 	
 	/**
@@ -46,13 +49,13 @@ class AdminHolidayController extends Controller
      * @param  \App\Http\Requests\HolidayFormRequest  $request
      * @return \Illuminate\Http\Response
      */
-	public function store()
+	public function store(AdminHolidayFormRequest $request)
 	{
 		$input = $request->all();
 		
 	    Holiday::create($input);
 		
-		return Redirect::action('AdminHolidayController@index');
+		return redirect('admin/holiday/index');
 	}
     
     /**
@@ -73,7 +76,9 @@ class AdminHolidayController extends Controller
      */
 	public function edit(Holiday $holiday)
     {
-        return view('holiday.admin.update', compact('holiday'));
+        $staffs = Staff::lists('first_name', 'id');
+        
+        return view('holiday.admin.update', compact('holiday', 'staffs'));
     }
     
     /**

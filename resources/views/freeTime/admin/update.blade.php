@@ -34,6 +34,12 @@
 @endif
 	
 	<p>
+    	{!! Form::label('staff_id', 'Staff:') !!}
+    	{!! Form::select('staff_id', $staffs, old('staff_id')) !!}
+    	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
+	</p>
+	
+	<p>
     	{!! Form::label('date_regarding', 'Date of free time:') !!}
     	{!! Form::date('date_regarding', old('date_regarding')) !!}
     	{!! $errors->first('date_regarding', '<div class="errorMessage">:message</div>') !!}

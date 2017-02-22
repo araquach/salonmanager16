@@ -74,6 +74,7 @@ Route::post('admin/sick/create', 'AdminSickDayController@store');
 Route::get('admin/sick/view/{sickDay}', 'AdminSickDayController@show' );
 Route::get('admin/sick/{sickDay}/edit', 'AdminSickDayController@edit');
 Route::patch('admin/sick/{sickDay}', 'AdminSickDayController@update');
+Route::patch('admin/sick/{sickDay}', 'AdminSickDayController@deduct');
 // need destroy routes
 
 // FreeTime Routes
