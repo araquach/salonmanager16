@@ -44,10 +44,10 @@ class HolidayController extends Controller
 		elseif($category == 'denied') 
 		{
 			$holidays = Holiday::where('staff_id', '=', $user->id)
-			->where('approved', '=', 1)
+		    ->where('approved', '=', 1)
 			->get();
 		}
-		else
+	    else
 		{
 			$holidays = Holiday::where('staff_id', '=', $user->id)->get();
 		}

@@ -26,9 +26,27 @@ class AdminHolidayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category = null)
 	{
-		$holidays = Holiday::all();
+		if($category == 'awaiting')
+		{
+			$holidays = Holiday::where('approved', '=', 0)->get();
+		}
+		elseif($category == 'upcoming') 
+		{
+			$holidays = Holiday::where('approved', '=', 2)
+			->where('request_date_from', '>=', Carbon::now())
+			->get();
+		}
+		elseif($category == 'denied') 
+		{
+			$holidays = Holiday::where('approved', '=', 1)->get();
+		}
+	    else
+		{
+			$holidays = Holiday::all();
+		}
+		
 		return View('/holiday/admin/index', compact('holidays'));
 	}
     
