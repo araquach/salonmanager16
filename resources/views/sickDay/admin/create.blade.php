@@ -35,11 +35,13 @@
 	   
 	@endif
 	
-		<p>
-	    	{!! Form::label('staff_id', 'Staff:') !!}
-	    	{!! Form::text('staff_id', old('staff_id')) !!}
-	    	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
-		</p>
+		{!! Form::hidden('approved', 2) !!}
+	
+	<p>
+    	{!! Form::label('staff_id', 'Staff:') !!}
+    	{!! Form::select('staff_id', $staffs, old('staff_id')) !!}
+    	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
+	</p>
 		
 		<p>
 	    	{!! Form::label('sick_from', 'From:') !!}
