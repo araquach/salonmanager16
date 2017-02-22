@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Http\Requests\AdminLieuHourFormRequest;
 use Auth;
 use Carbon\Carbon;
+use DB;
 
 class AdminLieuHourController extends Controller
 {
@@ -53,7 +54,9 @@ class AdminLieuHourController extends Controller
      */
     public function create()
 	{
-		$staffs = Staff::lists('first_name', 'id');
+		$staffs = Staff::select(
+        	DB::raw("CONCAT(first_name,' ', second_name) AS full_name, id")
+    		)->lists('full_name', 'id');
 		
 		return View('/lieuHour/admin/create', compact('staffs'));
 	}

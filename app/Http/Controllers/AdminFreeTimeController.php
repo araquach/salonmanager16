@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Http\Requests\AdminFreeTimeFormRequest;
 use Auth;
 use Carbon\Carbon;
+use DB;
 
 class AdminFreeTimeController extends Controller
 {
@@ -54,7 +55,9 @@ class AdminFreeTimeController extends Controller
      */
     public function create()
 	{
-		$staffs = Staff::lists('first_name', 'id');
+		$staffs = Staff::select(
+        	DB::raw("CONCAT(first_name,' ', second_name) AS full_name, id")
+    		)->lists('full_name', 'id');
 		
 		return View('/freeTime/admin/create', compact('staffs'));
 	}

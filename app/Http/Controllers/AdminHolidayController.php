@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Http\Requests\AdminHolidayFormRequest;
 use Auth;
 use Carbon\Carbon;
+use DB;
 
 class AdminHolidayController extends Controller
 {
@@ -38,7 +39,9 @@ class AdminHolidayController extends Controller
      */
     public function create()
 	{
-		$staffs = Staff::lists('first_name', 'id');
+		$staffs = Staff::select(
+        	DB::raw("CONCAT(first_name,' ', second_name) AS full_name, id")
+    		)->lists('full_name', 'id');
 		
 		return View('/holiday/admin/create', compact('staffs'));
 	}

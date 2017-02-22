@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Http\Requests\AdminSickDayFormRequest;
 use Auth;
 use Carbon\Carbon;
+use DB;
 
 class AdminSickDayController extends Controller
 {
@@ -25,10 +26,22 @@ class AdminSickDayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category = null)
 	{
-		$sickDays = SickDay::all();
-		return View('/sickDay/admin/index', compact('sickDays'));
+		if($category == 'deducted')
+		{
+			$sickDays = SickDay::where('deducted', '=', 1)->get();
+		}
+		elseif($category == 'awaiting')
+		{
+		    $sickDays = SickDay::where('deducted', '=', 0)->get();
+		}
+		else
+		{
+		    $sickDays = SickDay::get();
+		}
+		
+		return view('/sickDay/admin/index', compact('sickDays'));
 	}
     
     /**
@@ -38,7 +51,9 @@ class AdminSickDayController extends Controller
      */
     public function create()
 	{
-		$staffs = Staff::lists('first_name', 'id');
+		$staffs = Staff::select(
+        	DB::raw("CONCAT(first_name,' ', second_name) AS full_name, id")
+    		)->lists('full_name', 'id');
 		
 		return View('/sickDay/admin/create', compact('staffs'));
 	}
@@ -88,9 +103,9 @@ class AdminSickDayController extends Controller
      * @param  \App\SickDay  $sickDay
      * @return \Illuminate\Http\Response
      */
-    public function update(SickDayFormRequest $request, SickDay $sickDay)
+    public function update(AdminSickDayFormRequest $request, SickDay $sickDay)
     {
-        $holiday->update($request->all());
+        $sickDay->update($request->all());
         
         return redirect('admin/sick/index');
     }

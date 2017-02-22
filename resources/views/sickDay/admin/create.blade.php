@@ -35,8 +35,6 @@
 	   
 	@endif
 	
-		{!! Form::hidden('approved', 2) !!}
-	
 	<p>
     	{!! Form::label('staff_id', 'Staff:') !!}
     	{!! Form::select('staff_id', $staffs, old('staff_id')) !!}
