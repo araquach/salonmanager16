@@ -24,9 +24,10 @@ class AdminLieuHourFormRequest extends Request
     public function rules()
     {
         return [
+            'staff_id' => 'required',
+            'date_regarding' => 'required | date',
             'lieu_hours' => 'required | numeric',
             'description' => 'required',
-            'date_regarding' => 'required | date',
         ];
     }
 }

@@ -24,9 +24,10 @@ class AdminHolidayFormRequest extends Request
     public function rules()
     {
         return [
-            'hours_requested' => 'required|numeric',
+            'staff_id' => 'required',
             'request_date_from' => 'required|date|after:today',
             'request_date_to' => 'required|date|after:request_date_from',
+            'hours_requested' => 'required|numeric',
         ];
     }
     

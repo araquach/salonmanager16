@@ -24,6 +24,7 @@ class AdminFreeTimeFormRequest extends Request
     public function rules()
     {
         return [
+            'staff_id' => 'required',
             'date_regarding' => 'required | date',
             'free_time_hours' => 'required | numeric',
             'description' => 'required',

@@ -24,10 +24,11 @@ class AdminSickDayFormRequest extends Request
     public function rules()
     {
         return [
-            'sick_hours' => 'required | numeric',
-            'description' => 'required',
+            'staff_id' => 'required',
             'sick_from' => 'required | date',
             'sick_to' => 'required | date',
+            'sick_hours' => 'required | numeric',
+            'description' => 'required',
         ];
     }
 }

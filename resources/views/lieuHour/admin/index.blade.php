@@ -9,7 +9,7 @@
 @section('content')
 
 <div class="pageHead lieuHour">
-	<h3>Admin</h3>
+	<a href="{{ url('/admin') }}"><h3>Admin</h3></a>
 
 	@include('widgets.admin.lieuHour')
 
