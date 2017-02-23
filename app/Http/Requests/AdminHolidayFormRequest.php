@@ -25,9 +25,9 @@ class AdminHolidayFormRequest extends Request
     {
         return [
             'staff_id' => 'required',
-            'request_date_from' => 'required|date|after:today',
-            'request_date_to' => 'required|date|after:request_date_from',
-            'hours_requested' => 'required|numeric',
+            'request_date_from' => 'required | date | after:today',
+            'request_date_to' => 'required | date | after:request_date_from',
+            'hours_requested' => 'required | numeric',
         ];
     }
     
