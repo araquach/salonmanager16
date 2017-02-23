@@ -75,7 +75,7 @@
 	</div>
 	
 	<p>
-	    {!! Form::submit('Create') !!}
+	    {!! Form::submit('Save') !!}
 	</p>
 	
 	<a href="{{ action('HolidayController@index') }}">cancel</a>

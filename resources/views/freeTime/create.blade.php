@@ -58,7 +58,7 @@
 	</p>
 	
 	<p>
-	    {!! Form::submit('Create') !!}
+	    {!! Form::submit('Save') !!}
 	</p>
 	
 	<a href="{{ action('FreeTimeController@index') }}">cancel</a>

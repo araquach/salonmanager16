@@ -69,7 +69,7 @@
 	</p>
 	
 	<p>
-	    {!! Form::submit('Edit') !!}
+	    {!! Form::submit('Update') !!}
 	</p>
 	
 	<a href="{{ action('AdminLieuHourController@index') }}">cancel</a>

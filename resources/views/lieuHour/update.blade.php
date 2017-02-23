@@ -65,7 +65,7 @@
 	</p>
 	
 	<p>
-	    {!! Form::submit('Edit') !!}
+	    {!! Form::submit('Update') !!}
 	</p>
 	
 	<a href="{{ action('LieuHourController@index') }}">cancel</a>

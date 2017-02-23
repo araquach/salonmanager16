@@ -73,7 +73,7 @@
 		</div>
 		
 		<p>
-		    {!! Form::submit('Create') !!}
+		    {!! Form::submit('Update') !!}
 		</p>
 		
 		<a href="{{ action('AdminSickDayController@index') }}">cancel</a>
