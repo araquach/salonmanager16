@@ -68,7 +68,10 @@
 	</tr>
 </table>
 
+@if($holiday->approved < 1)
 <a href="/holiday/{{ $holiday->id }}/edit">Edit the holiday</a>
+@endif
+
 <br>
 {!! link_to('/holiday/index', 'Back to Holidays overview') !!}
 

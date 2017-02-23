@@ -22,6 +22,18 @@
 			<td>{{ $lieuHour->staff->first_name }} {{ $lieuHour->staff->second_name }}</td>
 		</tr>
 		<tr>
+		<td><strong>Add/Redeem:</strong></td>
+		<td>
+			@if($lieuHour->add_redeem == 1)
+				<b>Add</b>
+			@elseif($lieuHour->add_redeem == 2)
+				<b>Redeem</b>
+			@else
+				<b>Not Sure</b>
+			@endif
+		</td>
+	</tr>
+		<tr>
 			<td><strong>Date requested:</strong></td>
 			<td>{{ $lieuHour->date_regarding->format('D d/m/Y') }}</td>
 		</tr>

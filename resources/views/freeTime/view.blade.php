@@ -51,7 +51,9 @@
 	</tr>
 </table>
 
-<a href="/freetime/{{ $freeTime->id }}/edit">Edit this Free Time request</a>
+@if($freeTime->approved < 1)
+	<a href="/freetime/{{ $freeTime->id }}/edit">Edit this Free Time request</a>
+@endif
 
 <br>
 
