@@ -14,7 +14,7 @@
 
 <nav class"pageHeadNav">
 	<ul class="list--inline">
-		<li><a href="{{ url('/lieu/create') }}">Book Lieu Hours</a></li>
+		<li><a href="{{ url('/lieu/create') }}">Log Lieu Hours</a></li>
 		<li><a href="{{ url('/lieu/index', 'upcoming') }}">Upcoming Lieu</a></li>
 		<li><a href="{{ url('/lieu/index', 'awaiting') }}">Awaiting Approval</a></li>
 		<li><a href="{{ url('/lieu/index', 'denied') }}">Denied Lieu Hours</a></li>
@@ -38,6 +38,18 @@
 								pending 
 							@endif" >
 							
+			
+			
+			@if($lieuHour->add_redeem == 1)
+				<b>Add</b>
+			@elseif($lieuHour->add_redeem == 2)
+				<b>Redeem</b>
+			@else
+				<b>Not Sure</b>
+			@endif
+			
+			<br>
+			
 			<b>Request Date:</b> 
 			{{ $lieuHour->date_regarding->format('d/m/Y') }}
 			<br>

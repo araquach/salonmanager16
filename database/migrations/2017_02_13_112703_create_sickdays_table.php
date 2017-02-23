@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSickDaysTable extends Migration
+class CreateSickdaysTable extends Migration
 {
     /**
      * Run the migrations.

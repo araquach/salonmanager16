@@ -25,6 +25,7 @@ class AdminLieuHourFormRequest extends Request
     {
         return [
             'staff_id' => 'required',
+            'add_redeem' => 'required | numeric',
             'date_regarding' => 'required | date',
             'lieu_hours' => 'required | numeric',
             'description' => 'required',

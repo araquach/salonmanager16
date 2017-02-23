@@ -38,6 +38,16 @@
 								pending 
 							@endif" >
 							
+			@if($lieuHour->add_redeem == 1)
+				<b>Add</b>
+			@elseif($lieuHour->add_redeem == 2)
+				<b>Redeem</b>
+			@else
+				<b>Not Sure</b>
+			@endif
+			
+			<br>
+			
 			<b>Request Date:</b> 
 			{{ $lieuHour->date_regarding->format('d/m/Y') }}
 			<br>

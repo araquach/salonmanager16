@@ -35,6 +35,17 @@
 
 	{!! Form::hidden('staff_id', Auth::id()) !!}
 	
+	<div class="row question">
+		<p>
+	    	<p class="scale_label">Add</p>
+	    	{!! Form::radio('add_redeem', '1') !!}
+	    	<p class="scale_label">Redeem</p>
+	    	{!! Form::radio('add_redeem', '2') !!}
+	        
+	    	{!! $errors->first('add_redeem', '<div class="errorMessage">:message</div>') !!}
+		</p>
+	</div>
+	
 	<p>
     	{!! Form::label('date_regarding', 'Date:') !!}
     	{!! Form::date('date_regarding', old('date_regarding')) !!}

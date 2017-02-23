@@ -2145,6 +2145,8 @@ footer {
 
 form {
   max-width: 500px; }
+  form select {
+    background-color: #FFF; }
   form label {
     color: #fff; }
   form p:last-of-type {

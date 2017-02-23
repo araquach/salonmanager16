@@ -37,6 +37,17 @@
 
 	{!! Form::hidden('approved', 2) !!}
 	
+	<div class="row question">
+		<p>
+	    	<p class="scale_label">Add</p>
+	    	{!! Form::radio('add_redeem', '1') !!}
+	    	<p class="scale_label">Redeem</p>
+	    	{!! Form::radio('add_redeem', '2') !!}
+	        
+	    	{!! $errors->first('add_redeem', '<div class="errorMessage">:message</div>') !!}
+		</p>
+	</div>
+	
 	<p>
     	{!! Form::label('staff_id', 'Staff:') !!}
     	{!! Form::select('staff_id', $staffs, old('staff_id')) !!}

@@ -44,6 +44,7 @@ class AdminLieuHourController extends Controller
 		{
 			$lieuHours = LieuHour::get();
 		}
+		
 		return View('/lieuHour/admin/index', compact('lieuHours'));
 	}
     
@@ -67,13 +68,13 @@ class AdminLieuHourController extends Controller
      * @param  \App\Http\Requests\AdminLieuHourFormRequest  $request
      * @return \Illuminate\Http\Response
      */
-	public function store(AdminLieuHourController $request)
+	public function store(AdminLieuHourFormRequest $request)
 	{
 		$input = $request->all();
 		
 	    LieuHour::create($input);
 		
-		return Redirect::action('AdminLieuHourController@index');
+		return redirect('admin/lieu/index');
 	}
     
     /**
