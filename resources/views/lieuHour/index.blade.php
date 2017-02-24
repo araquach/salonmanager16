@@ -18,7 +18,7 @@
 		<li><a href="{{ url('/lieu/index', 'upcoming') }}">Upcoming Lieu</a></li>
 		<li><a href="{{ url('/lieu/index', 'awaiting') }}">Awaiting Approval</a></li>
 		<li><a href="{{ url('/lieu/index', 'denied') }}">Denied Lieu Hours</a></li>
-		<li><a href="{{ url('/lieu/index') }}">All Lieu Hours</a></li>
+		<li><a href="{{ url('/lieu/index', 'all') }}">All Lieu Hours</a></li>
 	</ul>
 </nav>
 

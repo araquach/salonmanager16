@@ -24,7 +24,7 @@ class SickDayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($category = null)
+    public function index($category = 'deducted')
     {
         $user = Auth::user();
         
@@ -40,7 +40,7 @@ class SickDayController extends Controller
 			->where('deducted', '=', 0)
 			->get();
 		}
-		else
+		elseif($category == 'all')
 		{
 		    $sickDays = SickDay::where('staff_id', '=', $user->id)->get();
 		}

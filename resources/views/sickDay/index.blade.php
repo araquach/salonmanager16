@@ -16,7 +16,7 @@
 <ul class="list--inline">
 <li><a href="{{ url('/sick/index', 'deducted') }}">Deducted Sick</a></li>
 <li><a href="{{ url('/sick/index', 'awaiting') }}">Awaiting Deduction</a></li>
-<li><a href="{{ url('/sick/index') }}">All Sick Days</a></li>
+<li><a href="{{ url('/sick/index', 'all') }}">All Sick Days</a></li>
 </ul>
 </nav>
 

@@ -18,7 +18,7 @@
 <li><a href="{{ url('/holiday/index', 'upcoming') }}">Upcoming Holidays</a></li>
 <li><a href="{{ url('/holiday/index', 'awaiting') }}">Awaiting Approval</a></li>
 <li><a href="{{ url('/holiday/index', 'denied') }}">Denied Holidays</a></li>
-<li><a href="{{ url('/holiday/index') }}">All Holidays</a></li>
+<li><a href="{{ url('/holiday/index', 'all') }}">All Holidays</a></li>
 </ul>
 </nav>
 

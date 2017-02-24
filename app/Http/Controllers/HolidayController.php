@@ -24,7 +24,7 @@ class HolidayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($category = null)
+    public function index($category = 'upcoming')
     {
         $user = Auth::user();
         
@@ -47,7 +47,7 @@ class HolidayController extends Controller
 		    ->where('approved', '=', 1)
 			->get();
 		}
-	    else
+	    elseif($category == 'all')
 		{
 			$holidays = Holiday::where('staff_id', '=', $user->id)->get();
 		}

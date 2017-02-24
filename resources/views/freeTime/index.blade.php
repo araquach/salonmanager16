@@ -18,7 +18,7 @@
 <li><a href="{{ url('/freetime/index', 'upcoming') }}">Upcoming Free Time</a></li>
 <li><a href="{{ url('/freetime/index', 'awaiting') }}">Awaiting Approval</a></li>
 <li><a href="{{ url('/freetime/index', 'denied') }}">Denied Free Time</a></li>
-<li><a href="{{ url('/freetime/index') }}">All Free Time</a></li>
+<li><a href="{{ url('/freetime/index', 'all') }}">All Free Time</a></li>
 </ul>
 </nav>
 

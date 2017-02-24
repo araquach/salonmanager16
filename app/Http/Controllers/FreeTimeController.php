@@ -24,7 +24,7 @@ class FreeTimeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($category = null)
+    public function index($category = 'upcoming')
     {
         $user = Auth::user();
         
@@ -46,7 +46,7 @@ class FreeTimeController extends Controller
 			->where('approved', '=', 1)
 			->get();
 		}
-		else
+		elseif($category == 'all')
 		{
 			$freeTimes = FreeTime::where('staff_id', '=', $user->id)->get();
 		}
