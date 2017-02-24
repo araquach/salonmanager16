@@ -10,13 +10,13 @@ class Staff extends Model
     
     protected $dates = ['created_at', 'updated_at'];
     
-    protected $with = ['user'];
+    // protected $with = ['user'];
     
     protected $table = 'staffs';
     
     public function user()
     {
-        return $this->belongsTo('App\User', 'staff_id');
+        return $this->hasOne('App\User');
     }
     
     public function holiday()

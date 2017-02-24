@@ -21,7 +21,6 @@ class CreateStaffTable extends Migration
 			$table->string('address3');
 			$table->string('postcode');
 			$table->string('email');
-			$table->string('phone');
 			$table->string('mobile');
 			$table->integer('iris_id')->unsigned();
 			$table->integer('salon_id')->unsigned();

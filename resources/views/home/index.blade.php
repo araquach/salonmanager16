@@ -10,7 +10,8 @@
 
 @if(Auth::user())
 
-<h4>Welcome {{ Auth::user()->name }}</h4>
+<h4>Welcome {{ Auth::user()->staff->first_name }}</h4>
+
 
 <div id="menuBox">
     

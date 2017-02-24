@@ -24,7 +24,7 @@ class HolidaysTableSeeder extends Seeder
         ]);
         
         DB::table('holidays')->insert([
-            'staff_id' => '1',
+            'staff_id' => '2',
             'hours_requested' => '8',
             'prebooked' => '1',
             'request_date_from' => '2017-04-05',
@@ -36,7 +36,7 @@ class HolidaysTableSeeder extends Seeder
         ]);
         
         DB::table('holidays')->insert([
-            'staff_id' => '1',
+            'staff_id' => '3',
             'hours_requested' => '24',
             'prebooked' => '0',
             'request_date_from' => '2017-03-02',
@@ -48,7 +48,7 @@ class HolidaysTableSeeder extends Seeder
         ]);
         
         DB::table('holidays')->insert([
-            'staff_id' => '1',
+            'staff_id' => '4',
             'hours_requested' => '32',
             'prebooked' => '1',
             'request_date_from' => '2017-05-10',
@@ -60,7 +60,7 @@ class HolidaysTableSeeder extends Seeder
         ]);
         
         DB::table('holidays')->insert([
-            'staff_id' => '2',
+            'staff_id' => '5',
             'hours_requested' => '8',
             'prebooked' => '0',
             'request_date_from' => '2017-02-28',
@@ -72,7 +72,7 @@ class HolidaysTableSeeder extends Seeder
         ]);
         
         DB::table('holidays')->insert([
-            'staff_id' => '2',
+            'staff_id' => '6',
             'hours_requested' => '40',
             'prebooked' => '1',
             'request_date_from' => '2017-05-22',
@@ -84,7 +84,7 @@ class HolidaysTableSeeder extends Seeder
         ]);
         
         DB::table('holidays')->insert([
-            'staff_id' => '2',
+            'staff_id' => '4',
             'hours_requested' => '8',
             'prebooked' => '0',
             'request_date_from' => '2017-03-02',

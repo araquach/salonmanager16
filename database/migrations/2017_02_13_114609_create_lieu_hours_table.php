@@ -16,7 +16,7 @@ class CreateLieuHoursTable extends Migration
             $table->increments('id');
             $table->integer('staff_id')->unsigned();
             $table->integer('add_redeem')->unsigned();
-            $table->integer('lieu_hours')->unsigned();
+            $table->integer('lieu_hours');
             $table->string('description');
             $table->date('date_regarding');
             $table->integer('approved');
