@@ -26,7 +26,7 @@ class AdminSickDayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($category = null)
+    public function index($category = 'awaiting')
 	{
 		if($category == 'deducted')
 		{
@@ -36,9 +36,9 @@ class AdminSickDayController extends Controller
 		{
 		    $sickDays = SickDay::where('deducted', '=', 0)->get();
 		}
-		else
+		elseif($category == 'all')
 		{
-		    $sickDays = SickDay::get();
+		    $sickDays = SickDay::all();
 		}
 		
 		return view('/sickDay/admin/index', compact('sickDays'));

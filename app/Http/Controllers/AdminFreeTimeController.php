@@ -26,13 +26,13 @@ class AdminFreeTimeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($category = null)
+    public function index($category = 'awaiting')
 	{
 		if($category == 'awaiting')
 		{
 			$freeTimes = FreeTime::where('approved', '=', 0)->get();
 		}
-		elseif($category == 'upcoming') 
+		elseif($category == 'approved') 
 		{
 			$freeTimes = FreeTime::where('approved', '=', 2)->get();
 		}
@@ -40,9 +40,9 @@ class AdminFreeTimeController extends Controller
 		{
 			$freeTimes = FreeTime::where('approved', '=', 1)->get();
 		}
-		else
+		elseif($category == 'all')
 		{
-			$freeTimes = FreeTime::get();
+			$freeTimes = FreeTime::all();
 		}
 		
 		return View('/freeTime/admin/index', compact('freeTimes'));

@@ -26,13 +26,13 @@ class AdminHolidayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($category = null)
+    public function index($category = 'awaiting')
 	{
 		if($category == 'awaiting')
 		{
 			$holidays = Holiday::where('approved', '=', 0)->get();
 		}
-		elseif($category == 'upcoming') 
+		elseif($category == 'approved') 
 		{
 			$holidays = Holiday::where('approved', '=', 2)
 			->where('request_date_from', '>=', Carbon::now())
@@ -42,7 +42,7 @@ class AdminHolidayController extends Controller
 		{
 			$holidays = Holiday::where('approved', '=', 1)->get();
 		}
-	    else
+	    elseif($category == 'all')
 		{
 			$holidays = Holiday::all();
 		}

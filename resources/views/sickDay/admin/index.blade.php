@@ -16,9 +16,9 @@
 	<nav class"pageHeadNav">
 		<ul class="list--inline">
 			<li><a href="{{ url('/admin/sick/create') }}">Log Sick Day</a></li>
-			<li><a href="{{ url('/admin/sick/index', 'deducted') }}">Deducted Sick</a></li>
 			<li><a href="{{ url('/admin/sick/index', 'awaiting') }}">Awaiting Deduction</a></li>
-			<li><a href="{{ url('/admin/sick/index') }}">All Sick Days</a></li>
+			<li><a href="{{ url('/admin/sick/index', 'deducted') }}">Deducted Sick</a></li>
+			<li><a href="{{ url('/admin/sick/index', 'all') }}">All Sick Days</a></li>
 		</ul>
 	</nav>
 

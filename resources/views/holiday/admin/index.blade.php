@@ -16,10 +16,10 @@
 	<nav class"pageHeadNav">
 		<ul class="list--inline">
 			<li><a href="{{ url('/admin/holiday/create') }}">Book holiday</a></li>
-			<li><a href="{{ url('/admin/holiday/index', 'upcoming') }}">Upcoming Holidays</a></li>
 			<li><a href="{{ url('/admin/holiday/index', 'awaiting') }}">Awaiting Approval</a></li>
+			<li><a href="{{ url('/admin/holiday/index', 'approved') }}">Approved Holidays</a></li>
 			<li><a href="{{ url('/admin/holiday/index', 'denied') }}">Denied Holidays</a></li>
-			<li><a href="{{ url('/admin/holiday/index') }}">All Holidays</a></li>
+			<li><a href="{{ url('/admin/holiday/index', 'all') }}">All Holidays</a></li>
 		</ul>
 	</nav>
 
