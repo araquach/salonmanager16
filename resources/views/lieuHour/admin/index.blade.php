@@ -38,6 +38,8 @@
 								pending 
 							@endif" >
 							
+			<b>{!! $lieuHour->staff->first_name !!} {!! $lieuHour->staff->second_name !!}</b>
+			
 			@if($lieuHour->add_redeem == 1)
 				<b>Add</b>
 			@elseif($lieuHour->add_redeem == 2)

@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Carbon\Carbon;
-
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+use Collective\Html\Eloquent\FormAccessible;
 
 class SickDay extends Model
 {
@@ -15,5 +15,25 @@ class SickDay extends Model
     public function staff()
     {
         return $this->belongsTo('App\Staff', 'staff_id');
+    }
+    
+    use FormAccessible;
+
+    /**
+     * Convert sick_from date format
+     *
+     */
+    public function formRequestSickFromAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
+    }
+    
+    /**
+     * Convert sick_to date format
+     *
+     */
+    public function formRequestSickToAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
     }
 }

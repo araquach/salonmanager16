@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Carbon\Carbon;
-
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+use Collective\Html\Eloquent\FormAccessible;
 
 class Holiday extends Model
 {
@@ -15,6 +15,26 @@ class Holiday extends Model
     public function staff()
     {
         return $this->belongsTo('App\Staff', 'staff_id');
+    }
+    
+    use FormAccessible;
+
+    /**
+     * Convert request_date_from date format
+     *
+     */
+    public function formRequestDateFromAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
+    }
+    
+    /**
+     * Convert request_date_to date format
+     *
+     */
+    public function formRequestDateToAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
     }
     
     public static function boot()

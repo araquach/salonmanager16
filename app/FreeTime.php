@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Carbon\Carbon;
-
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+use Collective\Html\Eloquent\FormAccessible;
 
 class FreeTime extends Model
 {
@@ -17,5 +17,16 @@ class FreeTime extends Model
     public function staff()
     {
         return $this->belongsTo('App\Staff', 'staff_id');
+    }
+    
+    use FormAccessible;
+
+    /**
+     * Convert request_date_from date format
+     *
+     */
+    public function formRequestDateRegardingAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
     }
 }
