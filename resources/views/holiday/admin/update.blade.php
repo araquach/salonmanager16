@@ -36,18 +36,16 @@
 		
 	<p>
     	{!! Form::label('staff_id', 'Staff:') !!}
-    	{!! Form::select('staff_id', $staffs, old('staff_id')) !!}
+    	{!! Form::select('staff_id', $staffs) !!}
     	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
-	<p>Current Date booked from: {{ $holiday->request_date_from->format('D d/m/Y') }}</p>
 	<p>
     	{!! Form::label('request_date_from', 'New from date:') !!}
     	{!! Form::date('request_date_from') !!}
     	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
-	<p>Current Date booked to: {{ $holiday->request_date_to->format('D d/m/Y') }}</p>
 	<p>
     	{!! Form::label('request_date_to', 'New to date:') !!}
     	{!! Form::date('request_date_to') !!}

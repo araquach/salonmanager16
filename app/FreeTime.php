@@ -25,7 +25,7 @@ class FreeTime extends Model
      * Convert request_date_from date format
      *
      */
-    public function formRequestDateRegardingAttribute($value)
+    public function formDateRegardingAttribute($value)
     {
         return Carbon::parse($value)->format('Y-m-d');
     }

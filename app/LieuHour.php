@@ -21,13 +21,14 @@ class LieuHour extends Model
     }
     
     use FormAccessible;
-
+    
     /**
-     * Convert date_regarding date format
+     * Convert request_date_to date format
      *
      */
-    public function formRequestDateRegardingAttribute($value)
+    public function formDateRegardingAttribute($value)
     {
         return Carbon::parse($value)->format('Y-m-d');
     }
+    
 }

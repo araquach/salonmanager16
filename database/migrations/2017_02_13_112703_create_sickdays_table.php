@@ -17,8 +17,8 @@ class CreateSickdaysTable extends Migration
             $table->integer('staff_id')->unsigned();
             $table->integer('sick_hours')->unsigned();
             $table->string('description');
-            $table->date('sick_from');
-            $table->date('sick_to');
+            $table->dateTime('sick_from');
+            $table->dateTime('sick_to');
             $table->integer('deducted')->unsigned()->nullable();
             $table->timestamps();
         });

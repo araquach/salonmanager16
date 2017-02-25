@@ -17,7 +17,7 @@ class CreateFreeTimesTable extends Migration
             $table->integer('staff_id')->unsigned();
             $table->integer('free_time_hours')->unsigned();
             $table->string('description');
-            $table->date('date_regarding');
+            $table->dateTime('date_regarding');
             $table->integer('approved');
             $table->timestamps();
         });

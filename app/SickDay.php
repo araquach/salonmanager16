@@ -23,7 +23,7 @@ class SickDay extends Model
      * Convert sick_from date format
      *
      */
-    public function formRequestSickFromAttribute($value)
+    public function formSickFromAttribute($value)
     {
         return Carbon::parse($value)->format('Y-m-d');
     }
@@ -32,7 +32,7 @@ class SickDay extends Model
      * Convert sick_to date format
      *
      */
-    public function formRequestSickToAttribute($value)
+    public function formSickToAttribute($value)
     {
         return Carbon::parse($value)->format('Y-m-d');
     }

@@ -18,7 +18,7 @@ class CreateLieuHoursTable extends Migration
             $table->integer('add_redeem')->unsigned();
             $table->integer('lieu_hours');
             $table->string('description');
-            $table->date('date_regarding');
+            $table->dateTime('date_regarding');
             $table->integer('approved');
             $table->timestamps();
         });
