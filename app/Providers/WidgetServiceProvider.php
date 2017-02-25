@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 
 use App\Holiday;
+use App\LieuHour;
+use App\SickDay;
+use App\FreeTime;
 use App\User;
 use App\Staff;
 use Auth;
@@ -28,7 +31,7 @@ class WidgetServiceProvider extends ServiceProvider
         });
         
         view()->composer('widgets.lieuHour', function($view){
-            $view->with('total', "5 dummy");
+            $view->with('total', LieuHour::where('staff_id', '=', Auth::user()->id)->sum('lieu_hours'));
         });
         
         view()->composer('widgets.sickDay', function($view){
