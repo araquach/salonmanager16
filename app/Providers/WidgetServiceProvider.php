@@ -25,21 +25,34 @@ class WidgetServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('widgets.holiday', function($view){
-            $view->with('total', Holiday::where('staff_id', '=', Auth::user()->id)->sum('hours_requested') / 8);
+            $view->with('total', Holiday::where('staff_id', '=', Auth::user()->id)
+                ->where('approved', 2)->sum('hours_requested') / 8);
+            
             $view->with('entitlement', User::where('id', '=', Auth::user()->id)->first());
-            $view->with('remainingSat', 5 - Holiday::where('staff_id', '=', Auth::user()->id)->sum('saturday'));
+            
+            $view->with('remainingSat', 5 - Holiday::where('staff_id', '=', Auth::user()->id)
+                ->where('approved', 2)->sum('saturday'));
         });
         
         view()->composer('widgets.lieuHour', function($view){
-            $view->with('total', LieuHour::where('staff_id', '=', Auth::user()->id)->sum('lieu_hours'));
+            $view->with('total', LieuHour::where('staff_id', '=', Auth::user()->id)
+                 ->where('approved', 2)->sum('lieu_hours'));
+                 
         });
         
         view()->composer('widgets.sickDay', function($view){
-            $view->with('total', "8 dummy");
+            $view->with('total', SickDay::where('staff_id', '=', Auth::user()->id)
+                 ->where('deducted', 1)->sum('sick_hours') / 8);
+                 
+             $view->with('warning', SickDay::where('staff_id', '=', Auth::user()->id)
+                 ->where('deducted', 1)->count('sick_hours'));   
         });
         
         view()->composer('widgets.freeTime', function($view){
-            $view->with('total', "3 dummy");
+            $view->with('entitlement', User::where('id', '=', Auth::user()->id)->first());
+            
+            $view->with('total', FreeTime::where('staff_id', '=', Auth::user()->id)
+                ->where('approved', 2)->sum('free_time_hours'));
         });
     }
 

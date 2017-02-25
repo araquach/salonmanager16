@@ -27,6 +27,7 @@ class CreateStaffTable extends Migration
 			$table->date('dob');
 			$table->integer('working_hours_week')->unsigned();
 			$table->integer('holiday_entitlement')->unsigned();
+			$table->integer('free_time_entitlement')->unsigned();
 			$table->boolean('active');
 			$table->integer('role')->unsigned();
 			$table->timestamps();

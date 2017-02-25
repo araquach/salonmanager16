@@ -42,7 +42,7 @@
 		{{ $sickDay->sick_to->format('d/m/Y') }}
 		<br />
 		
-		<b>To:</b> 
+		<b>Sick Days:</b> 
 		{{ calculateDays($sickDay->sick_hours) }}
 		<br />
 	</div>

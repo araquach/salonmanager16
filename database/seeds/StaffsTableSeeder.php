@@ -25,6 +25,7 @@ class StaffsTableSeeder extends Seeder
             'dob' => '1976-02-16',
             'working_hours_week' => 40,
             'holiday_entitlement' => 27,
+            'free_time_entitlement' => 5,
             'active' => 1,
             'role' => 1
         ]);
@@ -42,6 +43,7 @@ class StaffsTableSeeder extends Seeder
             'dob' => '1987-01-06',
             'working_hours_week' => 40,
             'holiday_entitlement' => 27,
+            'free_time_entitlement' => 5,
             'active' => 1,
             'role' => 1
         ]);
@@ -60,6 +62,7 @@ class StaffsTableSeeder extends Seeder
             'dob' => '1987-11-21',
             'working_hours_week' => 40,
             'holiday_entitlement' => 27,
+            'free_time_entitlement' => 5,
             'active' => 1,
             'role' => 2
         ]);
@@ -78,6 +81,7 @@ class StaffsTableSeeder extends Seeder
             'dob' => '1989-07-26',
             'working_hours_week' => 40,
             'holiday_entitlement' => 27,
+            'free_time_entitlement' => 5,
             'active' => 1,
             'role' => 2
         ]);
@@ -96,6 +100,7 @@ class StaffsTableSeeder extends Seeder
             'dob' => '1984-04-27',
             'working_hours_week' => 16,
             'holiday_entitlement' => 11,
+            'free_time_entitlement' => 3,
             'active' => 1,
             'role' => 2
         ]);
@@ -114,6 +119,7 @@ class StaffsTableSeeder extends Seeder
             'dob' => '1982-09-13',
             'working_hours_week' => 40,
             'holiday_entitlement' => 27,
+            'free_time_entitlement' => 5,
             'active' => 1,
             'role' => 1
         ]);
