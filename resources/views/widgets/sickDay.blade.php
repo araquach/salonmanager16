@@ -2,7 +2,7 @@
 
 <ul class="info list--unstyled">
     
-    @if( $total > 1 )
+    @if( $total > 0 )
     <li>Sick Days: {{ $total }}</li>
     @else
     <li>No Sick days!</li>

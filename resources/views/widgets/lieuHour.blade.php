@@ -2,17 +2,17 @@
 
 <ul class="info list--unstyled">
     <li>
-        Total Available: 
-        @if($total > 0)
-            {{ $total }}
+        Total Owed: 
+        @if($total < 0)
+            {{ abs($total) }}
         @else
             0
         @endif
     </li>
     <li>
-        Total Owed: 
-        @if($total < 0)
-            {{ abs($total) }}
+        Total Available: 
+        @if($total > 0)
+            {{ $total }}
         @else
             0
         @endif
