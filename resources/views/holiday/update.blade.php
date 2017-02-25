@@ -40,20 +40,20 @@
 	
 	<p>Current Date booked from: {{ $holiday->request_date_from->format('D d/m/Y') }}</p>
 	<p>
-    	{!! Form::label('request_date_from', 'New from date:') !!}
+    	{!! Form::label('request_date_from', 'Date From:') !!}
     	{!! Form::date('request_date_from') !!}
     	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>Current Date booked to: {{ $holiday->request_date_to->format('D d/m/Y') }}</p>
 	<p>
-    	{!! Form::label('request_date_to', 'New to date:') !!}
+    	{!! Form::label('request_date_to', 'Date To:') !!}
     	{!! Form::date('request_date_to') !!}
     	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>
-    	{!! Form::label('hours_requested', 'New days requested:') !!}
+    	{!! Form::label('hours_requested', 'Hours requested:') !!}
     	{!! Form::number('hours_requested') !!}
     	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
 	</p>
