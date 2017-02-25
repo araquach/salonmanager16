@@ -47,7 +47,9 @@
 	</tr>
 </table>
 
-<a href="{{ action('AdminHolidayController@edit', $holiday) }}">Edit the information</a>
+<div class="edit-button">
+	<a href="{{ action('AdminHolidayController@edit', $holiday) }}">Edit the information</a>
+</div>
 
 <div class="form holiday">
 	
@@ -88,6 +90,7 @@
 </div>
 
 {!! link_to('admin/holiday/index', 'Back to Holidays overview') !!}
+
 
 </div> <!-- detail holiday  -->
 

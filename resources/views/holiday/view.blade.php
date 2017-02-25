@@ -69,7 +69,9 @@
 </table>
 
 @if($holiday->approved < 1)
-<a href="/holiday/{{ $holiday->id }}/edit">Edit the holiday</a>
+<div class="edit-button">
+	<a href="/holiday/{{ $holiday->id }}/edit">Edit</a>
+</div>
 @endif
 
 <br>

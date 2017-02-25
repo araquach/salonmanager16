@@ -39,7 +39,9 @@
 		</tr>
 	</table>
 	
-	<a href="{{ action('AdminFreeTimeController@edit', $freeTime) }}">Edit the information</a>
+	<div class="edit-button">
+		<a href="{{ action('AdminFreeTimeController@edit', $freeTime) }}">Edit the information</a>
+	</div>
 
 	<div class="form freeTime">
 		

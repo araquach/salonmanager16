@@ -63,7 +63,9 @@
 </table>
 
 @if($lieuHour->approved < 1)
-<a href="/lieu/{{ $lieuHour->id }}/edit">Edit the Lieu Hour request</a>
+<div class="edit-button">
+	<a href="/lieu/{{ $lieuHour->id }}/edit">Edit</a>
+</div>
 @endif
 
 <br>

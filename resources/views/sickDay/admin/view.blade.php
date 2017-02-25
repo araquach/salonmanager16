@@ -41,7 +41,9 @@
 	</tr>
 </table>
 
-<a href="{{ action('AdminSickDayController@edit', $sickDay) }}">Edit the information</a>
+<div class="edit-button">
+	<a href="{{ action('AdminSickDayController@edit', $sickDay) }}">Edit the information</a>
+</div>
 
 <br>
 

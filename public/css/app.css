@@ -2167,7 +2167,8 @@ form {
   width: 60%;
   min-width: 600px;
   padding: 40px;
-  padding-top: 80px; }
+  padding-top: 80px;
+  margin-left: 0; }
   .form:before, .form:after {
     content: "";
     display: table; }
@@ -2304,5 +2305,17 @@ table.detail-view th {
 .question input {
   width: 20px;
   margin-right: 40px; }
+
+.edit-button {
+  margin: 0;
+  margin-top: -3em;
+  margin-bottom: 2em; }
+  .edit-button a {
+    border: 3px solid #FFF;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 0; }
+    .edit-button a:hover {
+      opacity: .7; }
 
 /*# sourceMappingURL=app.css.map */
