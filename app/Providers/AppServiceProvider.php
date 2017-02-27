@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Validator::extend('availableDays', 'App\Http\CustomValidator@validateAvailableDays');
+        Validator::extend('availableSaturdays', 'App\Http\CustomValidator@validateAvailableSaturdays');
     }
 
     /**

@@ -27,6 +27,7 @@ class HolidayFormRequest extends Request
             'request_date_from' => 'required | date | after:yesterday',
             'request_date_to' => 'required | date | after:request_date_from)',
             'hours_requested' => 'required | numeric | available_days',
+            'saturday' => 'numeric | available_saturdays',
         ];
     }
     
@@ -34,6 +35,8 @@ class HolidayFormRequest extends Request
 	{
 	    return [
 	        'hours_requested.required' => 'Days requested is required',
+	        'hours_requested.available_days' => 'You don\'t have enough days available',
+	        'saturday.available_saturdays' => 'You don\'t have enough Saturdays left'
 		];
 	}
 }
