@@ -41,9 +41,9 @@
 			
 			
 			@if($lieuHour->add_redeem == 1)
-				<b>Add</b>
+				<b>Add Hours</b>
 			@elseif($lieuHour->add_redeem == 2)
-				<b>Redeem</b>
+				<b>Redeem Hours</b>
 			@else
 				<b>Not Sure</b>
 			@endif

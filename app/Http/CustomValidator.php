@@ -10,21 +10,21 @@ use Auth;
 
 class CustomValidator {
 
-    // public function validateAvailableDays($attribute, $value, $parameters, $validator)
-    // {
-    //     $holidays = Holiday::where('staff_id', '=', Auth::user()->id)->sum('hours_requested');
-    //     $entitlement = User::where('id', '=', Auth::user()->id)->first();
+    public function validateAvailableDays($attribute, $value, $parameters, $validator)
+    {
+        $holidays = Holiday::where('staff_id', '=', Auth::user()->id)->sum('hours_requested');
+        $entitlement = User::where('id', '=', Auth::user()->id)->first();
         
-    //     $remaining = $entitlement->staff->holiday_entitlement - $holidays;
+        $remaining = $entitlement->staff->holiday_entitlement * 8 - $holidays;
         
-    //     // dd($remaining, (int)$value);
+        // dd($remaining, (int)$value);
         
-    //     if((int)$value > $remaining)
-    //     {
-    //         return false;
-    //     }
+        if((int)$value > $remaining)
+        {
+            return false;
+        }
         
-    //     return true;
-    // }
+        return true;
+     }
 
 }
