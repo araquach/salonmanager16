@@ -5,6 +5,7 @@ namespace App\Http;
 use App\Holiday;
 use App\Staff;
 use App\User;
+use Carbon\Carbon;
 
 use Auth;
 
@@ -17,8 +18,6 @@ class CustomValidator {
         $entitlement = User::where('id', '=', Auth::user()->staff->id)->first();
         
         $remaining = $entitlement->staff->holiday_entitlement * 8 - $holidays;
-        
-        // dd((int)$holidays, (int)$value, $remaining);
         
         if((int)$value > $remaining)
         {
@@ -40,6 +39,20 @@ class CustomValidator {
         }
         
         return true;
+     }
+     
+    public function validateOnOrAfter($attribute, $value, $parameters, $validator)
+    {
+        
+        $comparison = array_get($validator->getData(), $parameters[0]);
+        
+        if(Carbon::parse($comparison) > Carbon::parse($value))
+        {
+            return false;
+        }
+        
+        return true;
+        
      }
 
 }
