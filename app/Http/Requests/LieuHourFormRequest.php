@@ -26,7 +26,7 @@ class LieuHourFormRequest extends Request
         return [
             'add_redeem' => 'required | numeric',
             'date_regarding' => 'required | date',
-            'lieu_hours' => 'required | numeric',
+            'lieu_hours' => 'required | numeric | max:4 ',
             'description' => 'required',
         ];
     }

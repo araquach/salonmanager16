@@ -31,17 +31,27 @@ class LieuHour extends Model
         return Carbon::parse($value)->format('Y-m-d');
     }
     
+    public function formLieuHoursAttribute($value)
+    {
+        return abs($value);
+    }
+    
     public static function boot()
     {
         parent::boot();
         
         self::creating(function($model){
             if ($model->add_redeem == 2)
-            {
-                $model->lieu_hours = -$model->lieu_hours;
-            }
             
-            return $model;
+            return $model->lieu_hours = -$model->lieu_hours;
+        
+        });
+        
+        self::updating(function($model){
+            if ($model->add_redeem == 2)
+            
+            return $model->lieu_hours = -$model->lieu_hours;
+            
         });
     }
 }
