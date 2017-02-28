@@ -40,14 +40,16 @@ class LieuHour extends Model
     {
         parent::boot();
         
-        self::creating(function($model){
+        self::creating(function($model)
+        {
             if ($model->add_redeem == 2)
             
             return $model->lieu_hours = -$model->lieu_hours;
         
         });
         
-        self::updating(function($model){
+        self::updating(function($model)
+        {
             if ($model->add_redeem == 2)
             
             return $model->lieu_hours = -$model->lieu_hours;

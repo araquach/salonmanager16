@@ -41,13 +41,13 @@ class Holiday extends Model
     {
         parent::boot();
         
-        self::creating(function($model){
-            if ($model->request_date_from > Carbon::now()->addWeeks(2))
-            {
-                $model->prebooked = 1;
-            }
+        self::creating(function($model)
+        {
             
-            return $model;
+            if ($model->request_date_from > Carbon::now()->addWeeks(2))
+
+            return $model->prebooked = 1;
+            
         });
     }
 }
