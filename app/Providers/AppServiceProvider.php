@@ -17,6 +17,8 @@ class AppServiceProvider extends ServiceProvider
         Validator::extend('availableDays', 'App\Http\CustomValidator@validateAvailableDays');
         Validator::extend('availableSaturdays', 'App\Http\CustomValidator@validateAvailableSaturdays');
         Validator::extend('onOrAfter', 'App\Http\CustomValidator@validateOnOrAfter');
+        Validator::extend('inAdvance', 'App\Http\CustomValidator@validateInAdvance');
+        Validator::extend('inLieu', 'App\Http\CustomValidator@validateInLieu');
     }
 
     /**

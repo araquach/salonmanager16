@@ -54,5 +54,37 @@ class CustomValidator {
         return true;
         
      }
+     
+     public function validateInAdvance($attribute, $value, $parameters, $validator)
+     {
+         $weeks = $parameters[0];
+         
+         $date = Carbon::parse($value);
+         
+         $limit = Carbon::now()->addWeeks($weeks);
+         
+         if( $date > $limit )
+         {
+             return false;
+         }
+         
+         return true;
+     }
+     
+     public function validateInLieu($attribute, $value, $parameters, $validator)
+     {
+         $weeks = $parameters[0];
+         
+         $date = Carbon::parse($value);
+         
+         $limit = Carbon::now()->addWeeks(-$weeks);
+         
+         if( $date < $limit )
+         {
+             return false;
+         }
+         
+         return true;
+     }
 
 }
