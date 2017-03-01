@@ -18,7 +18,7 @@
     </div>
 @endif
 
-{!! Form::open(array(
+{!! Form::model(array(
 	'action' => 'AdminHolidayController@store'
 )) !!}
 
@@ -39,25 +39,25 @@
 	
 	<p>
     	{!! Form::label('staff_id', 'Staff:') !!}
-    	{!! Form::select('staff_id', $staffs, old('staff_id')) !!}
+    	{!! Form::select('staff_id', $staffs) !!}
     	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>
     	{!! Form::label('request_date_from', 'From:') !!}
-    	{!! Form::date('request_date_from', old('request_date_from')) !!}
+    	{!! Form::date('request_date_from') !!}
     	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>
     	{!! Form::label('request_date_to', 'To:') !!}
-    	{!! Form::date('request_date_to', old('request_date_to:')) !!}
+    	{!! Form::date('request_date_to') !!}
     	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>
     	{!! Form::label('hours_requested', 'Hours Requested:') !!}
-    	{!! Form::number('hours_requested', old('hours_requested')) !!}
+    	{!! Form::number('hours_requested') !!}
     	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	

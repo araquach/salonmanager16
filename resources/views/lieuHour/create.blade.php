@@ -18,7 +18,7 @@
     </div>
 @endif
 
-{!! Form::open(array(
+{!! Form::model(array(
 	'action' => 'LieuHourController@store'
 )) !!}
 
@@ -52,19 +52,19 @@
 	
 	<p>
     	{!! Form::label('date_regarding', 'Date:') !!}
-    	{!! Form::date('date_regarding', old('date_regarding')) !!}
+    	{!! Form::date('date_regarding') !!}
     	{!! $errors->first('date_regarding', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>
     	{!! Form::label('lieu_hours', 'Hours:') !!}
-    	{!! Form::text('lieu_hours', old('lieu_hours:')) !!}
+    	{!! Form::text('lieu_hours') !!}
     	{!! $errors->first('lieu_hours', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>
     	{!! Form::label('description', 'Description:') !!}
-    	{!! Form::text('description', old('description')) !!}
+    	{!! Form::text('description') !!}
     	{!! $errors->first('description', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	

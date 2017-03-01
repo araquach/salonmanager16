@@ -15,11 +15,25 @@ elixir(function(mix) {
     mix.copy(
         'node_modules/vue/dist/vue.js',
         'resources/assets/js'
+    )
+    
+    .copy(
+        'node_modules/jquery/dist/jquery.js',
+        'resources/assets/js'
+    )
+    
+    .copy(
+        'node_modules/jquery-ui/build/release.js',
+        'resources/assets/js'
     );
     
     mix.scripts([
         'vue.js',
-     ], 'public/scripts/vue.js');
+     ], 'public/scripts/vue.js')
+     
+     .scripts([
+        'jquery.js',
+     ], 'public/scripts/jquery.js');
     
     mix.sass('app.scss');
 

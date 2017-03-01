@@ -35,25 +35,25 @@
 	
 	<p>
     	{!! Form::label('staff_id', 'Staff:') !!}
-    	{!! Form::select('staff_id', $staffs, old('staff_id')) !!}
+    	{!! Form::select('staff_id', $staffs) !!}
     	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>
     	{!! Form::label('date_regarding', 'Date of free time:') !!}
-    	{!! Form::date('date_regarding', old('date_regarding')) !!}
+    	{!! Form::date('date_regarding') !!}
     	{!! $errors->first('date_regarding', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>
     	{!! Form::label('free_time_hours', 'Number of hours:') !!}
-    	{!! Form::number('free_time_hours', old('free_time_hours:')) !!}
+    	{!! Form::number('free_time_hours') !!}
     	{!! $errors->first('free_time_hours', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<p>
     	{!! Form::label('description', 'Description:') !!}
-    	{!! Form::text('description', old('description')) !!}
+    	{!! Form::text('description') !!}
     	{!! $errors->first('description', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	

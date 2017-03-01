@@ -18,7 +18,7 @@
 	    </div>
 	@endif
 	
-	{!! Form::open(array(
+	{!! Form::model(array(
 		'action' => 'AdminSickDayController@store'
 	)) !!}
 	
@@ -37,31 +37,31 @@
 	
 	<p>
     	{!! Form::label('staff_id', 'Staff:') !!}
-    	{!! Form::select('staff_id', $staffs, old('staff_id')) !!}
+    	{!! Form::select('staff_id', $staffs) !!}
     	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
 	</p>
 		
 		<p>
 	    	{!! Form::label('sick_from', 'From:') !!}
-	    	{!! Form::date('sick_from', old('sick_from')) !!}
+	    	{!! Form::date('sick_from') !!}
 	    	{!! $errors->first('sick_from', '<div class="errorMessage">:message</div>') !!}
 		</p>
 		
 		<p>
 	    	{!! Form::label('sick_to', 'To:') !!}
-	    	{!! Form::date('sick_to', old('sick_to:')) !!}
+	    	{!! Form::date('sick_to') !!}
 	    	{!! $errors->first('sick_to', '<div class="errorMessage">:message</div>') !!}
 		</p>
 		
 		<p>
 	    	{!! Form::label('sick_hours', 'How many days:') !!}
-	    	{!! Form::number('sick_hours', old('sick_hours')) !!}
+	    	{!! Form::number('sick_hours') !!}
 	    	{!! $errors->first('sick_hours', '<div class="errorMessage">:message</div>') !!}
 		</p>
 		
 		<p>
 	    	{!! Form::label('description', 'Description:') !!}
-	    	{!! Form::text('description', old('description')) !!}
+	    	{!! Form::text('description') !!}
 	    	{!! $errors->first('description', '<div class="errorMessage">:message</div>') !!}
 		</p>
 		
