@@ -24,7 +24,7 @@ class FreeTimeFormRequest extends Request
     public function rules()
     {
         return [
-            'date_regarding' => 'required | date | after:Carbon::now()',
+            'date_regarding' => 'required | date',
             'free_time_hours' => 'required | numeric',
             'description' => 'required',
         ];

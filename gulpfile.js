@@ -12,6 +12,15 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
+    mix.copy(
+        'node_modules/vue/dist/vue.js',
+        'resources/assets/js'
+    );
+    
+    mix.scripts([
+        'vue.js',
+     ], 'public/scripts/vue.js');
+    
     mix.sass('app.scss');
 
     mix.version([

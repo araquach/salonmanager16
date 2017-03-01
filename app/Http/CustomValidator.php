@@ -2,8 +2,9 @@
 
 namespace App\Http;
 
-use App\Holiday;
 use App\Staff;
+use App\Holiday;
+use App\LieuHour;
 use App\User;
 use Carbon\Carbon;
 
@@ -57,34 +58,59 @@ class CustomValidator {
      
      public function validateInAdvance($attribute, $value, $parameters, $validator)
      {
-         $weeks = $parameters[0];
+         $weeks = array_get($validator->getData(), $parameters[0]);
          
          $date = Carbon::parse($value);
          
-         $limit = Carbon::now()->addWeeks($weeks);
-         
-         if( $date > $limit )
+         if($date->addWeeks($weeks));
          {
-             return false;
+             return true;
          }
          
-         return true;
+         return false;
      }
      
      public function validateInLieu($attribute, $value, $parameters, $validator)
      {
-         $weeks = $parameters[0];
+         $weeks = array_get($validator->getData(), $parameters[0]);
          
          $date = Carbon::parse($value);
          
-         $limit = Carbon::now()->addWeeks(-$weeks);
-         
-         if( $date < $limit )
+         if($date->addWeeks(-$weeks));
          {
-             return false;
+             return true;
          }
          
-         return true;
+         return false;
      }
+     
+     public function validateAvailableTime($attribute, $value, $parameters, $validator)
+     {
+        $hours = LieuHour::where('staff_id', '=', Auth::user()->staff->id)
+                            ->where('approved', 2)->sum('lieu_hours');
+        
+        $addRemove = array_get($validator->getData(), $parameters[0]);
+        
+        // dd((int)$addRemove, $hours, $value);
+        
+        if((int)$addRemove = 1) //add
+        {
+            if((int)$hours + (int)$value > 6)
+            {
+                return false;
+            }
+        }
+        
+        elseif((int)$addRemove = 2) //redeem
+        {
+            if((int)$hours - (int)$value < 6)
+            {
+                return false;
+            }
+        }
+
+        return true;
+        
+    }
 
 }

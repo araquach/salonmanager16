@@ -710,7 +710,6 @@ dd {
   *:after {
     background: transparent !important;
     color: black !important;
-    -webkit-filter: none !important;
     filter: none !important;
     text-shadow: none !important; }
   :root {
