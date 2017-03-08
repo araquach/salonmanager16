@@ -94,7 +94,7 @@
 		el: '#app',
 		
 		data: {
-			days: '',
+			days: '{!! $holiday->hours_requested / 8 !!}',
 		},
 		
 		computed: {

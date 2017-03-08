@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="form sickDay">
+<div class="form sickDay" id="app">
 	
 	<h2>Update Sick Days</h2>
 	
@@ -91,7 +91,7 @@
 		el: '#app',
 		
 		data: {
-			days: '',
+			days: '{!! $sickDay->sick_hours / 8 !!}',
 		},
 		
 		computed: {

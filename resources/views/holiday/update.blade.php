@@ -38,14 +38,12 @@
 	
 	{!! Form::hidden('approved', 0) !!}
 	
-	<p>Current Date booked from: {{ $holiday->request_date_from->format('D d/m/Y') }}</p>
 	<p>
     	{!! Form::label('request_date_from', 'Date From:') !!}
     	{!! Form::date('request_date_from') !!}
     	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
-	<p>Current Date booked to: {{ $holiday->request_date_to->format('D d/m/Y') }}</p>
 	<p>
     	{!! Form::label('request_date_to', 'Date To:') !!}
     	{!! Form::date('request_date_to') !!}
@@ -55,7 +53,7 @@
 	<p>
 		{!! Form::label('hours_requested', 'Days Requested:') !!}
 		
-		<input v-model="days" name="hours_requested" type="number" id="hours_requested">
+		<input v-model="days" name="hours_requested" type="number" id="hours_requested" >
 		
 		<input v-model="hours"input name="hours_requested" type="hidden">
 		{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
@@ -86,7 +84,24 @@
 
 {{ Form::close() }}
 
-
 </div>
+
+<script>
+
+	new Vue({
+		el: '#app',
+		
+		data: {
+			days: '{!! $holiday->hours_requested / 8 !!}',
+		},
+		
+		computed: {
+			hours: function () {
+    			return this.days * 8
+    		}
+		}
+	})
+	
+</script>
 
 @stop
