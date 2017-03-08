@@ -62,7 +62,7 @@ class CustomValidator {
          
          $date = Carbon::parse($value);
          
-         if($date->addWeeks($weeks));
+         if($date->addWeeks($weeks))
          {
              return true;
          }
@@ -76,7 +76,7 @@ class CustomValidator {
          
          $date = Carbon::parse($value);
          
-         if($date->addWeeks(-$weeks));
+         if($date->addWeeks(-$weeks))
          {
              return true;
          }
