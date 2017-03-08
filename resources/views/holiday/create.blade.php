@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="form holiday">
+<div class="form holiday" id="app">
 	
 	<h2>Book a holiday</h2>
 	
@@ -50,11 +50,14 @@
     	{!! Form::date('request_date_to') !!}
     	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
 	</p>
-	
+		
 	<p>
-    	{!! Form::label('hours_requested', 'Hours Requested:') !!}
-    	{!! Form::number('hours_requested') !!}
-    	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
+		{!! Form::label('hours_requested', 'Days Requested:') !!}
+		
+		<input v-model="days" name="hours_requested" type="number" id="hours_requested">
+		
+		<input v-model="hours"input name="hours_requested" type="hidden">
+		{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<div class="row question">
@@ -84,5 +87,23 @@
 
 
 </div>
+
+<script>
+
+	new Vue({
+		el: '#app',
+		
+		data: {
+			days: '',
+		},
+		
+		computed: {
+			hours: function () {
+    			return this.days * 8
+    		}
+		}
+	})
+	
+</script>
 
 @stop

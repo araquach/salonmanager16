@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="form sickDay">
+<div class="form sickDay" id="app">
 	
 	<h2>Log Sick Days</h2>
 	
@@ -54,9 +54,12 @@
 		</p>
 		
 		<p>
-	    	{!! Form::label('sick_hours', 'How many days:') !!}
-	    	{!! Form::number('sick_hours') !!}
-	    	{!! $errors->first('sick_hours', '<div class="errorMessage">:message</div>') !!}
+			{!! Form::label('sick_hours', 'Number of days:') !!}
+			
+			<input v-model="days" name="sick_hours" type="number" id="sick_hours">
+			
+			<input v-model="hours"input name="sick_hours" type="hidden">
+			{!! $errors->first('sick_hours', '<div class="errorMessage">:message</div>') !!}
 		</p>
 		
 		<p>
@@ -83,5 +86,23 @@
 	{{ Form::close() }}
 
 </div>
+
+<script>
+
+	new Vue({
+		el: '#app',
+		
+		data: {
+			days: '',
+		},
+		
+		computed: {
+			hours: function () {
+    			return this.days * 8
+    		}
+		}
+	})
+	
+</script>
 
 @stop

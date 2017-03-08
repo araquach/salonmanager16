@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="form holiday">
+<div class="form holiday" id="app">
 	
 	<h2>Edit holiday</h2>
 	
@@ -53,9 +53,12 @@
 	</p>
 	
 	<p>
-    	{!! Form::label('hours_requested', 'Hours requested:') !!}
-    	{!! Form::number('hours_requested') !!}
-    	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
+		{!! Form::label('hours_requested', 'Days Requested:') !!}
+		
+		<input v-model="days" name="hours_requested" type="number" id="hours_requested">
+		
+		<input v-model="hours"input name="hours_requested" type="hidden">
+		{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
 	</p>
 	
 	<div class="row question">
